@@ -10,7 +10,7 @@ $config = [
     'language'=>'en',
     'sourceLanguage'=>'en',
   //  'homeUrl'=>'/basic',
-    'defaultRoute'=>'fontend/default/index',
+    'defaultRoute'=>'fontend/home/index',
 //    ['catAll']=>['backend/user/index'],
     'components' => [
         'imageCache' => [
@@ -135,6 +135,7 @@ $config = [
             'class' => 'app\modules\backend\Backend',
         ],
         'fontend' => [
+            'layout' => '/fontend_layout',
             'class' => 'app\modules\fontend\Fontend',
         ],
     ],

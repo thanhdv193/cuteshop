@@ -791,7 +791,7 @@ img.alignright{
 .main-header .header-search-box .form-inline .btn-search{
     width: 41px;
     height: 41px;
-    background: #ff3366 url("/images/search.png") no-repeat center center;
+    background: #ff3366 url("../images/search.png") no-repeat center center;
     border: none;
     border-radius: 0;
     color: #fff;
@@ -845,7 +845,7 @@ img.alignright{
     content: '';
     width: 41px;
     height: 41px;
-    background: #ff3366 url('<?= Url::base('http')?>/images/cart.png') no-repeat center center;
+    background: #ff3366 url('../images/cart.png') no-repeat center center;
     position: absolute;
     top: -1px;
     right: -1px;
@@ -907,7 +907,7 @@ img.alignright{
 }
 .cart-block .cart-block-content  .product-info .p-left .remove_link:after{
   content: '';
-  background: url("/images/delete_icon.png") no-repeat center center;
+  background: url("../images/delete_icon.png") no-repeat center center;
   font-size: 0;
   height: 9px;
   width: 9px;
@@ -988,12 +988,12 @@ span.notify{
     
 }
 span.notify-left{
-    background: url('/images/notify.png') no-repeat;
+    background: url('../images/notify.png') no-repeat;
     right: 25px;
     top: -8px;
 }
 span.notify-right{
-    background: url('/images/notify-right.png') no-repeat;
+    background: url('../images/notify-right.png') no-repeat;
     right: 0px;
     top: -7px;
 }
@@ -1369,10 +1369,10 @@ span.notify-right{
 }
 .nav-menu .nav>li>a{
     padding: 15px 25px;
-    background: url('/images/kak.png') no-repeat right center;
+    background: url('../images/kak.png') no-repeat right center;
 }
 .nav-menu .navbar-toggle{
-    background: url('/images/bar.png') no-repeat left center;
+    background: url('../images/bar.png') no-repeat left center;
     height: 50px;
     margin: 0;
     padding-right: 3px;
@@ -1406,7 +1406,7 @@ span.notify-right{
     position: absolute;
     top: 0;
     right: 0;
-    background: url("/images/floor-elevator.png") no-repeat left center;
+    background: url("../images/floor-elevator.png") no-repeat left center;
     padding-left: 38px;
     padding-right: 22px;
     font-size: 20px;
@@ -1705,7 +1705,7 @@ span.notify-right{
 
 .latest-deals .latest-deal-title{
     height: 54px;
-    background: url("/images/latest-deal-title.png") no-repeat left center;
+    background: url("../images/latest-deal-title.png") no-repeat left center;
     padding: 0;
     margin: 0;
     line-height: 54px;
@@ -2041,7 +2041,7 @@ span.notify-right{
   background-color: rgba(255,51,102,0.5);
 }
 .product-list li .add-to-cart a{
-    background: url("/images/add-cart.png") no-repeat left center;
+    background: url("../images/add-cart.png") no-repeat left center;
     height: 32px;
     line-height: 32px;
     color: #fff;
@@ -2099,7 +2099,7 @@ span.notify-right{
 .product-list li .price-percent-reduction2{
   width: 52px;
   height: 44px;
-  background: url("/images/price-percent-br.png") no-repeat center center;
+  background: url("../images/price-percent-br.png") no-repeat center center;
   color: #fff;
   line-height: normal;
   text-align: center;
@@ -2278,7 +2278,7 @@ span.notify-right{
     position: absolute;
     right: -5px;
     top: -5px;
-    background: url('/images/featured2.png') no-repeat;
+    background: url('../images/featured2.png') no-repeat;
     width: 75px;
     height: 75px;
     z-index: 100;
@@ -2572,7 +2572,7 @@ span.notify-right{
 
 .cate-link span {
     padding-right: 12px;
-    background: url('<?= Url::base('http')?>/data/cate-readmore-arrow.png') right 2px top 50%  no-repeat;
+    background: url('../data/cate-readmore-arrow.png') right 2px top 50%  no-repeat;
    text-transform: uppercase;
    font-size: 10px;
    line-height: 20px;
@@ -2967,7 +2967,7 @@ span.notify-right{
 .layered-filter-price .slider-range-price .ui-slider-handle{
   border: none;
   border-radius: 0;
-  background: url("/images/range-icon.png") no-repeat;
+  background: url("../images/range-icon.png") no-repeat;
   cursor: pointer;
 }
 
@@ -2993,12 +2993,12 @@ span.notify-right{
       width:12px;
       height:12px;
       margin-right: 13px;
-      background: url("/images/checkbox.png") no-repeat;
+      background: url("../images/checkbox.png") no-repeat;
       padding: 0;
       border: none;
 }
 .check-box-list input[type="checkbox"]:checked + label span.button{
-    background: #ff3366 url("/images/checked.png") no-repeat center center;
+    background: #ff3366 url("../images/checked.png") no-repeat center center;
     
 
 }
@@ -3169,7 +3169,7 @@ span.notify-right{
     width: 16px;
     height: 100%;
     float: left;
-    background:url("/images/cart.png") no-repeat scroll left center;
+    background:url("../images/cart.png") no-repeat scroll left center;
     content: " ";
     margin-right: 15px;
 }
@@ -3349,7 +3349,7 @@ span.notify-right{
   float: left;
   cursor: pointer;
   text-indent: -9999px;
-  background: url("/images/grid-view-bg.png") 0 0 #666;
+  background: url("../images/grid-view-bg.png") 0 0 #666;
   border: none;
   float: left;
 }
@@ -3424,7 +3424,7 @@ span.notify-right{
 }
 .product-list.list .add-to-cart a{
   height: 36px;
-  background: url("<?= Url::base('http')?>/images/cart.png") no-repeat left center;
+  background: url("../images/cart.png") no-repeat left center;
   margin-left: 15px;
   padding-left: 15px;
   width: 114px;
@@ -3503,7 +3503,7 @@ span.notify-right{
   content: '';
   width: 16px;
   height: 100%;
-  background:url("<?= Url::base('http')?>/images/cart.png") no-repeat left center;
+  background:url("../images/cart.png") no-repeat left center;
   float: left;
   margin-right: 10px;
 }
@@ -3730,7 +3730,7 @@ span.notify-right{
 }
 
 .cart_summary .action a{
-  background: url("<?= Url::base('http')?>/web/images/delete_icon.png") no-repeat center center;
+  background: url("../images/delete_icon.png") no-repeat center center;
   font-size: 0;
   height: 9px;
   width: 9px;
