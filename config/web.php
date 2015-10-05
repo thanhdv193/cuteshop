@@ -146,6 +146,7 @@ $config = [
             'backend/*',
             'user/*',
             'gii/*',
+            'fontend/*',
         ],
     ],
     'aliases' => [
