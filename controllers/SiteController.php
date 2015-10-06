@@ -115,7 +115,7 @@ class SiteController extends Controller
     public function actionSeo($parametrel="",$parametrel2=""){
         echo $parametrel;echo $parametrel2;
     }
-    
+
     public function onAuthSuccess($client)
     {
        $attributes = $client->getUserAttributes();
@@ -125,7 +125,7 @@ class SiteController extends Controller
             'source' => $client->getId(),
             'source_id' => $attributes['id'],
         ])->one();
-        
+
         if (Yii::$app->user->isGuest) {
             if ($auth) { // login
                 $user = $auth->user;
@@ -137,7 +137,7 @@ class SiteController extends Controller
                     ]);
                 } else {
                     $password = Yii::$app->security->generateRandomString(6);
-                   
+
                     $user = new User([
                         'username'=> $attributes['last_name'].$attributes['first_name'],
                         'email' => $attributes['email'],
@@ -178,5 +178,5 @@ class SiteController extends Controller
             }
         }
     }
- 
+
 }
