@@ -78,7 +78,7 @@ AppAsset::register($this);
         </div>
         <!-- end services -->
         
-        
+        <?= $content ?>
         
         <!-- Footer -->
         <?= FooterWidget::widget() ?>
