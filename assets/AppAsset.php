@@ -25,15 +25,25 @@ class AppAsset extends AssetBundle
         'css/layout/option3.css',
         'css/layout/animate.css',
         'css/layout/responsive.css',
-        'css/lib/jquery-ui/jquery-ui.css',
-        'css/lib/owl.carousel/owl.carousel.css',
-        'css/lib/jquery.bxslider/jquery.bxslider.css',
-        'css/lib/select2/css/select2.min.css',
-        'css/lib/font-awesome/css/font-awesome.min.css'
+        'lib/jquery-ui/jquery-ui.css',
+        'lib/owl.carousel/owl.carousel.css',
+        'lib/jquery.bxslider/jquery.bxslider.css',
+        'lib/select2/css/select2.min.css',
+        'lib/font-awesome/css/font-awesome.min.css'
         
     ];
     public $js = [
         'js/main.js',
+        'lib/bootstrap/js/bootstrap.min.js',
+        'lib/select2/js/select2.min.js',
+        'js/theme-script.js',
+        'js/jquery.actual.min.js',
+        'lib/countdown/jquery.countdown.js',
+        'lib/countdown/jquery.plugin.js',
+        'lib/owl.carousel/owl.carousel.min.js',
+        'lib/jquery.bxslider/jquery.bxslider.min.js',
+        
+        
     ];
     public $depends = [
         'yii\web\YiiAsset',
