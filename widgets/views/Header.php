@@ -502,7 +502,7 @@ use yii\helpers;
                                             <li class="block-container col-sm-3">
                                                 <ul class="block">
                                                     <li class="img_container">
-                                                        <img src="/images/banner/banner-topmenu.jpg" alt="Banner">
+                                                        <img src="/images/menu/banner-topmenu.jpg" alt="Banner">
                                                     </li>
                                                 </ul>
                                             </li>
