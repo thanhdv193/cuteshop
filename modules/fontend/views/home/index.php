@@ -437,7 +437,7 @@ use yii\helpers;
                         <ul class="product-list owl-carousel nav-center" data-dots="false" data-loop="true" data-nav = "true" data-margin = "10" data-responsive='{"0":{"items":1},"600":{"items":3},"1000":{"items":4}}'>
                             <li>
                                 <div class="left-block">
-                                    <a href="#"><img class="img-responsive" alt="product" src="assets/data/option3/p17.jpg" /></a>
+                                    <a href="#"><img class="img-responsive" alt="product" src="/images/product/p17.jpg" /></a>
                                     <div class="quick-view">
                                             <a title="Add to my wishlist" class="heart" href="#"></a>
                                             <a title="Add to compare" class="compare" href="#"></a>
