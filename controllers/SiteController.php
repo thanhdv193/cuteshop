@@ -147,8 +147,7 @@ class SiteController extends Controller
                     $user->generaAuthKey();
                     $user->generatePasswordResetToken();
                     $transaction = $user->getDb()->beginTransaction();
-                    echo '<pre>';
-                    print_r($transaction);die;
+                    
                     if ($user->save(FALSE)) {
                       //  echo 'xu';die;
                         $auth = new Auth([

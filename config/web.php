@@ -7,25 +7,24 @@ $config = [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'bootstrap' => ['gii'],
-    'language'=>'en',
-    'sourceLanguage'=>'en',
-  //  'homeUrl'=>'/basic',
-    'defaultRoute'=>'fontend/home/index',
+    'language' => 'en',
+    'sourceLanguage' => 'en',
+    //  'homeUrl'=>'/basic',
+    'defaultRoute' => 'fontend/home/index',
 //    ['catAll']=>['backend/user/index'],
     'components' => [
         'imageCache' => [
-        'class' => 'iutbay\yii2imagecache\ImageCache',
-        'sourcePath' => '@app/web/images',
-        'sourceUrl' => '@web/images',
-        'thumbsPath' => '@app/web/thumbs',
-        'thumbsUrl' => '@web/thumbs',
+            'class' => 'iutbay\yii2imagecache\ImageCache',
+            'sourcePath' => '@app/web/images',
+            'sourceUrl' => '@web/images',
+            'thumbsPath' => '@app/web/thumbs',
+            'thumbsUrl' => '@web/thumbs',
             'sizes' => [
                 'thumb' => [150, 150],
                 'medium' => [300, 300],
                 'large' => [600, 600],
             ],
         ],
-
         //login facebook and google.com
         'authClientCollection' => [
             'class' => 'yii\authclient\Collection',
@@ -38,12 +37,10 @@ $config = [
                     'clientId' => '446743135489351',
                     'clientSecret' => 'f2ca1e058bff4046b82b160fc79c3ab0',
                 ],
-                // etc.
+            // etc.
             ],
         ],
         //the end login facebook google
-        
-        
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'akZEZqxGC6T0wByyllGkBJza8bx9o0jp',
@@ -64,7 +61,6 @@ $config = [
             'thousandSeparator' => ' ',
             'currencyCode' => 'EUR',
         ],
-        
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
             // send all mails to a file by default. You have to set
@@ -86,13 +82,12 @@ $config = [
             ],
         ],
         'db' => require(__DIR__ . '/db.php'),
-    
-            'urlManager' => [
+        'urlManager' => [
             'class' => 'yii\web\UrlManager',
             'enablePrettyUrl' => true,
             'showScriptName' => 'false',
-           // 'enableStrictParsing' => 'true',
-           // 'suffix' => '.html',
+            // 'enableStrictParsing' => 'true',
+            // 'suffix' => '.html',
             'rules' => [
                 'thumbs/<path:.*>' => 'site/thumb',
                 '<controller:\w+>/<title:[\d\w\-_]+>-<id:\d+>' => '<controller>/view',
@@ -101,37 +96,33 @@ $config = [
                 '<module:\w+>/<controller:\w+>/<action:\w+>' => '<module>/<controller>/<action>',
                 'debug/<controller>/<action>' => 'debug/<controller>/<action>',
             ],
-     
-            
-            
-            ],
-        //phanquyen rbac
-        'authManager'=>[
-            'class'=>'yii\rbac\DbManager',
-           // 'class' => 'yii\rbac\PhpManager',
+        ],
+        'authManager' => [
+            'class' => 'yii\rbac\DbManager',
+        // 'class' => 'yii\rbac\PhpManager',
         ],
     ],
-    'modules'=>[
-        
-         'gii' => 'yii\gii\Module',
-      'admin'=>[
-         'class' => 'mdm\admin\Module',
-           'layout' => 'left-menu', // avaliable value 'left-menu', 'right-menu' and 'top-menu'
+    'modules' => [
+
+        'gii' => 'yii\gii\Module',
+        'admin' => [
+            'class' => 'mdm\admin\Module',
+            'layout' => 'left-menu', // avaliable value 'left-menu', 'right-menu' and 'top-menu'
             'controllerMap' => [
-                 'assignment' => [
+                'assignment' => [
                     'class' => 'mdm\admin\controllers\AssignmentController',
                     'userClassName' => 'app\models\User',
                     'idField' => 'id'
                 ],
             ],
             'menus' => [
-//                'assignment' => [
-//                    'label' => 'Grand Access' // change label
-//                ],
-               // 'rule' => null, // disable menu
+                'assignment' => [
+                    'label' => 'Grand Access' // change label
+                ],
+            // 'rule' => null, // disable menu
             ],
-          ], 
-       'backend' => [
+        ],
+        'backend' => [
             'class' => 'app\modules\backend\Backend',
         ],
         'fontend' => [
@@ -139,11 +130,11 @@ $config = [
             'class' => 'app\modules\fontend\Fontend',
         ],
     ],
-    'as access'=>[
-        'class'=>'mdm\admin\components\AccessControl',
-        'allowActions'=>[
+    'as access' => [
+        'class' => 'mdm\admin\components\AccessControl',
+        'allowActions' => [
             'site/*',
-            'admin/*',
+            //'admin/*',
             'backend/*',
             'user/*',
             'gii/*',
@@ -151,20 +142,19 @@ $config = [
         ],
     ],
     'aliases' => [
-        '@mdm/admin' => 'app/your/extracted',
+        '@mdm/admin' => 'app/vendor/mdmsoft',
     ],
     'params' => $params,
 ];
 
-if (YII_ENV_DEV) {
+if (YII_ENV_DEV)
+{
     // configuration adjustments for 'dev' environment
-   // $config['bootstrap'][] = 'debug';
-   // $config['modules']['debug'] = 'yii\debug\Module';
+    // $config['bootstrap'][] = 'debug';
+    // $config['modules']['debug'] = 'yii\debug\Module';
 
     $config['bootstrap'][] = 'gii';
     $config['modules']['gii'] = 'yii\gii\Module';
-    
-    
 }
 
 return $config;
