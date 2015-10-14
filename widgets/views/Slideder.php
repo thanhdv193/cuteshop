@@ -12,9 +12,9 @@ use yii\helpers;
                     <div class="homeslider">
                         <div class="content-slide">
                             <ul id="slide-background">
-                                <li data-background="#ffcc33"><img alt="Funky roots" src="/images/slider/slider1.jpg" title="Funky roots" /></li>
-                                <li data-background="#666a69"><img alt="Funky roots" src="/images/slider/slider2.jpg" title="Funky roots" /></li>
-                                <li data-background="#c1ddf6"><img  alt="Funky roots" src="/images/slider/slider3.jpg" title="Funky roots" /></li>
+                                <li data-background="#ffcc33"><img alt="Funky roots" src="/images/slider/slider1_1.jpg" title="Funky roots" /></li>
+                                <li data-background="#666a69"><img alt="Funky roots" src="/images/slider/slider2_1.jpg" title="Funky roots" /></li>
+                                <li data-background="#c1ddf6"><img  alt="Funky roots" src="/images/slider/fb-covers-image.jpg" title="Funky roots" /></li>
                             </ul>
                         </div>
                     </div>
