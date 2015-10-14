@@ -112,7 +112,8 @@
                     prevText:'<i class="fa fa-angle-left"></i>',
                     auto: true,
                     onSlideNext: function ($slideElement, oldIndex, newIndex) {
-                       var corlor = $($slideElement).data('background');   
+                       var corlor = $($slideElement).data('background');
+                       
                        $('#home-slider').css('background',corlor);     
                     },
                     onSlidePrev: function ($slideElement, oldIndex, newIndex) {

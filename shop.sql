@@ -205,3 +205,49 @@ CREATE TABLE `product` (
   PRIMARY KEY (`product_id`)
   
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+////////////////////
+CREATE TABLE `image` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `object_id` int(10) unsigned NOT NULL,  
+	`object_type` varchar(255) COLLATE utf8_unicode_ci NOT NULL,  
+  `filename` varchar(255) COLLATE utf8_unicode_ci NOT NULL,  
+  `sort_order` int(11) DEFAULT '0',
+  `create_date` int(10) unsigned NOT NULL,  
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/////////////////////////
+CREATE TABLE `product_group` (
+  `product_group_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `title` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `h1` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `meta_description` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `sort_order` int(11) DEFAULT '0',
+  `active` tinyint(4) DEFAULT '1',
+  `create_date` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`product_group_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+////////////////////////
+CREATE TABLE `product_node` (
+  `product_node_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `title` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `h1` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `meta_description` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `sort_order` int(11) DEFAULT '0',
+  `active` tinyint(4) DEFAULT '1',
+  `create_date` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`product_node_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+//////////////////
+CREATE TABLE `product_category` (
+  `product_category_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `title` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `h1` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `meta_description` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `sort_order` int(11) DEFAULT '0',
+  `active` tinyint(4) DEFAULT '1',
+  `create_date` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`product_category_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;

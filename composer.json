@@ -28,7 +28,8 @@
         "yiisoft/yii2-jui": "*",
         "iutbay/yii2-kcfinder": "*",
         "iutbay/yii2-fontawesome": "*",
-        "iutbay/yii2-imagecache": "*"
+        "iutbay/yii2-imagecache": "*",
+        "kartik-v/yii2-widget-fileinput": "@dev"
         
     },
     "require-dev": {
