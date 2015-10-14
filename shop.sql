@@ -184,3 +184,24 @@ ALTER TABLE `auth_item_child`
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+CREATE TABLE `product` (
+  `product_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `product_category_id` int(10) unsigned NOT NULL,
+  `product_group_id` int(10) unsigned NOT NULL,
+  `product_node_id` int(10) unsigned NOT NULL,  
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `title` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `h1` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `meta_description` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `view_count` int(10) unsigned NOT NULL,     
+  `content` text COLLATE utf8_unicode_ci,
+  `announce` text COLLATE utf8_unicode_ci,
+  `sort_order` int(11) DEFAULT '0',
+  `active` tinyint(4) DEFAULT '1',
+  `price` float unsigned DEFAULT '0',
+  `old_price` float unsigned DEFAULT '0',
+  `quantity_current` int(10) unsigned NOT NULL,       
+  PRIMARY KEY (`product_id`)
+  
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
