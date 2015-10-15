@@ -19,9 +19,12 @@ use iutbay\yii2kcfinder\KCFinderInputWidget;
                 'options' => ['enctype' => 'multipart/form-data'], 'id' => 'form_user_create'
     ]);
     ?>
-    <?= $form->field($model, 'username') ?>    
+    <?= $form->field($model, 'username')->textInput(['name' => 'username', 'id' => 'username'])->label('Tên tài khoản') ?>    
     <?php
-    // $form->field($model, 'username')->widget(CKEditor::className(),[
+    ?>
+    <?= $form->field($model, 'email')->textInput(['name' => 'email', 'id' => 'email'])  ?>    
+    <?php
+// $form->field($model, 'username')->widget(CKEditor::className(),[
 //      'editorOptions' => [
 //      'preset' => 'full',
 //      'inline' => false, //по умолчанию false
@@ -55,8 +58,9 @@ use iutbay\yii2kcfinder\KCFinderInputWidget;
         'options' => ['accept' => 'image/*'],
     ]);
     ?>
-    <?= $form->field($model, 'password_hash')->passwordInput() ?>
-    <?= $form->field($model, 'password_repeat')->passwordInput() ?>
+    <?= $form->field($model, 'gender')->dropDownList(['nam' => 'Nam', 'Nu' => 'Nữ', 'bd' => 'Không xác định'])->label('Giới tính'); ?>
+    <?= $form->field($model, 'password_hash')->passwordInput()->label('Mật khẩu') ?>
+    <?= $form->field($model, 'password_repeat')->passwordInput()->label('Nhập lại mật khẩu') ?>
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>

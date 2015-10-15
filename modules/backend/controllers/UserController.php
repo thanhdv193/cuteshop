@@ -67,8 +67,7 @@ class UserController extends Controller
         
         if ($model->load(Yii::$app->request->post()))
         {
-            $model->Avatar = UploadedFile::getInstance($model, 'Avatar');     
-            
+            $model->Avatar = UploadedFile::getInstance($model, 'Avatar');                 
             var_dump($model->Avatar); die;
             $model->password_hash = Yii::$app->security->generatePasswordHash($model->password_hash);
             $model->save(false);
