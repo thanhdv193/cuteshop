@@ -1,28 +1,69 @@
 <?php
 
-use yii\helpers\Html;
-use yii\bootstrap\Nav;
-use yii\bootstrap\NavBar;
-use yii\widgets\Breadcrumbs;
-use app\assets\AppAssetBackend;
-use app\widgets\HeaderWidget;
-use app\widgets\SlidederWidget;
-use app\widgets\FooterWidget;
-
-AppAssetBackend::register($this);
+use yii\helpers;
 ?>
-<?php $this->beginPage() ?>
 <!DOCTYPE html>
-<html lang="<?= Yii::$app->language ?>">
+<html lang="en">
+
+    <!-- Mirrored from avalon.redteamux.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 28 Oct 2014 07:38:22 GMT -->
     <head>
-        <meta charset="<?= Yii::$app->charset ?>"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <?= Html::csrfMetaTags() ?>
-        <title><?= Html::encode($this->title) ?></title>
-        <?php $this->head() ?>
+        <meta charset="utf-8">
+        <title>Avalon Admin Theme</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-touch-fullscreen" content="yes">
+        <meta name="description" content="Avalon Admin Theme">
+        <meta name="author" content="The Red Team">
+
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,700' rel='stylesheet' type='text/css'>
+
+        <!--[if lt IE 10]>
+            <script src="assets/js/media.match.min.js"></script>
+            <script src="assets/js/placeholder.min.js"></script>
+        <![endif]-->
+
+        <link href="assets/fonts/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+        <link href="assets/css/styles.css" type="text/css" rel="stylesheet">
+
+        <link href="assets/plugins/jstree/dist/themes/avalon/style.min.css" type="text/css" rel="stylesheet">
+        <link href="assets/plugins/codeprettifier/prettify.css" type="text/css" rel="stylesheet">
+        <link href="assets/plugins/iCheck/skins/minimal/blue.css" type="text/css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries. Placeholdr.js enables the placeholder attribute -->
+        <!--[if lt IE 9]>
+            <link href="assets/css/ie8.css" type="text/css" rel="stylesheet">
+            <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.1.0/respond.min.js"></script>
+            <script type="text/javascript" src="assets/plugins/charts-flot/excanvas.min.js"></script>
+            <script type="text/javascript" src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <!-- The following CSS are included as plugins and can be removed if unused-->
+
+        <link href="assets/plugins/form-daterangepicker/daterangepicker-bs3.css" type="text/css" rel="stylesheet">    	<!-- DateRangePicker -->
+        <link href="assets/plugins/switchery/switchery.css" type="text/css" rel="stylesheet">        					<!-- Switchery -->
+        <link href="assets/plugins/fullcalendar/fullcalendar.css" type="text/css" rel="stylesheet"> 						<!-- FullCalendar -->
+
+
     </head>
+
     <body class="infobar-offcanvas">
-        <?php $this->beginBody() ?>
+        <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                        m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '../www.google-analytics.com/analytics.js', 'ga');
+
+            ga('create', 'UA-44426473-3', 'auto');
+            ga('send', 'pageview');
+        </script>
+
         <div id="headerbar">
             <div class="container-fluid">
                 <div class="row">
@@ -94,13 +135,16 @@ AppAssetBackend::register($this);
             </div>
         </div>
         <header id="topnav" class="navbar navbar-inverse navbar-fixed-top clearfix" role="banner">
+
+
             <a id="leftmenu-trigger" class="" data-toggle="tooltip" data-placement="right" title="Toggle Sidebar"></a>
             <a class="navbar-brand" href="index-2.html">Avalon</a>
             <a id="rightmenu-trigger" class="" data-toggle="tooltip" data-placement="left" title="Toggle Infobar"></a>
 
+
             <div class="yamm navbar-left navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-<!--                    <li class="dropdown">
+                    <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-random mr5"></i>Mega Menu<span class="caret"></span></a>
                         <ul class="dropdown-menu" style="width: 900px;">
                             <li>
@@ -172,8 +216,8 @@ AppAssetBackend::register($this);
                                 </div>
                             </li>
                         </ul>
-                    </li>-->
-<!--                    <li class="dropdown" id="widget-classicmenu">
+                    </li>
+                    <li class="dropdown" id="widget-classicmenu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown<span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="#">Action</a></li>
@@ -184,9 +228,9 @@ AppAssetBackend::register($this);
                             <li class="divider"></li>
                             <li><a href="#">One more separated link</a></li>
                         </ul>
-                    </li>-->
-<!--                    <li><a href="frontend/index.html" target="_blank">Frontend</a></li>
-                    <li><a href="landing/index.html" target="_blank">Landing Page</a></li>-->
+                    </li>
+                    <li><a href="frontend/index.html" target="_blank">Frontend</a></li>
+                    <li><a href="landing/index.html" target="_blank">Landing Page</a></li>
                 </ul>
             </div>
 
@@ -281,6 +325,8 @@ AppAssetBackend::register($this);
                         </div>
                     </div>
                 </li>
+
+
                 <li class="dropdown toolbar-icon-bg">
                     <a href="#" class="hasnotifications dropdown-toggle" data-toggle='dropdown'><span class="icon-bg"><i class="fa fa-fw fa-bell"></i></span><span class="badge badge-alizarin">5</span></a>
                     <div class="dropdown-menu notifications arrow">
@@ -449,8 +495,11 @@ AppAssetBackend::register($this);
                         <li><a href="#"><span class="pull-left">Sign Out</span> <i class="pull-right fa fa-sign-out"></i></a></li>
                     </ul>
                 </li>
+
             </ul>
+
         </header>
+
         <div id="wrapper">
             <div id="layout-static">
                 <div class="static-sidebar-wrapper sidebar-default">
@@ -734,7 +783,629 @@ AppAssetBackend::register($this);
                             <div class="container-fluid">
 
 
-                                     <?= $content ?>
+                                <div id="panel-advancedoptions">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <a class="info-tiles tiles-inverse has-footer" href="#">
+                                                <div class="tiles-heading">
+                                                    <div class="pull-left">Orders</div>
+                                                    <div class="pull-right">
+                                                        <div id="tileorders" class="sparkline-block"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="tiles-body">
+                                                    <div class="text-center">1,249</div>
+                                                </div>
+                                                <div class="tiles-footer">
+                                                    <div class="pull-left">manage orders</div>
+                                                    <div class="pull-right percent-change">+20.7%</div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <a class="info-tiles tiles-green has-footer" href="#">
+                                                <div class="tiles-heading">
+                                                    <div class="pull-left">Revenues</div>
+                                                    <div class="pull-right">
+                                                        <div id="tilerevenues" class="sparkline-block"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="tiles-body">
+                                                    <div class="text-center">$61,250</div>
+                                                </div>
+                                                <div class="tiles-footer">
+                                                    <div class="pull-left">go to accounts</div>
+                                                    <div class="pull-right percent-change">+17.2%</div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <a class="info-tiles tiles-blue has-footer" href="#">
+                                                <div class="tiles-heading">
+                                                    <div class="pull-left">Tickets</div>
+                                                    <div class="pull-right">
+                                                        <div id="tiletickets" class="sparkline-block"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="tiles-body">
+                                                    <div class="text-center">1,398</div>
+                                                </div>
+                                                <div class="tiles-footer">
+                                                    <div class="pull-left">see all tickets</div>
+                                                    <div class="pull-right percent-change">+10.3%</div>
+                                                </div>
+                                            </a>
+                                        </div>
+
+                                        <div class="col-md-3">
+                                            <a class="info-tiles tiles-midnightblue has-footer" href="#">
+                                                <div class="tiles-heading">
+                                                    <div class="pull-left">Members</div>
+                                                    <div class="pull-right">
+                                                        <div id="tilemembers" class="sparkline-block"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="tiles-body">
+                                                    <div class="text-center">7,112</div>
+                                                </div>
+                                                <div class="tiles-footer">
+                                                    <div class="pull-left">manage members</div>
+                                                    <div class="pull-right percent-change">-11.1%</div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row">
+                                        <div class="col-md-12 bs-grid">
+                                            <div class="panel panel-default panel-btn-focused" id="p1" data-widget-editbutton="false">
+                                                <div class="panel-heading">
+                                                    <h2>
+                                                        <ul class="nav nav-tabs">
+                                                            <li class="active"><a href="#tab-visitor" data-toggle="tab"><i class="fa fa-user visible-xs"></i><span class="hidden-xs">Visitor Stats</span></a></li>
+                                                            <li><a href="#tab-revenues" data-toggle="tab"><i class="fa fa-bar-chart-o visible-xs"></i><span class="hidden-xs">Revenues</span></a></li>
+                                                        </ul>
+                                                    </h2>
+                                                </div>
+                                                <div class="panel-colorbox" style="display: none">
+                                                    <ul class="list-unstyled list-inline panel-color-list">
+                                                        <li><span data-widget-setstyle="panel-default"></span></li>
+                                                        <li><span data-widget-setstyle="panel-inverse"></span></li>
+                                                        <li><span data-widget-setstyle="panel-primary"></span></li>
+                                                        <li><span data-widget-setstyle="panel-success"></span></li>
+                                                        <li><span data-widget-setstyle="panel-warning"></span></li>
+                                                        <li><span data-widget-setstyle="panel-danger"></span></li>
+                                                        <li><span data-widget-setstyle="panel-info"></span></li>
+                                                        <li><span data-widget-setstyle="panel-brown"></span></li>
+                                                        <li><span data-widget-setstyle="panel-indigo"></span></li>
+                                                        <li><span data-widget-setstyle="panel-orange"></span></li>
+                                                        <li><span data-widget-setstyle="panel-midnightblue"></span></li>
+                                                        <li><span data-widget-setstyle="panel-sky"></span></li>
+                                                        <li><span data-widget-setstyle="panel-magenta"></span></li>
+                                                        <li><span data-widget-setstyle="panel-purple"></span></li>
+                                                        <li><span data-widget-setstyle="panel-green"></span></li>
+                                                        <li><span data-widget-setstyle="panel-grape"></span></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="panel-body">
+                                                    <div class="tab-content">
+                                                        <div class="clearfix">
+                                                            <button class="btn btn-default pull-left" id="daterangepicker2">
+                                                                <i class="fa fa-calendar visible-xs"></i> 
+                                                                <span class="hidden-xs" style="text-transform: uppercase;"><?php echo date("F j, Y", strtotime('-30 day')); ?> - <?php echo date("F j, Y"); ?></span> <b class="caret"></b>
+                                                            </button>
+
+                                                            <div class="btn-toolbar pull-right">
+                                                                <div class="btn-group">
+                                                                    <a href='#' class="btn btn-default dropdown-toggle" data-toggle='dropdown'><i class="fa fa-cloud-download visible-xs"></i><span class="hidden-xs">Export as </span> <span class="caret"></span></a>
+                                                                    <ul class="dropdown-menu">
+                                                                        <li><a href="#">Text File (*.txt)</a></li>
+                                                                        <li><a href="#">Excel File (*.xlsx)</a></li>
+                                                                        <li><a href="#">PDF File (*.pdf)</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div id="tab-visitor" class="tab-pane active">
+                                                            <div id="visitors-stats" style="height:250px;" class="demo-graph graph-1"></div>
+                                                        </div>
+                                                        <div id="tab-revenues" class="tab-pane">
+                                                            <div id="revenues-stats" style="height: 250px;" class="demo-graph graph-2"></div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6 bs-grid">
+                                            <div class="row">
+                                                <div class="col-md-12 bs-grid">
+                                                    <div class="panel panel-default panel-btn-focused" id="p2">
+                                                        <div class="panel-heading">
+                                                            <h2>Population by country</h2>
+                                                        </div>
+                                                        <div class="panel-editbox" style="display: none">
+                                                            <div class="form-horizontal">
+                                                                <div class="form-group">
+                                                                    <div class="col-sm-12">
+                                                                        <input type="text" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="panel-colorbox" style="display: none">
+                                                            <ul class="list-unstyled list-inline panel-color-list">
+                                                                <li><span data-widget-setstyle="panel-default"></span></li>
+                                                                <li><span data-widget-setstyle="panel-inverse"></span></li>
+                                                                <li><span data-widget-setstyle="panel-primary"></span></li>
+                                                                <li><span data-widget-setstyle="panel-success"></span></li>
+                                                                <li><span data-widget-setstyle="panel-warning"></span></li>
+                                                                <li><span data-widget-setstyle="panel-danger"></span></li>
+                                                                <li><span data-widget-setstyle="panel-info"></span></li>
+                                                                <li><span data-widget-setstyle="panel-brown"></span></li>
+                                                                <li><span data-widget-setstyle="panel-indigo"></span></li>
+                                                                <li><span data-widget-setstyle="panel-orange"></span></li>
+                                                                <li><span data-widget-setstyle="panel-midnightblue"></span></li>
+                                                                <li><span data-widget-setstyle="panel-sky"></span></li>
+                                                                <li><span data-widget-setstyle="panel-magenta"></span></li>
+                                                                <li><span data-widget-setstyle="panel-purple"></span></li>
+                                                                <li><span data-widget-setstyle="panel-green"></span></li>
+                                                                <li><span data-widget-setstyle="panel-grape"></span></li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="panel-body bg-gray">
+                                                            <div class="map-world">
+                                                                <div class="row mb20">
+                                                                    <div class="map col-md-12">
+                                                                        <span>Alternative content for the map</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-6">
+                                                                        <div class="areaLegend">
+                                                                            <span>Alternative content for the legend</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="plotLegend">
+                                                                            <span>Alternative content for the legend</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12 bs-grid">
+                                                    <div class="panel panel-default panel-btn-focused demo-new-members" id="p3">
+                                                        <div class="panel-heading">
+                                                            <h2>New Members</h2>
+                                                        </div>
+                                                        <div class="panel-editbox" style="display: none">
+                                                            <div class="form-horizontal">
+                                                                <div class="form-group">
+                                                                    <div class="col-sm-12">
+                                                                        <input type="text" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="panel-colorbox" style="display: none">
+                                                            <ul class="list-unstyled list-inline panel-color-list">
+                                                                <li><span data-widget-setstyle="panel-default"></span></li>
+                                                                <li><span data-widget-setstyle="panel-inverse"></span></li>
+                                                                <li><span data-widget-setstyle="panel-primary"></span></li>
+                                                                <li><span data-widget-setstyle="panel-success"></span></li>
+                                                                <li><span data-widget-setstyle="panel-warning"></span></li>
+                                                                <li><span data-widget-setstyle="panel-danger"></span></li>
+                                                                <li><span data-widget-setstyle="panel-info"></span></li>
+                                                                <li><span data-widget-setstyle="panel-brown"></span></li>
+                                                                <li><span data-widget-setstyle="panel-indigo"></span></li>
+                                                                <li><span data-widget-setstyle="panel-orange"></span></li>
+                                                                <li><span data-widget-setstyle="panel-midnightblue"></span></li>
+                                                                <li><span data-widget-setstyle="panel-sky"></span></li>
+                                                                <li><span data-widget-setstyle="panel-magenta"></span></li>
+                                                                <li><span data-widget-setstyle="panel-purple"></span></li>
+                                                                <li><span data-widget-setstyle="panel-green"></span></li>
+                                                                <li><span data-widget-setstyle="panel-grape"></span></li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="panel-body panel-no-padding">
+                                                            <div class="tabel-responsive">
+                                                                <table class="table table-hover mb0">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th width="5" class="vam"><div class="checkbox icheck"><input type="checkbox" value=""></div></th>
+                                                                    <th width="25">Name</th>
+                                                                    <th width="35" class="hidden-xs">Email</th>
+                                                                    <th width="50"></th>
+                                                                    </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td class="vam"><div class="checkbox icheck"><input type="checkbox" value=""></div></td>
+                                                                            <td>Joesph Keitt</td>
+                                                                            <td class="hidden-xs">joseph01@xyz.com</td>
+                                                                            <td class="vam td-btn text-right">
+                                                                                <div class="btn-group">
+                                                                                    <a href="#" class="btn btn-xs btn-default"><i class="fa fa-fw fa-check"></i></a>
+                                                                                    <a href="#" class="btn btn-xs btn-default"><i class="fa fa-fw fa-times"></i></a>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td class="vam"><div class="checkbox icheck"><input type="checkbox" value=""></div></td>
+                                                                            <td>Andrew Hall</td>
+                                                                            <td class="hidden-xs">andrew01@xyz.com</td>
+                                                                            <td class="vam td-btn text-right">
+                                                                                <div class="btn-group">
+                                                                                    <a href="#" class="btn btn-xs btn-default"><i class="fa fa-fw fa-check"></i></a>
+                                                                                    <a href="#" class="btn btn-xs btn-default"><i class="fa fa-fw fa-times"></i></a>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td class="vam"><div class="checkbox icheck"><input type="checkbox" value=""></div></td>
+                                                                            <td>Rhett Hisle</td>
+                                                                            <td class="hidden-xs">rhett88@abc.com</td>
+                                                                            <td class="vam td-btn text-right">
+                                                                                <div class="btn-group">
+                                                                                    <a href="#" class="btn btn-xs btn-default"><i class="fa fa-fw fa-check"></i></a>
+                                                                                    <a href="#" class="btn btn-xs btn-default"><i class="fa fa-fw fa-times"></i></a>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td class="vam"><div class="checkbox icheck"><input type="checkbox" value=""></div></td>
+                                                                            <td>Collin Bessette</td>
+                                                                            <td class="hidden-xs">collb11@xyz.com</td>
+                                                                            <td class="vam td-btn text-right">
+                                                                                <div class="btn-group">
+                                                                                    <a href="#" class="btn btn-xs btn-default"><i class="fa fa-fw fa-check"></i></a>
+                                                                                    <a href="#" class="btn btn-xs btn-default"><i class="fa fa-fw fa-times"></i></a>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td class="vam"><div class="checkbox icheck"><input type="checkbox" value=""></div></td>
+                                                                            <td>Anderson Corrigan</td>
+                                                                            <td class="hidden-xs">andy91@abc.com</td>
+                                                                            <td class="vam td-btn text-right">
+                                                                                <div class="btn-group">
+                                                                                    <a href="#" class="btn btn-xs btn-default"><i class="fa fa-fw fa-check"></i></a>
+                                                                                    <a href="#" class="btn btn-xs btn-default"><i class="fa fa-fw fa-times"></i></a>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td class="vam"><div class="checkbox icheck"><input type="checkbox" value=""></div></td>
+                                                                            <td>Archie Chavarria</td>
+                                                                            <td class="hidden-xs">arch77@abc.com</td>
+                                                                            <td class="vam td-btn text-right">
+                                                                                <div class="btn-group">
+                                                                                    <a href="#" class="btn btn-xs btn-default"><i class="fa fa-fw fa-check"></i></a>
+                                                                                    <a href="#" class="btn btn-xs btn-default"><i class="fa fa-fw fa-times"></i></a>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td class="vam"><div class="checkbox icheck"><input type="checkbox" value=""></div></td>
+                                                                            <td>Dirk Fino</td>
+                                                                            <td class="hidden-xs">dif03@xyz.com</td>
+                                                                            <td class="vam td-btn text-right">
+                                                                                <div class="btn-group">
+                                                                                    <a href="#" class="btn btn-xs btn-default"><i class="fa fa-fw fa-check"></i></a>
+                                                                                    <a href="#" class="btn btn-xs btn-default"><i class="fa fa-fw fa-times"></i></a>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td class="vam"><div class="checkbox icheck"><input type="checkbox" value=""></div></td>
+                                                                            <td>Ignacio Mcmaster</td>
+                                                                            <td class="hidden-xs">andrew01@xyz.com</td>
+                                                                            <td class="vam td-btn text-right">
+                                                                                <div class="btn-group">
+                                                                                    <a href="#" class="btn btn-xs btn-default"><i class="fa fa-fw fa-check"></i></a>
+                                                                                    <a href="#" class="btn btn-xs btn-default"><i class="fa fa-fw fa-times"></i></a>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td class="vam"><div class="checkbox icheck"><input type="checkbox" value=""></div></td>
+                                                                            <td>Dana Adair</td>
+                                                                            <td class="hidden-xs">dann4@abc.com</td>
+                                                                            <td class="vam td-btn text-right">
+                                                                                <div class="btn-group">
+                                                                                    <a href="#" class="btn btn-xs btn-default"><i class="fa fa-fw fa-check"></i></a>
+                                                                                    <a href="#" class="btn btn-xs btn-default"><i class="fa fa-fw fa-times"></i></a>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td class="vam"><div class="checkbox icheck"><input type="checkbox" value=""></div></td>
+                                                                            <td>Lloyd Klass</td>
+                                                                            <td class="hidden-xs">lklass1@abc.com</td>
+                                                                            <td class="vam td-btn text-right">
+                                                                                <div class="btn-group">
+                                                                                    <a href="#" class="btn btn-xs btn-default"><i class="fa fa-fw fa-check"></i></a>
+                                                                                    <a href="#" class="btn btn-xs btn-default"><i class="fa fa-fw fa-times"></i></a>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                            <div class="panel-footer p10 m0">
+                                                                <ul class="pagination pagination-sm m0 pull-right">
+                                                                    <li class="disabled"><a href="#"><i class="fa fa-angle-left"></i></a></li>
+                                                                    <li class="active"><a href="#">1</a></li>
+                                                                    <li><a href="#">2</a></li>
+                                                                    <li><a href="#">3</a></li>
+                                                                    <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+                                                                </ul>
+                                                                <a href="#" class="btn btn-sm btn-default pull-left">Approve Selected</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12 bs-grid">
+                                                    <div class="panel panel-default panel-btn-focused" id="p4">
+                                                        <div class="panel-heading">
+                                                            <h2>Calendar</h2>
+                                                            <div class="panel-ctrls">
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="panel-editbox" style="display: none">
+                                                            <div class="form-horizontal">
+                                                                <div class="form-group">
+                                                                    <div class="col-sm-12">
+                                                                        <input type="text" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="panel-colorbox" style="display: none">
+                                                            <ul class="list-unstyled list-inline panel-color-list">
+                                                                <li><span data-widget-setstyle="panel-default"></span></li>
+                                                                <li><span data-widget-setstyle="panel-inverse"></span></li>
+                                                                <li><span data-widget-setstyle="panel-primary"></span></li>
+                                                                <li><span data-widget-setstyle="panel-success"></span></li>
+                                                                <li><span data-widget-setstyle="panel-warning"></span></li>
+                                                                <li><span data-widget-setstyle="panel-danger"></span></li>
+                                                                <li><span data-widget-setstyle="panel-info"></span></li>
+                                                                <li><span data-widget-setstyle="panel-brown"></span></li>
+                                                                <li><span data-widget-setstyle="panel-indigo"></span></li>
+                                                                <li><span data-widget-setstyle="panel-orange"></span></li>
+                                                                <li><span data-widget-setstyle="panel-midnightblue"></span></li>
+                                                                <li><span data-widget-setstyle="panel-sky"></span></li>
+                                                                <li><span data-widget-setstyle="panel-magenta"></span></li>
+                                                                <li><span data-widget-setstyle="panel-purple"></span></li>
+                                                                <li><span data-widget-setstyle="panel-green"></span></li>
+                                                                <li><span data-widget-setstyle="panel-grape"></span></li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="panel-body">
+                                                            <div id="calendar-drag"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>			
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 bs-grid">
+                                            <div class="row">
+                                                <div class="col-md-12 bs-grid">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div class="panel panel-default panel-btn-focused" id="p5">
+                                                                <div class="panel-heading">
+                                                                    <h2>Live Dynamic</h2>
+                                                                    <div class="panel-ctrls">
+                                                                        <input type="checkbox" class="js-switch-success switchery-xs" checked id="live-dynamic-switch" />
+                                                                        <i class="separator"></i>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="panel-editbox" style="display: none">
+                                                                    <div class="form-horizontal">
+                                                                        <div class="form-group">
+                                                                            <div class="col-sm-12">
+                                                                                <input type="text" class="form-control">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="panel-colorbox" style="display: none">
+                                                                    <ul class="list-unstyled list-inline panel-color-list">
+                                                                        <li><span data-widget-setstyle="panel-default"></span></li>
+                                                                        <li><span data-widget-setstyle="panel-inverse"></span></li>
+                                                                        <li><span data-widget-setstyle="panel-primary"></span></li>
+                                                                        <li><span data-widget-setstyle="panel-success"></span></li>
+                                                                        <li><span data-widget-setstyle="panel-warning"></span></li>
+                                                                        <li><span data-widget-setstyle="panel-danger"></span></li>
+                                                                        <li><span data-widget-setstyle="panel-info"></span></li>
+                                                                        <li><span data-widget-setstyle="panel-brown"></span></li>
+                                                                        <li><span data-widget-setstyle="panel-indigo"></span></li>
+                                                                        <li><span data-widget-setstyle="panel-orange"></span></li>
+                                                                        <li><span data-widget-setstyle="panel-midnightblue"></span></li>
+                                                                        <li><span data-widget-setstyle="panel-sky"></span></li>
+                                                                        <li><span data-widget-setstyle="panel-magenta"></span></li>
+                                                                        <li><span data-widget-setstyle="panel-purple"></span></li>
+                                                                        <li><span data-widget-setstyle="panel-green"></span></li>
+                                                                        <li><span data-widget-setstyle="panel-grape"></span></li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="panel-body">
+                                                                    <div id="server-load" style="height: 192px;"></div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-sm-4">
+                                                            <a href="#" class="info-tiles tiles-midnightblue">
+                                                                <div class="tiles-heading">
+                                                                    Bandwidth
+                                                                </div>
+                                                                <div class="tiles-body">
+                                                                    <div class="easypiechart" id="bandwidth" data-percent="42">
+                                                                        <span class="percent"></span>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <a href="#" class="info-tiles tiles-primary">
+                                                                <div class="tiles-heading">
+                                                                    Server Load
+                                                                </div>
+                                                                <div class="tiles-body">
+                                                                    <div class="easypiechart" id="serverload" data-percent="31">
+                                                                        <span class="percent"></span>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <a href="#" class="info-tiles tiles-grape">
+                                                                <div class="tiles-heading">
+                                                                    RAM Usage
+                                                                </div>
+                                                                <div class="tiles-body">
+                                                                    <div class="easypiechart" id="ramusage" data-percent="72">
+                                                                        <span class="percent"></span>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>		
+                                                <div class="col-md-12 bs-grid">
+                                                    <div class="panel panel-default panel-btn-focused" id="p6">
+                                                        <div class="panel-heading">
+                                                            <h2>Todo List</h2>
+                                                        </div>
+                                                        <div class="panel-editbox" style="display: none">
+                                                            <div class="form-horizontal">
+                                                                <div class="form-group">
+                                                                    <div class="col-sm-12">
+                                                                        <input type="text" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="panel-colorbox" style="display: none">
+                                                            <ul class="list-unstyled list-inline panel-color-list">
+                                                                <li><span data-widget-setstyle="panel-default"></span></li>
+                                                                <li><span data-widget-setstyle="panel-inverse"></span></li>
+                                                                <li><span data-widget-setstyle="panel-primary"></span></li>
+                                                                <li><span data-widget-setstyle="panel-success"></span></li>
+                                                                <li><span data-widget-setstyle="panel-warning"></span></li>
+                                                                <li><span data-widget-setstyle="panel-danger"></span></li>
+                                                                <li><span data-widget-setstyle="panel-info"></span></li>
+                                                                <li><span data-widget-setstyle="panel-brown"></span></li>
+                                                                <li><span data-widget-setstyle="panel-indigo"></span></li>
+                                                                <li><span data-widget-setstyle="panel-orange"></span></li>
+                                                                <li><span data-widget-setstyle="panel-midnightblue"></span></li>
+                                                                <li><span data-widget-setstyle="panel-sky"></span></li>
+                                                                <li><span data-widget-setstyle="panel-magenta"></span></li>
+                                                                <li><span data-widget-setstyle="panel-purple"></span></li>
+                                                                <li><span data-widget-setstyle="panel-green"></span></li>
+                                                                <li><span data-widget-setstyle="panel-grape"></span></li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="panel-body panel-no-padding panel-tasks">
+                                                            <h4 class="task-header">Pending Tasks</h4>
+                                                            <ul class="connectedSortable" id="sortable-tasks">
+                                                                <li class="item-warning">
+                                                                    <span class="drag-handle"> 
+                                                                        <div class="checkbox-inline icheck"><input type="checkbox"></div>
+                                                                    </span>
+                                                                    <p>
+                                                                        Send project demo files to client
+                                                                    </p>
+                                                                    <a href="#" class="btn btn-xs btn-default task-options"><i class="fa fa-pencil"></i></a>
+                                                                </li>
+                                                                <li class="item-orange">
+                                                                    <span class="drag-handle"> 
+                                                                        <div class="checkbox-inline icheck"><input type="checkbox"></div>
+                                                                    </span>
+                                                                    <p>
+                                                                        Sketch wireframes for new project and send it to client as soon as possible
+                                                                    </p>
+                                                                    <a href="#" class="btn btn-xs btn-default task-options"><i class="fa fa-pencil"></i></a>
+                                                                </li>
+                                                                <li class="">
+                                                                    <span class="drag-handle"> 
+                                                                        <div class="checkbox-inline icheck"><input type="checkbox"></div>
+                                                                    </span>
+                                                                    <p>
+                                                                        Buy some milk
+                                                                    </p>
+                                                                    <a href="#" class="btn btn-xs btn-default task-options"><i class="fa fa-pencil"></i></a>
+                                                                </li>
+                                                                <li class="">
+                                                                    <span class="drag-handle"> 
+                                                                        <div class="checkbox-inline icheck"><input type="checkbox"></div>
+                                                                    </span>
+                                                                    <p>
+                                                                        Prepare documentation for completed project
+                                                                    </p>
+                                                                    <a href="#" class="btn btn-xs btn-default task-options"><i class="fa fa-pencil"></i></a>
+                                                                </li>
+                                                                <li class="item-success">
+                                                                    <span class="drag-handle"> 
+                                                                        <div class="checkbox-inline icheck"><input type="checkbox"></div>
+                                                                    </span>
+                                                                    <p>
+                                                                        Meeting with the development team
+                                                                    </p>
+                                                                    <a href="#" class="btn btn-xs btn-default task-options"><i class="fa fa-pencil"></i></a>
+                                                                </li>
+
+                                                            </ul>
+                                                            <h4 class="task-header"><i class="fa fa-check"></i> Completed Tasks</h4>
+                                                            <ul class="task-completed connectedSortable" id="completed-tasks">
+
+                                                                <li class="item-primary">
+                                                                    <span class="drag-handle"> 
+                                                                        <div class="checkbox-inline icheck"><input type="checkbox" checked></div>
+                                                                        <span class="drag-image"></span>
+                                                                    </span>
+                                                                    <p>
+                                                                        Assign tasks to designers
+                                                                    </p>
+                                                                    <a href="#" class="btn btn-xs btn-default task-options"><i class="fa fa-pencil"></i></a>
+                                                                </li>
+                                                                <li class="">
+                                                                    <span class="drag-handle"> 
+                                                                        <div class="checkbox-inline icheck"><input type="checkbox" checked></div>
+                                                                        <span class="drag-image"></span>
+                                                                    </span>
+                                                                    <p>
+                                                                        Set up a meeting with new client
+                                                                    </p>
+                                                                    <a href="#" class="btn btn-xs btn-default task-options"><i class="fa fa-pencil"></i></a>
+                                                                </li>
+
+                                                            </ul>
+                                                            <div class="tasks-footer clearfix">
+                                                                <a href="#" class="btn btn-sm btn-success"><i class="fa fa-plus"></i> <span class="hidden-xs">New</span></a>
+                                                                <a href="#" class="btn btn-sm btn-default"><i class="fa fa-check"></i> <span class="hidden-xs">Mark All Done</span></a>
+                                                                <a href="app-todo.html" class="btn-link btn-sm pull-right" style="padding-right: 0">Go to todo page</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
 
 
                             </div> <!-- .container-fluid -->
@@ -743,7 +1414,7 @@ AppAssetBackend::register($this);
                     <footer role="contentinfo">
                         <div class="clearfix">
                             <ul class="list-unstyled list-inline pull-left">
-                                <li><h6 style="margin: 0;"> &copy; 2015 thanhdv</h6></li>
+                                <li><h6 style="margin: 0;"> &copy; 2014 Avalon</h6></li>
                             </ul>
                             <button class="pull-right btn btn-link btn-xs hidden-print" id="back-to-top"><i class="fa fa-arrow-up"></i></button>
                         </div>
@@ -751,6 +1422,8 @@ AppAssetBackend::register($this);
                 </div>
             </div>
         </div>
+
+
         <div class="infobar-wrapper">
             <div class="infobar">
 
@@ -1119,6 +1792,9 @@ AppAssetBackend::register($this);
                 </div>
             </div>
         </div>
+
+
+        <!-- Switcher -->
         <div class="demo-options">
             <div class="demo-options-icon"><i class="fa fa-spin fa-fw fa-smile-o"></i></div>
             <div class="demo-heading">Demo Settings</div>
@@ -1197,10 +1873,66 @@ AppAssetBackend::register($this);
             </div>
 
         </div>
-       
+        <!-- /Switcher -->
+        <!-- Load site level scripts -->
+
+        <script src="assets/js/jquery-1.10.2.min.js"></script> 							<!-- Load jQuery -->
+        <script src="assets/js/jqueryui-1.9.2.min.js"></script> 							<!-- Load jQueryUI -->
+        <script src="assets/js/bootstrap.min.js"></script> 								<!-- Load Bootstrap -->
+
+        <script src="assets/plugins/jquery-slimscroll/jquery.slimscroll.js"></script> 	<!-- Slimscroll for custom scrolls -->
+        <script src="assets/plugins/sparklines/jquery.sparklines.min.js"></script>  		<!-- Sparkline -->
+        <script src="assets/plugins/jstree/dist/jstree.min.js"></script>  				<!-- jsTree -->
+
+        <script src="assets/plugins/codeprettifier/prettify.js"></script> 				<!-- Code Prettifier  -->
+        <script src="assets/plugins/bootstrap-switch/bootstrap-switch.js"></script> 		<!-- Swith/Toggle Button -->
+
+        <script src="assets/plugins/bootstrap-tabdrop/js/bootstrap-tabdrop.js"></script>  <!-- Bootstrap Tabdrop -->
+
+        <script src="assets/plugins/iCheck/icheck.min.js"></script>     					<!-- iCheck -->
+
+        <script src="assets/js/enquire.min.js"></script> 										<!-- Enquire for Responsiveness -->
+
+        <script src="assets/plugins/bootbox/bootbox.js"></script>					<!-- BOOTBOX -->
+
+        <script src="assets/js/application.js"></script>
+        <script src="assets/demo/demo.js"></script>
+        <script src="assets/demo/demo-switcher.js"></script>
+
+        <script src="assets/plugins/simpleWeather/jquery.simpleWeather.min.js"></script> 
+
+        <!-- End loading site level scripts -->
+
+        <!-- Load page level scripts-->
+
+        <script src="assets/plugins/form-daterangepicker/daterangepicker.js"></script>     	<!-- Date Range Picker -->
+        <script src="assets/plugins/form-daterangepicker/moment.min.js"></script>             <!-- Moment.js for Date Range Picker -->
+
+        <script src="assets/plugins/easypiechart/jquery.easypiechart.js"></script> 			<!-- EasyPieChart -->
+        <script src="assets/plugins/powerwidgets/js/powerwidgets.js"></script> 				<!-- PowerWidgets -->
+        <script src="assets/plugins/switchery/switchery.js"></script>     					<!-- Switchery -->
+
+        <script src="assets/plugins/fullcalendar/fullcalendar.min.js"></script>   			<!-- FullCalendar -->
+
+        <!-- Charts -->
+        <script src="assets/plugins/charts-flot/jquery.flot.min.js"></script>             	<!-- Flot Main File -->
+        <script src="assets/plugins/charts-flot/jquery.flot.stack.min.js"></script>       	<!-- Flot Stacked Charts Plugin -->
+        <script src="assets/plugins/charts-flot/jquery.flot.orderBars.min.js"></script>   	<!-- Flot Ordered Bars Plugin-->
+        <script src="assets/plugins/charts-flot/jquery.flot.resize.min.js"></script>          <!-- Flot Responsive -->
+        <script src="assets/plugins/charts-flot/jquery.flot.tooltip.min.js"></script> 		<!-- Flot Tooltips -->
+
+        <!-- Maps -->
+        <script src="assets/plugins/jQuery-Mapael/js/raphael/raphael-min.js"></script>        <!-- Load Raphael as Dependency -->
+        <script src="assets/plugins/jQuery-Mapael/js/jquery.mapael.js"></script>              <!-- jQuery Mapael -->
+        <!-- <script src="assets/plugins/jQuery-mousewheel/jquery.mousewheel.min.js"></script> -->     <!-- Mousewheel Support in zoomed-in maps -->
+        <script src="assets/plugins/jQuery-Mapael/js/maps/world_countries.js"></script>       <!-- Vector Data of World Countries -->
 
 
-        <?php $this->endBody() ?>
+        <script src="assets/demo/demo-index.js"></script> 									<!-- Initialize scripts for this page-->
+
+        <!-- End loading page level scripts-->
+
     </body>
+
+    <!-- Mirrored from avalon.redteamux.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 28 Oct 2014 07:42:50 GMT -->
 </html>
-<?php $this->endPage() ?>

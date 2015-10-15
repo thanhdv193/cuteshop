@@ -18,31 +18,27 @@ class AppAssetBackend extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'css/site.css',
-        'css/layout/style.css',
-        'css/lib/bootstrap/css/bootstrap.min.css',
-        'css/layout/reset.css',
-        'css/layout/option3.css',
-        'css/layout/animate.css',
-        'css/layout/responsive.css',
-        'lib/jquery-ui/jquery-ui.css',
-        'lib/owl.carousel/owl.carousel.css',
-        'lib/jquery.bxslider/jquery.bxslider.css',
-        'lib/select2/css/select2.min.css',
-        'lib/font-awesome/css/font-awesome.min.css'
+        'css/backend/layout/styles.css',
+        'css/backend/fonts/font-awesome/css/font-awesome.min.css',
+        
         
     ];
     public $js = [
         'js/main.js',
         'lib/bootstrap/js/bootstrap.min.js',
-        'lib/select2/js/select2.min.js',        
-        'js/jquery.actual.min.js',
-        'lib/countdown/jquery.plugin.js',
-        'lib/countdown/jquery.countdown.js',        
-        'lib/owl.carousel/owl.carousel.min.js',
-        'lib/jquery.bxslider/jquery.bxslider.min.js',
-        'js/theme-script.js',
-        
+        'js/backend/plugins/jquery-slimscroll/jquery.slimscroll.js',
+        'js/backend/plugins/sparklines/jquery.sparklines.min.js',
+        'js/backend/plugins/jstree/dist/jstree.min.js',
+        'js/backend/plugins/codeprettifier/prettify.js',
+        'js/backend/plugins/bootstrap-switch/bootstrap-switch.js',
+        'js/backend/plugins/bootstrap-tabdrop/js/bootstrap-tabdrop.js',
+        'js/backend/plugins/iCheck/icheck.min.js',
+        'js/backend/enquire.min.js',
+        'js/backend/plugins/bootbox/bootbox.js',
+        'js/backend/application.js',
+        'js/backend/demo.js',
+        'js/backend/demo-switcher.js',
+        'js/backend/plugins/simpleWeather/jquery.simpleWeather.min.js',
         
     ];
     public $depends = [
