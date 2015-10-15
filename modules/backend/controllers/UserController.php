@@ -8,12 +8,15 @@ use app\models\UserSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
+use kartik\file\FileInput;
 
 /**
  * UserController implements the CRUD actions for User model.
  */
 class UserController extends Controller
 {
+
     public function behaviors()
     {
         return [
@@ -36,8 +39,8 @@ class UserController extends Controller
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+                    'searchModel' => $searchModel,
+                    'dataProvider' => $dataProvider,
         ]);
     }
 
@@ -49,7 +52,7 @@ class UserController extends Controller
     public function actionView($id)
     {
         return $this->render('view', [
-            'model' => $this->findModel($id),
+                    'model' => $this->findModel($id),
         ]);
     }
 
@@ -60,17 +63,41 @@ class UserController extends Controller
      */
     public function actionCreate()
     {
-        $model=new User();
-
-        if ($model->load(Yii::$app->request->post()) ) {
-              $model->password_hash=Yii::$app->security->generatePasswordHash($model->password_hash);
+        $model = new User();
+        
+        if ($model->load(Yii::$app->request->post()))
+        {
+            $model->Avatar = UploadedFile::getInstance($model, 'Avatar');                 
+            var_dump($model->Avatar); die;
+            $model->password_hash = Yii::$app->security->generatePasswordHash($model->password_hash);
             $model->save(false);
             return $this->redirect(['view', 'id' => $model->id]);
-        } else {
+        } else
+        {
             return $this->render('create', [
-                'model' => $model,
+                        'model' => $model,
             ]);
         }
+    }
+
+    public function actionUpLoadImage()
+    {
+        $model = new User();
+        $post = Yii::$app->request->getBodyParams();
+        $file_name = $_FILES['email'];
+        $objecFile = new UploadedFile();
+        foreach ($file_name as $key => $value)
+        {
+            if ($key == 'tmp_name')
+            {
+                $objecFile->tempName = $value;
+            } else
+            {
+                $objecFile->$key = $value;
+            }                        
+        }
+        $model->Avatar = $objecFile;
+        $model->upload();
     }
 
     /**
@@ -81,18 +108,19 @@ class UserController extends Controller
      */
     public function actionUpdate($id)
     {
-        
+
         $model = $this->findModel($id);
-        if ($model->load(Yii::$app->request->post()) ) {
-            $model->password_hash=Yii::$app->security->generatePasswordHash($model->password_hash);
+        if ($model->load(Yii::$app->request->post()))
+        {
+            $model->password_hash = Yii::$app->security->generatePasswordHash($model->password_hash);
             $model->save(false);
             return $this->redirect(['view', 'id' => $model->id]);
-        } else {
+        } else
+        {
             return $this->render('update', [
-                'model' => $model,
+                        'model' => $model,
             ]);
         }
-      
     }
 
     /**
@@ -117,10 +145,13 @@ class UserController extends Controller
      */
     protected function findModel($id)
     {
-        if (($model = User::findOne($id)) !== null) {
+        if (($model = User::findOne($id)) !== null)
+        {
             return $model;
-        } else {
+        } else
+        {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
+
 }

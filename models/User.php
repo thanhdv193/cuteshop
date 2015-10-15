@@ -7,6 +7,7 @@ use yii\base\NotSupportedException;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
+use yii\web\UploadedFile;
 
 class User extends ActiveRecord implements IdentityInterface {
 
@@ -26,14 +27,18 @@ class User extends ActiveRecord implements IdentityInterface {
 
     public function rules() {
         return[
+            
             ['username', 'filter', 'filter' => 'trim'],
             ['username', 'required'],
             ['username', 'unique', 'targetClass' => '\app\models\User', 'message' => Yii::t('app', 'the user name can only contain letters ,nubers and dashes!')],
             ['username', 'string', 'min' => 2, 'max' => 255],
+            [['Avatar'], 'file','extensions' => 'PNG,JPG,png,jpg', 'maxFiles' => 4],
             ['email', 'filter', 'filter' => 'trim'],
             ['email', 'required'],
             ['email', 'email'],
             ['email', 'unique', 'targetClass' => '\app\models\User', 'message' => Yii::t('app', 'email')],
+            ['gender', 'required'],            
+            ['gender', 'string', 'min' => 2, 'max' => 255],
             [['password_hash', 'password_repeat'], 'required'],
             [['password_hash', 'password_repeat'], 'string', 'min' => 6],
             [['password_hash'], 'in', 'range' => ['password_hash', 'Password', 'Password123'], 'not' => 'true', 'message' => Yii::t('app', 'the user name can only contain letters ,nubers and dashes!')],
@@ -130,5 +135,14 @@ class User extends ActiveRecord implements IdentityInterface {
 
     public function removePasswordResetToken() {
         $this->password_reset_token = null;
+    }
+    public function upload() {
+        if ($this->Avatar) {        
+            //var_dump($this->Avatar->baseName); die;
+            $this->Avatar->saveAs('upload/Product/' . time() . '-avatar-' . $this->Avatar->baseName . '.' . $this->Avatar->extension);
+            return time() . '-avatar-' . $this->Avatar->baseName . '.' . $this->Avatar->extension;
+        } else {
+            return false;
+        }
     }
 }

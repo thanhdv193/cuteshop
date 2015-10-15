@@ -14,43 +14,53 @@ use iutbay\yii2kcfinder\KCFinderInputWidget;
 
 <div class="user-form">
 
-    <?php $form = ActiveForm::begin(); ?>
-    <?= $form->field($model, 'username') ?>
-    <?php //echo $form->field($model, 'email')  ?>
-
     <?php
-    // $form->field($model, 'username')->widget(CKEditor::className(),[
+    $form = ActiveForm::begin([
+                'options' => ['enctype' => 'multipart/form-data'], 'id' => 'form_user_create'
+    ]);
+    ?>
+    <?= $form->field($model, 'username')->textInput(['name' => 'username', 'id' => 'username'])->label('Tên tài khoản') ?>    
+    <?php
+    ?>
+    <?= $form->field($model, 'email')->textInput(['name' => 'email', 'id' => 'email'])  ?>    
+    <?php
+// $form->field($model, 'username')->widget(CKEditor::className(),[
 //      'editorOptions' => [
 //      'preset' => 'full',
 //      'inline' => false, //по умолчанию false
 //      ],
 //      ]); 
     ?> 
-
-
-    <?=
-    $form->field($model, 'email')->widget(KCFinderInputWidget::className(), [
-        'multiple' => true,
-    ]);
+    <?php
+//    echo FileInput::widget([
+//        'name' => 'email',
+//        'options' => [
+//            'multiple' => true
+//        ],
+//        'pluginOptions' => [
+//            'uploadUrl' => Url::to(['/backend/user/up-load-image']),
+//            'maxFileCount' => 1
+//        ]
+//    ]);
+//    
     ?>
     <?php
-    echo FileInput::widget([
-        'name' => 'email',
-        'options' => [
-            'multiple' => true
-        ],
+    echo $form->field($model, 'Avatar')->widget(FileInput::classname(), [
         'pluginOptions' => [
-            'uploadUrl' => Url::to(['/site/file-upload']),
-            'uploadExtraData' => [
-                'album_id' => 20,
-                'cat_id' => 'Nature'
-            ],
-            'maxFileCount' => 10
-        ]
+            'allowedFileExtensions' => ['jpg', 'gif', 'png'],
+            'showCaption' => false,
+            'showRemove' => false,
+            'showUpload' => false,
+            'browseClass' => 'btn btn-primary btn-block btn-file-image',
+            'browseIcon' => '<i class="glyphicon glyphicon-camera"></i> ',
+            'browseLabel' => 'Chọn avatar'
+        ],
+        'options' => ['accept' => 'image/*'],
     ]);
     ?>
-    <?= $form->field($model, 'password_hash')->passwordInput() ?>
-    <?= $form->field($model, 'password_repeat')->passwordInput() ?>
+    <?= $form->field($model, 'gender')->dropDownList(['nam' => 'Nam', 'Nu' => 'Nữ', 'bd' => 'Không xác định'])->label('Giới tính'); ?>
+    <?= $form->field($model, 'password_hash')->passwordInput()->label('Mật khẩu') ?>
+    <?= $form->field($model, 'password_repeat')->passwordInput()->label('Nhập lại mật khẩu') ?>
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
