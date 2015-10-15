@@ -14,10 +14,12 @@ use iutbay\yii2kcfinder\KCFinderInputWidget;
 
 <div class="user-form">
 
-    <?php $form = ActiveForm::begin(); ?>
-    <?= $form->field($model, 'username') ?>
-    <?php //echo $form->field($model, 'email')  ?>
-
+    <?php
+    $form = ActiveForm::begin([
+                'options' => ['enctype' => 'multipart/form-data'], 'id' => 'form_user_create'
+    ]);
+    ?>
+    <?= $form->field($model, 'username') ?>    
     <?php
     // $form->field($model, 'username')->widget(CKEditor::className(),[
 //      'editorOptions' => [
@@ -26,27 +28,31 @@ use iutbay\yii2kcfinder\KCFinderInputWidget;
 //      ],
 //      ]); 
     ?> 
-
-
-    <?=
-    $form->field($model, 'email')->widget(KCFinderInputWidget::className(), [
-        'multiple' => true,
-    ]);
+    <?php
+//    echo FileInput::widget([
+//        'name' => 'email',
+//        'options' => [
+//            'multiple' => true
+//        ],
+//        'pluginOptions' => [
+//            'uploadUrl' => Url::to(['/backend/user/up-load-image']),
+//            'maxFileCount' => 1
+//        ]
+//    ]);
+//    
     ?>
     <?php
-    echo FileInput::widget([
-        'name' => 'email',
-        'options' => [
-            'multiple' => true
-        ],
+    echo $form->field($model, 'Avatar')->widget(FileInput::classname(), [
         'pluginOptions' => [
-            'uploadUrl' => Url::to(['/backend/user/up-load-image']),
-            'uploadExtraData' => [
-                'album_id' => 20,
-                'cat_id' => 'Nature'
-            ],
-            'maxFileCount' => 10
-        ]
+            'allowedFileExtensions' => ['jpg', 'gif', 'png'],
+            'showCaption' => false,
+            'showRemove' => false,
+            'showUpload' => false,
+            'browseClass' => 'btn btn-primary btn-block btn-file-image',
+            'browseIcon' => '<i class="glyphicon glyphicon-camera"></i> ',
+            'browseLabel' => 'Chọn avatar'
+        ],
+        'options' => ['accept' => 'image/*'],
     ]);
     ?>
     <?= $form->field($model, 'password_hash')->passwordInput() ?>

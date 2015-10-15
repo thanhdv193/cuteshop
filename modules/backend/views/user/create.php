@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Html;
+use yii\helpers\Url;
 
 
 /* @var $this yii\web\View */
@@ -10,6 +11,7 @@ $this->title = 'Create User';
 $this->params['breadcrumbs'][] = ['label' => 'Users', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+<link href="<?= Url::base('http') ?>/css/backend/user/user_form.css" rel="stylesheet">
 <div class="user-create">
 
     <h1><?= Html::encode($this->title) ?></h1>

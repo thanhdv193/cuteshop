@@ -208,13 +208,14 @@ CREATE TABLE `product` (
 ////////////////////
 CREATE TABLE `image` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `object_id` int(10) unsigned NOT NULL,  
-	`object_type` varchar(255) COLLATE utf8_unicode_ci NOT NULL,  
-  `filename` varchar(255) COLLATE utf8_unicode_ci NOT NULL,  
+  `object_id` int(10) unsigned NOT NULL,
+  `object_type` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `filename` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `sort_order` int(11) DEFAULT '0',
-  `create_date` int(10) unsigned NOT NULL,  
+  `create_date` int(10) unsigned NOT NULL,
+  `image_path` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /////////////////////////
 CREATE TABLE `product_group` (
   `product_group_id` int(10) unsigned NOT NULL AUTO_INCREMENT,

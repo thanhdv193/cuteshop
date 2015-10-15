@@ -33,7 +33,7 @@ class User extends ActiveRecord implements IdentityInterface {
             ['username', 'string', 'min' => 2, 'max' => 255],
             [['Avatar'], 'file','extensions' => 'PNG,JPG,png,jpg', 'maxFiles' => 4],
             ['email', 'filter', 'filter' => 'trim'],
-            ['email', 'required'],
+//            ['email', 'required'],
             ['email', 'email'],
             ['email', 'unique', 'targetClass' => '\app\models\User', 'message' => Yii::t('app', 'email')],
             [['password_hash', 'password_repeat'], 'required'],
