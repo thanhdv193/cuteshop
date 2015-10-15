@@ -27,6 +27,7 @@ class User extends ActiveRecord implements IdentityInterface {
 
     public function rules() {
         return[
+            
             ['username', 'filter', 'filter' => 'trim'],
             ['username', 'required'],
             ['username', 'unique', 'targetClass' => '\app\models\User', 'message' => Yii::t('app', 'the user name can only contain letters ,nubers and dashes!')],

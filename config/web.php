@@ -124,6 +124,7 @@ $config = [
         ],
         'backend' => [
             'class' => 'app\modules\backend\Backend',
+            'layout' => '/backend_layout',
         ],
         'fontend' => [
             'layout' => '/fontend_layout',
