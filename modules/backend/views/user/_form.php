@@ -40,7 +40,7 @@ use iutbay\yii2kcfinder\KCFinderInputWidget;
             'multiple' => true
         ],
         'pluginOptions' => [
-            'uploadUrl' => Url::to(['/site/file-upload']),
+            'uploadUrl' => Url::to(['/backend/user/up-load-image']),
             'uploadExtraData' => [
                 'album_id' => 20,
                 'cat_id' => 'Nature'

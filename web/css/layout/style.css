@@ -5208,3 +5208,9 @@ span.notify-right{
   color: #fff;
   opacity: 0.8;
 }
+.file-error-message{
+    display: none !important
+}
+.glyphicon-exclamation-sign {
+    display: none !important
+}

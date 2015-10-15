@@ -7,6 +7,7 @@ use yii\base\NotSupportedException;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
+use yii\web\UploadedFile;
 
 class User extends ActiveRecord implements IdentityInterface {
 
@@ -30,6 +31,7 @@ class User extends ActiveRecord implements IdentityInterface {
             ['username', 'required'],
             ['username', 'unique', 'targetClass' => '\app\models\User', 'message' => Yii::t('app', 'the user name can only contain letters ,nubers and dashes!')],
             ['username', 'string', 'min' => 2, 'max' => 255],
+            [['Avatar'], 'file','extensions' => 'PNG,JPG,png,jpg', 'maxFiles' => 4],
             ['email', 'filter', 'filter' => 'trim'],
             ['email', 'required'],
             ['email', 'email'],
@@ -130,5 +132,14 @@ class User extends ActiveRecord implements IdentityInterface {
 
     public function removePasswordResetToken() {
         $this->password_reset_token = null;
+    }
+    public function upload() {
+        if ($this->Avatar) {        
+            //var_dump($this->Avatar->baseName); die;
+            $this->Avatar->saveAs('upload/Product/' . time() . '-avatar-' . $this->Avatar->baseName . '.' . $this->Avatar->extension);
+            return time() . '-avatar-' . $this->Avatar->baseName . '.' . $this->Avatar->extension;
+        } else {
+            return false;
+        }
     }
 }
