@@ -3,45 +3,60 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
+
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\UserSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Users';
+$this->title = 'Danh sách người dùng';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="user-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <?php // echo $this->render('_search', ['model' => $searchModel]);  ?>
 
     <p>
-        <?= Html::a('Create User', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Thêm người dùng', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
-    <?php Pjax::begin()?>
-    <?= GridView::widget([
+    <?php Pjax::begin() ?>
+    <?=
+    GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
-        'rowOptions'=>  function($model){
-            if(isset($model->created_at)){
-                 
+        'rowOptions' => function($model)
+        {
+            if (isset($model->created_at))
+            {
+                
             }
         },
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
             'id',
-            'username',
-//            'auth_key',
-//            'password_hash',
-//            'password_reset_token',
-             'email:email',
-             'status',
-             'created_at',
-             'updated_at',
-             'role',
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); ?>
-<?php Pjax::end()?>
+            [
+                'attribute' => 'Avatar',
+                'format' => 'html',
+                'label' => 'Ảnh đại diện',
+                'value' => function ($data)
+                {
+                    return Html::img('@web/upload/User/Avatar/' . $data['Avatar'], ['width' => '70px']);
+                },
+                    ],
+                    'username',
+                    'email:email',
+                    'status',
+                    [
+                        'attribute' => 'created_at',
+                        'format' => ['date', 'php:d/m/Y']
+                    ],
+                    [
+                        'attribute' => 'updated_at',
+                        'format' => ['date', 'php:d/m/Y']
+                    ],
+                    ['class' => 'yii\grid\ActionColumn'],
+                ],
+            ]);
+            ?>
+            <?php Pjax::end() ?>
 </div>

@@ -64,12 +64,21 @@ class UserController extends Controller
     public function actionCreate()
     {
         $model = new User();
-        
+
         if ($model->load(Yii::$app->request->post()))
         {
-            $model->Avatar = UploadedFile::getInstance($model, 'Avatar');                 
-            var_dump($model->Avatar); die;
-            $model->password_hash = Yii::$app->security->generatePasswordHash($model->password_hash);
+            $post = Yii::$app->request->post();            
+            $model->Avatar = UploadedFile::getInstance($model, 'Avatar');
+            $model->password_hash = Yii::$app->security->generatePasswordHash($model->password_hash);            
+            $upload = $model->upload($post['username']);
+            if ($upload)
+            {
+                $model->username = $post['username'];
+                $model->Avatar = $upload;
+                $model->email = $post['email'];
+                $model->gender = $post['gender'];
+                //$model->password_hash = $post['password_hash'];
+            }
             $model->save(false);
             return $this->redirect(['view', 'id' => $model->id]);
         } else
@@ -94,7 +103,7 @@ class UserController extends Controller
             } else
             {
                 $objecFile->$key = $value;
-            }                        
+            }
         }
         $model->Avatar = $objecFile;
         $model->upload();

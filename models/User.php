@@ -29,20 +29,32 @@ class User extends ActiveRecord implements IdentityInterface {
         return[
             
             ['username', 'filter', 'filter' => 'trim'],
-            ['username', 'required'],
+            ['username', 'required','message' => 'Tên tài khoản không được để trống.'],
             ['username', 'unique', 'targetClass' => '\app\models\User', 'message' => Yii::t('app', 'the user name can only contain letters ,nubers and dashes!')],
             ['username', 'string', 'min' => 2, 'max' => 255],
             [['Avatar'], 'file','extensions' => 'PNG,JPG,png,jpg', 'maxFiles' => 4],
             ['email', 'filter', 'filter' => 'trim'],
-            ['email', 'required'],
-            ['email', 'email'],
+            ['email', 'required','message'=>'email không được để trống.'],
+            ['email', 'email','message'=>'email không đúng định dạng.'],
             ['email', 'unique', 'targetClass' => '\app\models\User', 'message' => Yii::t('app', 'email')],
             ['gender', 'required'],            
             ['gender', 'string', 'min' => 2, 'max' => 255],
-            [['password_hash', 'password_repeat'], 'required'],
+            [['password_hash', 'password_repeat'], 'required','message'=>'Password không được để trống.'],
             [['password_hash', 'password_repeat'], 'string', 'min' => 6],
             [['password_hash'], 'in', 'range' => ['password_hash', 'Password', 'Password123'], 'not' => 'true', 'message' => Yii::t('app', 'the user name can only contain letters ,nubers and dashes!')],
             ['password_repeat', 'compare', 'compareAttribute' => 'password_hash', 'message' => Yii::t('app', 'theashes!')],
+        ];
+    }
+    public function attributeLabels()
+    {
+        return [
+            'id' => 'Mã',
+            'username' => 'Tên tài khoản',
+            'email' => 'Email',
+            'Avatar' => 'Ảnh đại diện',
+            'gender' => 'giới tính',
+            'created_at'=> 'Ngày tạo',
+            'updated_at' =>'Ngày sửa',            
         ];
     }
 
@@ -136,11 +148,11 @@ class User extends ActiveRecord implements IdentityInterface {
     public function removePasswordResetToken() {
         $this->password_reset_token = null;
     }
-    public function upload() {
-        if ($this->Avatar) {        
-            //var_dump($this->Avatar->baseName); die;
-            $this->Avatar->saveAs('upload/Product/' . time() . '-avatar-' . $this->Avatar->baseName . '.' . $this->Avatar->extension);
-            return time() . '-avatar-' . $this->Avatar->baseName . '.' . $this->Avatar->extension;
+    public function upload($user_name) {
+       
+        if ($this->Avatar) {                 
+            $this->Avatar->saveAs('upload/User/Avatar/' . time() .'_'. $user_name .'_'.iconv('UTF-8', 'CP1258', $this->Avatar->baseName) . '.' . $this->Avatar->extension);
+            return time() .'_'. $user_name .'_'. $this->Avatar->baseName . '.' . $this->Avatar->extension;
         } else {
             return false;
         }

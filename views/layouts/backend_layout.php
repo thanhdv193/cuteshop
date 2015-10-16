@@ -5,9 +5,7 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAssetBackend;
-use app\widgets\HeaderWidget;
-use app\widgets\SlidederWidget;
-use app\widgets\FooterWidget;
+
 
 AppAssetBackend::register($this);
 ?>
@@ -433,7 +431,7 @@ AppAssetBackend::register($this);
 
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle username" data-toggle="dropdown">
-                        <span class="hidden-xs">Alexander Smith</span>
+                        <span class="hidden-xs"><?php echo Yii::$app->user->identity->username ?></span>
                         <img class="img-circle" src="assets/demo/avatar/avatar_06.png" alt="Dangerfield" />
 
                     </a>
@@ -466,7 +464,7 @@ AppAssetBackend::register($this);
                                         </div>
                                         <div class="tabular-cell welcome-options">
                                             <span class="welcome-text">Welcome,</span>
-                                            <a href="#" class="name">Alexander Smith</a>
+                                            <a href="#" class="name"><?php echo Yii::$app->user->identity->username ?></a>
                                         </div>
                                     </div>
                                 </div>
@@ -743,7 +741,7 @@ AppAssetBackend::register($this);
                     <footer role="contentinfo">
                         <div class="clearfix">
                             <ul class="list-unstyled list-inline pull-left">
-                                <li><h6 style="margin: 0;"> &copy; 2015 thanhdv</h6></li>
+                                <li><h6 style="margin: 0;"> &copy; 2015 </h6></li>
                             </ul>
                             <button class="pull-right btn btn-link btn-xs hidden-print" id="back-to-top"><i class="fa fa-arrow-up"></i></button>
                         </div>

@@ -3,28 +3,18 @@
 $params = require(__DIR__ . '/params.php');
 
 $config = [
-    'id' => 'basic',
+    'id' => 'shop',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'bootstrap' => ['gii'],
-    'language' => 'en',
+    'language' => 'vi-VN',
     'sourceLanguage' => 'en',
     //  'homeUrl'=>'/basic',
-    'defaultRoute' => 'fontend/home/index',
+    //'defaultRoute' => 'fontend/home/index',
+    'defaultRoute' => 'index.php/site/login',
 //    ['catAll']=>['backend/user/index'],
     'components' => [
-        'imageCache' => [
-            'class' => 'iutbay\yii2imagecache\ImageCache',
-            'sourcePath' => '@app/web/images',
-            'sourceUrl' => '@web/images',
-            'thumbsPath' => '@app/web/thumbs',
-            'thumbsUrl' => '@web/thumbs',
-            'sizes' => [
-                'thumb' => [150, 150],
-                'medium' => [300, 300],
-                'large' => [600, 600],
-            ],
-        ],
+        
         //login facebook and google.com
         'authClientCollection' => [
             'class' => 'yii\authclient\Collection',
@@ -136,8 +126,8 @@ $config = [
         'allowActions' => [
             'site/*',
             //'admin/*',
-            'backend/*',
-            'user/*',
+            //'backend/*',
+            //'user/*',
             'gii/*',
             'fontend/*',
         ],

@@ -16,13 +16,13 @@ use iutbay\yii2kcfinder\KCFinderInputWidget;
 
     <?php
     $form = ActiveForm::begin([
-                'options' => ['enctype' => 'multipart/form-data'], 'id' => 'form_user_create'
+                'options' => ['enctype' => 'multipart/form-data','accept-charset'=>"UTF-8"], 'id' => 'form_user_create'
     ]);
     ?>
-    <?= $form->field($model, 'username')->textInput(['name' => 'username', 'id' => 'username'])->label('Tên tài khoản') ?>    
+    <?= $form->field($model, 'username')->textInput(['name' => 'username','class'=>'txt_user form-control'])->label('Tên tài khoản') ?>    
     <?php
     ?>
-    <?= $form->field($model, 'email')->textInput(['name' => 'email', 'id' => 'email'])  ?>    
+    <?= $form->field($model, 'email')->textInput(['name' => 'email','class'=>'txt_email form-control'])  ?>    
     <?php
 // $form->field($model, 'username')->widget(CKEditor::className(),[
 //      'editorOptions' => [
@@ -50,7 +50,7 @@ use iutbay\yii2kcfinder\KCFinderInputWidget;
             'allowedFileExtensions' => ['jpg', 'gif', 'png'],
             'showCaption' => false,
             'showRemove' => false,
-            'showUpload' => false,
+            'showUpload' => FALSE,
             'browseClass' => 'btn btn-primary btn-block btn-file-image',
             'browseIcon' => '<i class="glyphicon glyphicon-camera"></i> ',
             'browseLabel' => 'Chọn avatar'
@@ -58,9 +58,9 @@ use iutbay\yii2kcfinder\KCFinderInputWidget;
         'options' => ['accept' => 'image/*'],
     ]);
     ?>
-    <?= $form->field($model, 'gender')->dropDownList(['nam' => 'Nam', 'Nu' => 'Nữ', 'bd' => 'Không xác định'])->label('Giới tính'); ?>
-    <?= $form->field($model, 'password_hash')->passwordInput()->label('Mật khẩu') ?>
-    <?= $form->field($model, 'password_repeat')->passwordInput()->label('Nhập lại mật khẩu') ?>
+    <?= $form->field($model, 'gender')->dropDownList(['nam' => 'Nam', 'Nu' => 'Nữ', 'bd' => 'Không xác định'],['class'=>'txt_gender form-control','name'=>'gender'])->label('Giới tính'); ?>
+    <?= $form->field($model, 'password_hash')->passwordInput(['class'=>'txt_password form-control','name'=>'password_hash'])->label('Mật khẩu') ?>
+    <?= $form->field($model, 'password_repeat')->passwordInput(['class'=>'txt_password form-control'])->label('Nhập lại mật khẩu') ?>
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
