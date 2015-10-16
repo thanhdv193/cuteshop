@@ -44,6 +44,7 @@ use iutbay\yii2kcfinder\KCFinderInputWidget;
 //    ]);
 //    
     ?>
+    <?= Html::img('@web/upload/User/Avatar/' . $model['Avatar'], ['width' => '70px']) ?>
     <?php
     echo $form->field($model, 'Avatar')->widget(FileInput::classname(), [
         'pluginOptions' => [

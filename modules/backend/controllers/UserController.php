@@ -37,6 +37,7 @@ class UserController extends Controller
     {
         $searchModel = new UserSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataProvider->pagination->pageSize=15;
 
         return $this->render('index', [
                     'searchModel' => $searchModel,
@@ -68,8 +69,8 @@ class UserController extends Controller
         if ($model->load(Yii::$app->request->post()))
         {
             $post = Yii::$app->request->post();            
-            $model->Avatar = UploadedFile::getInstance($model, 'Avatar');
-            $model->password_hash = Yii::$app->security->generatePasswordHash($model->password_hash);            
+            $model->Avatar = UploadedFile::getInstance($model, 'Avatar');            
+            $model->password_hash = Yii::$app->security->generatePasswordHash($post['password_hash']);            
             $upload = $model->upload($post['username']);
             if ($upload)
             {
@@ -80,7 +81,7 @@ class UserController extends Controller
                 //$model->password_hash = $post['password_hash'];
             }
             $model->save(false);
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['index']);
         } else
         {
             return $this->render('create', [

@@ -44,8 +44,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 },
                     ],
                     'username',
-                    'email:email',
-                    'status',
+                    'email:email',                  
                     [
                         'attribute' => 'created_at',
                         'format' => ['date', 'php:d/m/Y']

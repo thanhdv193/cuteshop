@@ -11,6 +11,7 @@ AppAssetBackend::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
+
 <html lang="<?= Yii::$app->language ?>">
     <head>
         <meta charset="<?= Yii::$app->charset ?>"/>
@@ -429,9 +430,9 @@ AppAssetBackend::register($this);
                     </div>
                 </li>
 
-                <li class="dropdown">
+                <li class="dropdown"> 
                     <a href="#" class="dropdown-toggle username" data-toggle="dropdown">
-                        <span class="hidden-xs"><?php echo Yii::$app->user->identity->username ?></span>
+                        <span class="hidden-xs"><?php Yii::$app->user->isGuest ? ['label' => 'Login', 'url' => ['/site/login']] :  Yii::$app->user->identity->username  ?></span>
                         <img class="img-circle" src="assets/demo/avatar/avatar_06.png" alt="Dangerfield" />
 
                     </a>
@@ -464,7 +465,7 @@ AppAssetBackend::register($this);
                                         </div>
                                         <div class="tabular-cell welcome-options">
                                             <span class="welcome-text">Welcome,</span>
-                                            <a href="#" class="name"><?php echo Yii::$app->user->identity->username ?></a>
+                                            <a href="#" class="name"><?php Yii::$app->user->isGuest ?  :  Yii::$app->user->identity->username  ?></a>
                                         </div>
                                     </div>
                                 </div>
