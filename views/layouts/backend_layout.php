@@ -7,7 +7,6 @@ use yii\widgets\Breadcrumbs;
 use app\assets\AppAssetBackend;
 use app\widgets\BackendMenuWidget;
 
-
 AppAssetBackend::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -100,93 +99,93 @@ AppAssetBackend::register($this);
 
             <div class="yamm navbar-left navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-<!--                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-random mr5"></i>Mega Menu<span class="caret"></span></a>
-                        <ul class="dropdown-menu" style="width: 900px;">
-                            <li>
-                                <div class="yamm-content container-sm-height">
-                                    <div class="row row-sm-height yamm-col-bordered">
-                                        <div class="col-sm-3 col-sm-height yamm-col">
-
-                                            <h3 class="yamm-category">Sidebar</h3>
-                                            <ul class="list-unstyled mb20">
-                                                <li><a href="layout-fixed-sidebars.html">Stretch Sidebars</a></li>
-                                                <li><a href="layout-sidebar-scroll.html">Scroll Sidebar</a></li>
-                                                <li><a href="layout-static-leftbar.html">Static Sidebar</a></li>
-                                                <li><a href="layout-leftbar-widgets.html">Sidebar Widgets</a></li>   
+                    <!--                    <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-random mr5"></i>Mega Menu<span class="caret"></span></a>
+                                            <ul class="dropdown-menu" style="width: 900px;">
+                                                <li>
+                                                    <div class="yamm-content container-sm-height">
+                                                        <div class="row row-sm-height yamm-col-bordered">
+                                                            <div class="col-sm-3 col-sm-height yamm-col">
+                    
+                                                                <h3 class="yamm-category">Sidebar</h3>
+                                                                <ul class="list-unstyled mb20">
+                                                                    <li><a href="layout-fixed-sidebars.html">Stretch Sidebars</a></li>
+                                                                    <li><a href="layout-sidebar-scroll.html">Scroll Sidebar</a></li>
+                                                                    <li><a href="layout-static-leftbar.html">Static Sidebar</a></li>
+                                                                    <li><a href="layout-leftbar-widgets.html">Sidebar Widgets</a></li>   
+                                                                </ul>
+                    
+                                                                <h3 class="yamm-category">Infobar</h3>
+                                                                <ul class="list-unstyled">
+                                                                    <li><a href="layout-infobar-offcanvas.html">Offcanvas Infobar</a></li>
+                                                                    <li><a href="layout-infobar-overlay.html">Overlay Infobar</a></li>
+                                                                    <li><a href="layout-chatbar-overlay.html">Chatbar</a></li>
+                                                                    <li><a href="layout-rightbar-widgets.html">Infobar Widgets</a></li>   
+                                                                </ul>
+                    
+                                                            </div>
+                                                            <div class="col-sm-3 col-sm-height yamm-col">
+                    
+                                                                <h3 class="yamm-category">Page Content</h3>
+                                                                <ul class="list-unstyled mb20">
+                                                                    <li><a href="layout-breadcrumb-top.html">Breadcrumbs on Top</a></li>
+                                                                    <li><a href="layout-page-tabs.html">Page Tabs</a></li>
+                                                                    <li><a href="layout-fullheight-panel.html">Full-Height Panel</a></li>
+                                                                    <li><a href="layout-fullheight-content.html">Full-Height Content</a></li>
+                                                                </ul>
+                    
+                                                                <h3 class="yamm-category">Misc</h3>
+                                                                <ul class="list-unstyled">
+                                                                    <li><a href="layout-topnav-options.html">Topnav Options</a></li>
+                                                                    <li><a href="layout-horizontal-small.html">Horizontal Small</a></li>
+                                                                    <li><a href="layout-horizontal-large.html">Horizontal Large</a></li>
+                                                                    <li><a href="layout-boxed.html">Boxed</a></li>
+                                                                </ul>
+                    
+                                                            </div>
+                                                            <div class="col-sm-3 col-sm-height yamm-col">
+                    
+                                                                <h3 class="yamm-category">Analytics</h3>
+                                                                <ul class="list-unstyled mb20">
+                                                                    <li><a href="charts-flot.html">Flot</a></li>
+                                                                    <li><a href="charts-sparklines.html">Sparklines</a></li>
+                                                                    <li><a href="charts-morris.html">Morris</a></li>
+                                                                    <li><a href="charts-easypiechart.html">Easy Pie Charts</a></li>
+                                                                </ul>
+                    
+                                                                <h3 class="yamm-category">Components</h3>
+                                                                <ul class="list-unstyled">
+                                                                    <li><a href="ui-tiles.html">Tiles</a></li>
+                                                                    <li><a href="custom-knob.html">jQuery Knob</a></li>
+                                                                    <li><a href="custom-jqueryui.html">jQuery Slider</a></li>
+                                                                    <li><a href="custom-ionrange.html">Ion Range Slider</a></li>
+                                                                </ul>
+                    
+                                                            </div>
+                                                            <div class="col-sm-3 col-sm-height yamm-col">
+                                                                <h3 class="yamm-category">Rem</h3>
+                                                                <img src="assets/demo/stockphoto/communication_12_carousel.jpg" class="mb20 img-responsive" style="width: 100%;">
+                                                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
                                             </ul>
-
-                                            <h3 class="yamm-category">Infobar</h3>
-                                            <ul class="list-unstyled">
-                                                <li><a href="layout-infobar-offcanvas.html">Offcanvas Infobar</a></li>
-                                                <li><a href="layout-infobar-overlay.html">Overlay Infobar</a></li>
-                                                <li><a href="layout-chatbar-overlay.html">Chatbar</a></li>
-                                                <li><a href="layout-rightbar-widgets.html">Infobar Widgets</a></li>   
+                                        </li>-->
+                    <!--                    <li class="dropdown" id="widget-classicmenu">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown<span class="caret"></span></a>
+                                            <ul class="dropdown-menu" role="menu">
+                                                <li><a href="#">Action</a></li>
+                                                <li><a href="#">Another action</a></li>
+                                                <li><a href="#">Something else here</a></li>
+                                                <li class="divider"></li>
+                                                <li><a href="#">Separated link</a></li>
+                                                <li class="divider"></li>
+                                                <li><a href="#">One more separated link</a></li>
                                             </ul>
-
-                                        </div>
-                                        <div class="col-sm-3 col-sm-height yamm-col">
-
-                                            <h3 class="yamm-category">Page Content</h3>
-                                            <ul class="list-unstyled mb20">
-                                                <li><a href="layout-breadcrumb-top.html">Breadcrumbs on Top</a></li>
-                                                <li><a href="layout-page-tabs.html">Page Tabs</a></li>
-                                                <li><a href="layout-fullheight-panel.html">Full-Height Panel</a></li>
-                                                <li><a href="layout-fullheight-content.html">Full-Height Content</a></li>
-                                            </ul>
-
-                                            <h3 class="yamm-category">Misc</h3>
-                                            <ul class="list-unstyled">
-                                                <li><a href="layout-topnav-options.html">Topnav Options</a></li>
-                                                <li><a href="layout-horizontal-small.html">Horizontal Small</a></li>
-                                                <li><a href="layout-horizontal-large.html">Horizontal Large</a></li>
-                                                <li><a href="layout-boxed.html">Boxed</a></li>
-                                            </ul>
-
-                                        </div>
-                                        <div class="col-sm-3 col-sm-height yamm-col">
-
-                                            <h3 class="yamm-category">Analytics</h3>
-                                            <ul class="list-unstyled mb20">
-                                                <li><a href="charts-flot.html">Flot</a></li>
-                                                <li><a href="charts-sparklines.html">Sparklines</a></li>
-                                                <li><a href="charts-morris.html">Morris</a></li>
-                                                <li><a href="charts-easypiechart.html">Easy Pie Charts</a></li>
-                                            </ul>
-
-                                            <h3 class="yamm-category">Components</h3>
-                                            <ul class="list-unstyled">
-                                                <li><a href="ui-tiles.html">Tiles</a></li>
-                                                <li><a href="custom-knob.html">jQuery Knob</a></li>
-                                                <li><a href="custom-jqueryui.html">jQuery Slider</a></li>
-                                                <li><a href="custom-ionrange.html">Ion Range Slider</a></li>
-                                            </ul>
-
-                                        </div>
-                                        <div class="col-sm-3 col-sm-height yamm-col">
-                                            <h3 class="yamm-category">Rem</h3>
-                                            <img src="assets/demo/stockphoto/communication_12_carousel.jpg" class="mb20 img-responsive" style="width: 100%;">
-                                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </li>-->
-<!--                    <li class="dropdown" id="widget-classicmenu">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown<span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">One more separated link</a></li>
-                        </ul>
-                    </li>-->
-<!--                    <li><a href="frontend/index.html" target="_blank">Frontend</a></li>
-                    <li><a href="landing/index.html" target="_blank">Landing Page</a></li>-->
+                                        </li>-->
+                    <!--                    <li><a href="frontend/index.html" target="_blank">Frontend</a></li>
+                                        <li><a href="landing/index.html" target="_blank">Landing Page</a></li>-->
                 </ul>
             </div>
 
@@ -433,8 +432,10 @@ AppAssetBackend::register($this);
 
                 <li class="dropdown"> 
                     <a href="#" class="dropdown-toggle username" data-toggle="dropdown">
-                        <span class="hidden-xs"><?php Yii::$app->user->isGuest ? ['label' => 'Login', 'url' => ['/site/login']] :  Yii::$app->user->identity->username  ?></span>
-                        <img class="img-circle" src="assets/demo/avatar/avatar_06.png" alt="Dangerfield" />
+                        <span class="hidden-xs"><?php if(Yii::$app->user->isGuest == false) { ?>
+                                               <?php echo Yii::$app->user->identity->username ?>
+                                           <?php } ?></span>
+                        <img class="img-circle" src="/upload/User/Avatar/<?php if(Yii::$app->user->isGuest == false) { ?><?php echo Yii::$app->user->identity->Avatar ?><?php } ?>" alt="Dangerfield" />
 
                     </a>
                     <ul class="dropdown-menu userinfo">
@@ -462,11 +463,13 @@ AppAssetBackend::register($this);
                                 <div class="widget-body welcome-box tabular">
                                     <div class="tabular-row">
                                         <div class="tabular-cell welcome-avatar">
-                                            <a href="#"><img src="assets/demo/avatar/avatar_06.png" class="avatar"></a>
+                                            <a href="#"><img src="/upload/User/Avatar/<?php if(Yii::$app->user->isGuest == false) { ?><?php echo Yii::$app->user->identity->Avatar ?><?php } ?>" class="avatar"></a>
                                         </div>
                                         <div class="tabular-cell welcome-options">
-                                            <span class="welcome-text">Welcome,</span>
-                                            <a href="#" class="name"><?php Yii::$app->user->isGuest ?  :  Yii::$app->user->identity->username  ?></a>
+                                            <span class="welcome-text">Welcome </span>
+                                            <a href="#" class="name"><?php if(Yii::$app->user->isGuest == false) { ?>
+                                               <?php echo Yii::$app->user->identity->username ?>
+                                           <?php } ?></a>
                                         </div>
                                     </div>
                                 </div>
@@ -475,188 +478,188 @@ AppAssetBackend::register($this);
                             <!--menu -->
                             <?= BackendMenuWidget::widget() ?>
                             <!--end menu -->
-<!--                            <div class="widget stay-on-collapse" id="widget-sidebar">
-                                <span class="widget-heading">Explore</span>
-                                <nav role="navigation" class="widget-body">
-                                    <ul class="acc-menu">
-                                        <li><a href="index-2.html"><i class="fa fa-hom"></i><span>Dashboard</span><span class="badge badge-dark">1</span></a></li>
-                                        <li><a href="javascript:;"><i class="fa fa-columns"></i><span>Layouts</span><span class="badge badge-dark">23</span></a>
-                                            <ul class="acc-menu">
-                                                <li><a href="layout-grids.html">Grid Scaffolding</a></li>
-
-                                                <li><a href="layout-fixed-sidebars.html">Stretch Sidebars</a></li>
-
-                                                <li><a href="layout-sidebar-scroll.html">Sidebar Scroll</a></li>
-                                                <li><a href="layout-static-leftbar.html">Static Sidebar</a></li>
-
-                                                <li><a href="layout-infobar-offcanvas.html">Offcanvas Infobar</a></li>
-                                                <li><a href="layout-infobar-overlay.html">Overlay Infobar</a></li>
-
-                                                <li><a href="layout-breadcrumb-top.html">Breadcrumb on Top</a></li>
-                                                <li><a href="layout-page-tabs.html">Page Tabs</a></li>
-
-                                                <li><a href="layout-fullheight-content.html">Fixed Height Content</a></li>
-                                                <li><a href="layout-fullheight-panel.html">Fixed Height Panel</a></li>
-
-                                                <li><a href="layout-leftbar-widgets.html">Leftbar Widgets <span class="label label-grape">Cool</span></a></li>
-                                                <li><a href="layout-rightbar-widgets.html">Rightbar Widgets <span class="label label-grape">Cool</span></a></li>
-                                                <li><a href="layout-topnav-options.html">Topnav Options</a></li>
-
-                                                <li><a href="javascript:;">Horizontal Nav <span class="badge badge-dark">2</span></a>
-                                                    <ul class="acc-menu">
-                                                        <li><a href="layout-horizontal-small.html">Small Menu</a></li>
-                                                        <li><a href="layout-horizontal-large.html">Large Menu</a></li>
-                                                    </ul>
-                                                </li>
-
-                                                <li><a href="layout-chatbar-overlay.html">Chatbar</a></li>
-                                                <li><a href="layout-boxed.html">Boxed</a></li>
-                                                <li><a href="layout-compact.html">Compact Leftbar</a></li>
-
-                                            </ul>
-                                        </li>
-                                        <li><a href="javascript:;"><i class="fa fa-flask"></i><span>Base UI</span></a>
-                                            <ul class="acc-menu">
-                                                <li><a href="ui-typography.html">Typography</a></li>
-                                                <li><a href="ui-buttons.html">Buttons</a></li>
-                                                <li><a href="ui-tables.html">Tables</a></li>
-                                                <li><a href="ui-forms.html">Forms</a></li>
-                                                <li><a href="ui-images.html">Images</a></li>
-                                                <li><a href="ui-panels.html">Panels</a></li>
-                                                <li><a href="ui-icons.html">Font Icons</a></li>
-                                                <li><a href="ui-helpers.html">Helpers</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="javascript:;"><i class="fa fa-cogs"></i><span>BS Components</span><span class="label label-primary">BS</span></a>
-                                            <ul class="acc-menu">
-                                                <li><a href="ui-modals.html">Modal Box</a></li>
-                                                <li><a href="ui-progress.html">Progress Bars</a></li>
-                                                <li><a href="ui-paginations.html">Pagers &amp; Paginations</a></li>
-                                                <li><a href="ui-breadcrumbs.html">Breadcrumbs</a></li>
-                                                <li><a href="ui-labelsbadges.html">Labels &amp; Badges</a></li>
-                                                <li><a href="ui-alerts.html">Alerts &amp; Notificiations</a></li>
-                                                <li><a href="ui-tabs.html">Tabs &amp; Accordions</a></li>
-                                                <li><a href="ui-navbars.html">Navbars</a></li>
-                                                <li><a href="ui-carousel.html">Carousel</a></li>
-                                                <li><a href="ui-wells.html">Wells</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="javascript:;"><i class="fa fa-random"></i><span>Custom Components</span></a>
-                                            <ul class="acc-menu">
-                                                <li><a href="ui-tiles.html">Tiles</a></li>
-                                                <li><a href="custom-skylo.html">Page Progress Bar</a></li>
-                                                <li><a href="custom-bootbox.html">Bootbox</a></li>
-                                                <li><a href="custom-datepaginator.html">Date Paginator</a></li>
-                                                <li><a href="custom-pines.html">Pines Notification</a></li>
-                                                <li><a href="custom-notific8.html">Notific8 Notification</a></li>
-                                                <li><a href="custom-pulsate.html">Pulsating Elements</a></li>
-                                                <li><a href="custom-knob.html">jQuery Knob</a></li>
-                                                <li><a href="custom-jqueryui.html">jQueryUI Widgets</a></li>
-                                                <li><a href="custom-ionrange.html">Ion Range Slider</a></li>
-                                                <li><a href="custom-tour.html">Tour</a></li>
-                                                <li><a href="ui-nestable.html">Nestable Lists</a></li>
-                                                <li><a href="custom-jstree.html">Tree View</a></li>
-                                                <li><a href="custom-weather.html">Weather</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="javascript:;"><i class="fa fa-pencil"></i><span>Advanced Forms</span></a>
-                                            <ul class="acc-menu">
-                                                <li><a href="form-components.html">Form Components</a></li>
-                                                <li><a href="form-pickers.html">Pickers</a></li>
-                                                <li><a href="form-wizard.html">Form Wizard</a></li>
-                                                <li><a href="form-validation.html">Form Validation</a></li>
-                                                <li><a href="form-masks.html">Form Masks</a></li>
-                                                <li><a href="form-dropzone.html">Dropzone Uploader</a></li>
-                                                <li><a href="form-ckeditor.html">CKEditor</a></li>
-                                                <li><a href="form-summernote.html">Summernote</a></li>
-                                                <li><a href="form-markdown.html">Markdown Editor</a></li>
-                                                <li><a href="form-xeditable.html">Inline Editor</a></li>
-                                                <li><a href="form-imagecrop.html">Image Cropping</a></li>
-                                                <li><a href="form-gridforms.html">Grid Forms</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="javascript:;"><i class="fa fa-table"></i><span>Advanced Tables</span></a>
-                                            <ul class="acc-menu">
-                                                <li><a href="tables-responsive.html">Responsive Tables</a></li>
-                                                <li><a href="tables-editable.html">Editable Tables</a></li>
-                                                <li><a href="tables-data.html">Data Tables</a></li>
-                                                <li><a href="tables-advanceddatatable.html">Advanced Data Tables</a></li>
-                                                <li><a href="tables-fixedheader.html">Fixed Header Tables</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="ui-advancedpanels.html"><i class="fa fa-cog fa-spin"></i><span>Advanced Panels</span><span class="label label-alizarin">HOT!</span></a></li>
-                                        <li><a href="javascript:;"><i class="fa fa-bar-chart-o"></i><span>Analytics</span></a>
-                                            <ul class="acc-menu">
-                                                <li><a href="charts-flot.html">Flot</a></li>
-                                                <li><a href="charts-sparklines.html">Sparklines</a></li>
-                                                <li><a href="charts-morris.html">Morris.js</a></li>
-                                                <li><a href="charts-chart.html">Chart.js</a></li>
-                                                <li><a href="charts-easypiechart.html">Easy Pie Chart</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="javascript:;"><i class="fa fa-map-marker"></i><span>Maps</span></a>
-                                            <ul class="acc-menu">
-                                                <li><a href="maps-google.html">Google Maps</a></li>
-                                                <li><a href="maps-vector.html">Vector Maps</a></li>
-                                                <li><a href="maps-mapael.html">Mapael</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="javascript:;"><i class="fa fa-files-o"></i><span>Pages</span></a>
-                                            <ul class="acc-menu">
-                                                <li><a href="extras-messages.html">Messages</a></li>
-                                                <li><a href="extras-profile.html">Profile</a></li>
-                                                <li><a href="extras-calendar.html">Calendar</a></li>
-                                                <li><a href="extras-timeline.html">Timeline</a></li>
-                                                <li><a href="extras-search.html">Search Page</a></li>
-                                                <li><a href="extras-chatroom.html">Chat Room</a></li>
-                                                <li><a href="extras-invoice.html">Invoice</a></li>
-                                                <li><a href="javascript:;">Responsive Email Template</a>
-                                                    <ul class="acc-menu">
-                                                        <li><a href="responsive-email/basic.html">Basic</a></li>
-                                                        <li><a href="responsive-email/hero.html">Hero</a></li>
-                                                        <li><a href="responsive-email/sidebar.html">Sidebar</a></li>
-                                                        <li><a href="responsive-email/sidebar-hero.html">Sidebar Hero</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="extras-gallery.html">Gallery</a></li>
-                                                <li><a href="coming-soon.html">Coming Soon</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="javascript:;"><i class="fa fa-briefcase"></i><span>Extras</span></a>
-                                            <ul class="acc-menu">
-                                                <li><a href="extras-pricingtable.html">Pricing Tables</a></li>
-                                                <li><a href="extras-faq.html">FAQ</a></li>
-                                                <li><a href="extras-registration.html">Registration</a></li>
-                                                <li><a href="extras-forgotpassword.html">Password Reset</a></li>
-                                                <li><a href="extras-login.html">Login</a></li>
-                                                <li><a href="extras-404.html">404 Page</a></li>
-                                                <li><a href="extras-500.html">500 Page</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="javascript:;"><i class="fa fa-sitemap"></i><span>Multiple Level Menu</span><span class="badge badge-dark">99</span></a>
-                                            <ul class="acc-menu">
-                                                <li><a href="javascript:;">Menu Item 1</a></li>
-                                                <li><a href="javascript:;">Menu Item 2</a>
-                                                    <ul class="acc-menu">
-                                                        <li><a href="javascript:;">Menu Item 2.1</a></li>
-                                                        <li><a href="javascript:;">Menu Item 2.2</a>
-                                                            <ul class="acc-menu">
-                                                                <li><a href="javascript:;">Menu Item 2.2.1</a></li>
-                                                                <li><a href="javascript:;">Menu Item 2.2.2</a>
-                                                                    <ul class="acc-menu">
-                                                                        <li><a href="javascript:;">And deeper yet!</a></li>
-                                                                    </ul>
-                                                                </li>
-                                                            </ul>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li class="disabled-link"><a href="index-2.html">Disabled Menu Item</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </div>-->
+                            <!--                            <div class="widget stay-on-collapse" id="widget-sidebar">
+                                                            <span class="widget-heading">Explore</span>
+                                                            <nav role="navigation" class="widget-body">
+                                                                <ul class="acc-menu">
+                                                                    <li><a href="index-2.html"><i class="fa fa-hom"></i><span>Dashboard</span><span class="badge badge-dark">1</span></a></li>
+                                                                    <li><a href="javascript:;"><i class="fa fa-columns"></i><span>Layouts</span><span class="badge badge-dark">23</span></a>
+                                                                        <ul class="acc-menu">
+                                                                            <li><a href="layout-grids.html">Grid Scaffolding</a></li>
+                            
+                                                                            <li><a href="layout-fixed-sidebars.html">Stretch Sidebars</a></li>
+                            
+                                                                            <li><a href="layout-sidebar-scroll.html">Sidebar Scroll</a></li>
+                                                                            <li><a href="layout-static-leftbar.html">Static Sidebar</a></li>
+                            
+                                                                            <li><a href="layout-infobar-offcanvas.html">Offcanvas Infobar</a></li>
+                                                                            <li><a href="layout-infobar-overlay.html">Overlay Infobar</a></li>
+                            
+                                                                            <li><a href="layout-breadcrumb-top.html">Breadcrumb on Top</a></li>
+                                                                            <li><a href="layout-page-tabs.html">Page Tabs</a></li>
+                            
+                                                                            <li><a href="layout-fullheight-content.html">Fixed Height Content</a></li>
+                                                                            <li><a href="layout-fullheight-panel.html">Fixed Height Panel</a></li>
+                            
+                                                                            <li><a href="layout-leftbar-widgets.html">Leftbar Widgets <span class="label label-grape">Cool</span></a></li>
+                                                                            <li><a href="layout-rightbar-widgets.html">Rightbar Widgets <span class="label label-grape">Cool</span></a></li>
+                                                                            <li><a href="layout-topnav-options.html">Topnav Options</a></li>
+                            
+                                                                            <li><a href="javascript:;">Horizontal Nav <span class="badge badge-dark">2</span></a>
+                                                                                <ul class="acc-menu">
+                                                                                    <li><a href="layout-horizontal-small.html">Small Menu</a></li>
+                                                                                    <li><a href="layout-horizontal-large.html">Large Menu</a></li>
+                                                                                </ul>
+                                                                            </li>
+                            
+                                                                            <li><a href="layout-chatbar-overlay.html">Chatbar</a></li>
+                                                                            <li><a href="layout-boxed.html">Boxed</a></li>
+                                                                            <li><a href="layout-compact.html">Compact Leftbar</a></li>
+                            
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li><a href="javascript:;"><i class="fa fa-flask"></i><span>Base UI</span></a>
+                                                                        <ul class="acc-menu">
+                                                                            <li><a href="ui-typography.html">Typography</a></li>
+                                                                            <li><a href="ui-buttons.html">Buttons</a></li>
+                                                                            <li><a href="ui-tables.html">Tables</a></li>
+                                                                            <li><a href="ui-forms.html">Forms</a></li>
+                                                                            <li><a href="ui-images.html">Images</a></li>
+                                                                            <li><a href="ui-panels.html">Panels</a></li>
+                                                                            <li><a href="ui-icons.html">Font Icons</a></li>
+                                                                            <li><a href="ui-helpers.html">Helpers</a></li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li><a href="javascript:;"><i class="fa fa-cogs"></i><span>BS Components</span><span class="label label-primary">BS</span></a>
+                                                                        <ul class="acc-menu">
+                                                                            <li><a href="ui-modals.html">Modal Box</a></li>
+                                                                            <li><a href="ui-progress.html">Progress Bars</a></li>
+                                                                            <li><a href="ui-paginations.html">Pagers &amp; Paginations</a></li>
+                                                                            <li><a href="ui-breadcrumbs.html">Breadcrumbs</a></li>
+                                                                            <li><a href="ui-labelsbadges.html">Labels &amp; Badges</a></li>
+                                                                            <li><a href="ui-alerts.html">Alerts &amp; Notificiations</a></li>
+                                                                            <li><a href="ui-tabs.html">Tabs &amp; Accordions</a></li>
+                                                                            <li><a href="ui-navbars.html">Navbars</a></li>
+                                                                            <li><a href="ui-carousel.html">Carousel</a></li>
+                                                                            <li><a href="ui-wells.html">Wells</a></li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li><a href="javascript:;"><i class="fa fa-random"></i><span>Custom Components</span></a>
+                                                                        <ul class="acc-menu">
+                                                                            <li><a href="ui-tiles.html">Tiles</a></li>
+                                                                            <li><a href="custom-skylo.html">Page Progress Bar</a></li>
+                                                                            <li><a href="custom-bootbox.html">Bootbox</a></li>
+                                                                            <li><a href="custom-datepaginator.html">Date Paginator</a></li>
+                                                                            <li><a href="custom-pines.html">Pines Notification</a></li>
+                                                                            <li><a href="custom-notific8.html">Notific8 Notification</a></li>
+                                                                            <li><a href="custom-pulsate.html">Pulsating Elements</a></li>
+                                                                            <li><a href="custom-knob.html">jQuery Knob</a></li>
+                                                                            <li><a href="custom-jqueryui.html">jQueryUI Widgets</a></li>
+                                                                            <li><a href="custom-ionrange.html">Ion Range Slider</a></li>
+                                                                            <li><a href="custom-tour.html">Tour</a></li>
+                                                                            <li><a href="ui-nestable.html">Nestable Lists</a></li>
+                                                                            <li><a href="custom-jstree.html">Tree View</a></li>
+                                                                            <li><a href="custom-weather.html">Weather</a></li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li><a href="javascript:;"><i class="fa fa-pencil"></i><span>Advanced Forms</span></a>
+                                                                        <ul class="acc-menu">
+                                                                            <li><a href="form-components.html">Form Components</a></li>
+                                                                            <li><a href="form-pickers.html">Pickers</a></li>
+                                                                            <li><a href="form-wizard.html">Form Wizard</a></li>
+                                                                            <li><a href="form-validation.html">Form Validation</a></li>
+                                                                            <li><a href="form-masks.html">Form Masks</a></li>
+                                                                            <li><a href="form-dropzone.html">Dropzone Uploader</a></li>
+                                                                            <li><a href="form-ckeditor.html">CKEditor</a></li>
+                                                                            <li><a href="form-summernote.html">Summernote</a></li>
+                                                                            <li><a href="form-markdown.html">Markdown Editor</a></li>
+                                                                            <li><a href="form-xeditable.html">Inline Editor</a></li>
+                                                                            <li><a href="form-imagecrop.html">Image Cropping</a></li>
+                                                                            <li><a href="form-gridforms.html">Grid Forms</a></li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li><a href="javascript:;"><i class="fa fa-table"></i><span>Advanced Tables</span></a>
+                                                                        <ul class="acc-menu">
+                                                                            <li><a href="tables-responsive.html">Responsive Tables</a></li>
+                                                                            <li><a href="tables-editable.html">Editable Tables</a></li>
+                                                                            <li><a href="tables-data.html">Data Tables</a></li>
+                                                                            <li><a href="tables-advanceddatatable.html">Advanced Data Tables</a></li>
+                                                                            <li><a href="tables-fixedheader.html">Fixed Header Tables</a></li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li><a href="ui-advancedpanels.html"><i class="fa fa-cog fa-spin"></i><span>Advanced Panels</span><span class="label label-alizarin">HOT!</span></a></li>
+                                                                    <li><a href="javascript:;"><i class="fa fa-bar-chart-o"></i><span>Analytics</span></a>
+                                                                        <ul class="acc-menu">
+                                                                            <li><a href="charts-flot.html">Flot</a></li>
+                                                                            <li><a href="charts-sparklines.html">Sparklines</a></li>
+                                                                            <li><a href="charts-morris.html">Morris.js</a></li>
+                                                                            <li><a href="charts-chart.html">Chart.js</a></li>
+                                                                            <li><a href="charts-easypiechart.html">Easy Pie Chart</a></li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li><a href="javascript:;"><i class="fa fa-map-marker"></i><span>Maps</span></a>
+                                                                        <ul class="acc-menu">
+                                                                            <li><a href="maps-google.html">Google Maps</a></li>
+                                                                            <li><a href="maps-vector.html">Vector Maps</a></li>
+                                                                            <li><a href="maps-mapael.html">Mapael</a></li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li><a href="javascript:;"><i class="fa fa-files-o"></i><span>Pages</span></a>
+                                                                        <ul class="acc-menu">
+                                                                            <li><a href="extras-messages.html">Messages</a></li>
+                                                                            <li><a href="extras-profile.html">Profile</a></li>
+                                                                            <li><a href="extras-calendar.html">Calendar</a></li>
+                                                                            <li><a href="extras-timeline.html">Timeline</a></li>
+                                                                            <li><a href="extras-search.html">Search Page</a></li>
+                                                                            <li><a href="extras-chatroom.html">Chat Room</a></li>
+                                                                            <li><a href="extras-invoice.html">Invoice</a></li>
+                                                                            <li><a href="javascript:;">Responsive Email Template</a>
+                                                                                <ul class="acc-menu">
+                                                                                    <li><a href="responsive-email/basic.html">Basic</a></li>
+                                                                                    <li><a href="responsive-email/hero.html">Hero</a></li>
+                                                                                    <li><a href="responsive-email/sidebar.html">Sidebar</a></li>
+                                                                                    <li><a href="responsive-email/sidebar-hero.html">Sidebar Hero</a></li>
+                                                                                </ul>
+                                                                            </li>
+                                                                            <li><a href="extras-gallery.html">Gallery</a></li>
+                                                                            <li><a href="coming-soon.html">Coming Soon</a></li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li><a href="javascript:;"><i class="fa fa-briefcase"></i><span>Extras</span></a>
+                                                                        <ul class="acc-menu">
+                                                                            <li><a href="extras-pricingtable.html">Pricing Tables</a></li>
+                                                                            <li><a href="extras-faq.html">FAQ</a></li>
+                                                                            <li><a href="extras-registration.html">Registration</a></li>
+                                                                            <li><a href="extras-forgotpassword.html">Password Reset</a></li>
+                                                                            <li><a href="extras-login.html">Login</a></li>
+                                                                            <li><a href="extras-404.html">404 Page</a></li>
+                                                                            <li><a href="extras-500.html">500 Page</a></li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li><a href="javascript:;"><i class="fa fa-sitemap"></i><span>Multiple Level Menu</span><span class="badge badge-dark">99</span></a>
+                                                                        <ul class="acc-menu">
+                                                                            <li><a href="javascript:;">Menu Item 1</a></li>
+                                                                            <li><a href="javascript:;">Menu Item 2</a>
+                                                                                <ul class="acc-menu">
+                                                                                    <li><a href="javascript:;">Menu Item 2.1</a></li>
+                                                                                    <li><a href="javascript:;">Menu Item 2.2</a>
+                                                                                        <ul class="acc-menu">
+                                                                                            <li><a href="javascript:;">Menu Item 2.2.1</a></li>
+                                                                                            <li><a href="javascript:;">Menu Item 2.2.2</a>
+                                                                                                <ul class="acc-menu">
+                                                                                                    <li><a href="javascript:;">And deeper yet!</a></li>
+                                                                                                </ul>
+                                                                                            </li>
+                                                                                        </ul>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </li>
+                                                                            <li class="disabled-link"><a href="index-2.html">Disabled Menu Item</a></li>
+                                                                        </ul>
+                                                                    </li>
+                                                                </ul>
+                                                            </nav>
+                                                        </div>-->
 
 
                             <div class="widget stay-on-collapse">
@@ -736,7 +739,7 @@ AppAssetBackend::register($this);
                             <div class="container-fluid">
 
 
-                                     <?= $content ?>
+                                <?= $content ?>
 
 
                             </div> <!-- .container-fluid -->
@@ -1199,7 +1202,7 @@ AppAssetBackend::register($this);
             </div>
 
         </div>
-       
+
 
 
         <?php $this->endBody() ?>

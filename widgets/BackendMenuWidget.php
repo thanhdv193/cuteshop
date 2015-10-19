@@ -17,6 +17,11 @@ class BackendMenuWidget extends Widget
     public function run()
     {
         $menu = BackendMenu::find()->where(['parent_id'=>0])->asArray()->all();
+        foreach($menu AS &$value)
+        {
+            $subMenu = BackendMenu::find()->where(['parent_id'=>$value['id']])->asArray()->all();
+            $value['sub_menu'] = $subMenu;
+        }
       //echo'<pre>';  var_dump($menu); echo'<pre>'; die;
         return $this->render('BackendMenu',['menu'=>$menu]);
     }
