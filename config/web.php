@@ -10,8 +10,8 @@ $config = [
     'language' => 'vi-VN',
     'sourceLanguage' => 'en',
     //  'homeUrl'=>'/basic',
-    'defaultRoute' => 'fontend/home/index',
-  //  'defaultRoute' => 'index.php/site/login',
+    //'defaultRoute' => 'fontend/home/index',
+    'defaultRoute' => 'index.php/site/login',
 //    ['catAll']=>['backend/user/index'],
     'components' => [
         
@@ -126,7 +126,7 @@ $config = [
         'allowActions' => [
             'site/*',
             //'admin/*',
-            'backend/*',
+            //'backend/*',
             //'user/*',
             //'gii/*',
             'fontend/*',

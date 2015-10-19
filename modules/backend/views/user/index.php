@@ -33,7 +33,11 @@ $this->params['breadcrumbs'][] = $this->title;
         },
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-            'id',
+            [
+
+                'attribute' => 'id',
+                'contentOptions' => ['style' => 'width:15px;'],
+            ],
             [
                 'attribute' => 'Avatar',
                 'format' => 'html',
@@ -44,7 +48,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 },
                     ],
                     'username',
-                    'email:email',                  
+                    'email:email',
                     [
                         'attribute' => 'created_at',
                         'format' => ['date', 'php:d/m/Y']
@@ -53,7 +57,11 @@ $this->params['breadcrumbs'][] = $this->title;
                         'attribute' => 'updated_at',
                         'format' => ['date', 'php:d/m/Y']
                     ],
-                    ['class' => 'yii\grid\ActionColumn'],
+                    ['class' => 'yii\grid\ActionColumn',
+                        'header' => 'Thao tác',
+                        'headerOptions' => ['width' => '80', 'text-align' => 'center'],
+                        
+                    ],
                 ],
             ]);
             ?>
