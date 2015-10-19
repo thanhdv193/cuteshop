@@ -78,6 +78,7 @@ class UserController extends Controller
                 $model->Avatar = $upload;
                 $model->email = $post['email'];
                 $model->gender = $post['gender'];
+                $model->group = 1;
                 //$model->password_hash = $post['password_hash'];
             }
             $model->save(false);
