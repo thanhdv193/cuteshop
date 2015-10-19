@@ -476,7 +476,7 @@ AppAssetBackend::register($this);
                             </div>
 
                             <!--menu -->
-                            <?= BackendMenuWidget::widget() ?>
+                          
                             <!--end menu -->
                             <!--                            <div class="widget stay-on-collapse" id="widget-sidebar">
                                                             <span class="widget-heading">Explore</span>
