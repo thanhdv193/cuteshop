@@ -466,7 +466,7 @@ AppAssetBackend::register($this);
                                             <a href="#"><img src="/upload/User/Avatar/<?php if(Yii::$app->user->isGuest == false) { ?><?php echo Yii::$app->user->identity->Avatar ?><?php } ?>" class="avatar"></a>
                                         </div>
                                         <div class="tabular-cell welcome-options">
-                                            <span class="welcome-text">Welcome </span>
+                                            <span class="welcome-text">Xin chào </span>
                                             <a href="#" class="name"><?php if(Yii::$app->user->isGuest == false) { ?>
                                                <?php echo Yii::$app->user->identity->username ?>
                                            <?php } ?></a>
