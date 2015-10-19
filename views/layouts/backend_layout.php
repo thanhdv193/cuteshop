@@ -5,6 +5,7 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAssetBackend;
+use app\widgets\BackendMenuWidget;
 
 
 AppAssetBackend::register($this);
@@ -471,12 +472,14 @@ AppAssetBackend::register($this);
                                 </div>
                             </div>
 
-
-                            <div class="widget stay-on-collapse" id="widget-sidebar">
+                            <!--menu -->
+                            <?= BackendMenuWidget::widget() ?>
+                            <!--end menu -->
+<!--                            <div class="widget stay-on-collapse" id="widget-sidebar">
                                 <span class="widget-heading">Explore</span>
                                 <nav role="navigation" class="widget-body">
                                     <ul class="acc-menu">
-                                        <li><a href="index-2.html"><i class="fa fa-home"></i><span>Dashboard</span><span class="badge badge-dark">1</span></a></li>
+                                        <li><a href="index-2.html"><i class="fa fa-hom"></i><span>Dashboard</span><span class="badge badge-dark">1</span></a></li>
                                         <li><a href="javascript:;"><i class="fa fa-columns"></i><span>Layouts</span><span class="badge badge-dark">23</span></a>
                                             <ul class="acc-menu">
                                                 <li><a href="layout-grids.html">Grid Scaffolding</a></li>
@@ -653,7 +656,7 @@ AppAssetBackend::register($this);
                                         </li>
                                     </ul>
                                 </nav>
-                            </div>
+                            </div>-->
 
 
                             <div class="widget stay-on-collapse">
