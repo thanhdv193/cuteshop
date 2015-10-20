@@ -22,7 +22,7 @@ use yii\helpers\ArrayHelper;
     $menu = BackendMenu::find()->where(['parent_id' => 0])->all();
     $listData = ArrayHelper::map($menu, 'id', 'name');
     echo $form->field($model, 'parent_id')->dropDownList(
-            $listData, ['prompt' => 'Select...','name'=>'parent_id']);
+            $listData, ['prompt' => 'Select...','name'=>'parent_id'])->label('Menu cha') ;
     ?>
    
     <?= $form->field($model, 'name')->textInput(['name' => 'name','class'=>'txt_user form-control','maxlength' => true])->label('Tên menu')  ?>

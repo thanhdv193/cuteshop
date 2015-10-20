@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\BackendMenu */
 
-$this->title = 'Create Backend Menu';
+$this->title = 'Thêm mới menu';
 $this->params['breadcrumbs'][] = ['label' => 'Backend Menus', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
