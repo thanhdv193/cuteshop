@@ -9,15 +9,28 @@ use yii\helpers;
         <ul class="acc-menu">
             <li><a href="index-2.html"><i class="fa fa-hom"></i><span>Dashboard</span><span class="badge badge-dark">1</span></a></li>
             <?php foreach ($menu as $key => $value): ?>
-            <li><a href="javascript:;"><i class="fa fa-columns"></i><span><?php echo $value['name'] ?></span><span class="badge badge-dark">23</span></a>
-                <ul class="acc-menu">
-                    <?php foreach ($value as $subMenu): ?>      
-                   
-                   <!--      <li><a href="layout-grids.html"></a></li>  -->
-                    <?php endforeach; ?>
-                </ul>
-            </li>
-            <?php endforeach; ?>
+                <li><a href="javascript:;"><i class="fa fa-columns"></i><span><?php echo $value['name'] ?></span>
+                        <?php if ($value['count_sub_menu'] > 0)
+                        {
+                            ?>
+                            <span class="badge badge-dark">
+                            <?php echo $value['count_sub_menu'] ?>
+                            </span>
+    <?php } ?>
+                    </a>
+                    <ul class="acc-menu">
+                        <?php
+                        if (isset($value['sub_menu']))
+                        {
+                            ?>
+                            <?php foreach ($value['sub_menu'] as $subMenu): ?>      
+                                <li><a href="<?php echo $subMenu['route'] ?>"><?php echo $subMenu['name'] ?></a></li>
+        <?php endforeach; ?>
+    <?php } ?>
+
+                    </ul>
+                </li>
+<?php endforeach; ?>
             <li><a href="javascript:;"><i class="fa fa-sitemap"></i><span>Multiple Level Menu</span><span class="badge badge-dark">99</span></a>
                 <ul class="acc-menu">
                     <li><a href="javascript:;">Menu Item 1</a></li>

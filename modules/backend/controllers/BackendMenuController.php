@@ -9,6 +9,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
+use yii\helpers\Url;
 
 /**
  * BackendMenuController implements the CRUD actions for BackendMenu model.
@@ -77,13 +78,15 @@ class BackendMenuController extends Controller
                 $model->parent_id = $post['parent_id'];
             }
             $model->name = $post['name'];
-            if($post['sort_order'] == null){
+            if ($post['sort_order'] == null)
+            {
                 $model->sort_order = 0;
-            }else{
+            } else
+            {
                 $model->sort_order = $post['sort_order'];
             }
-            
-            $model->route = $post['route'];
+
+            $model->route = Url::base('http') . '/' . $post['route'];
 
             $model->save(false);
             return $this->redirect(['index']);
@@ -105,9 +108,31 @@ class BackendMenuController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save())
+        if ($model->load(Yii::$app->request->post()))
         {
-            return $this->redirect(['view', 'id' => $model->id]);
+            $post = Yii::$app->request->post();
+            $model->icon = UploadedFile::getInstance($model, 'icon');
+            $upload = $model->upload();
+            if ($post['parent_id'] == null)
+            {
+                $model->parent_id = 0;
+            } else
+            {
+                $model->parent_id = $post['parent_id'];
+            }
+            $model->name = $post['name'];
+            if ($post['sort_order'] == null)
+            {
+                $model->sort_order = 0;
+            } else
+            {
+                $model->sort_order = $post['sort_order'];
+            }
+
+            $model->route = Url::base('http') . '/' . $post['route'];
+            $model->save(false);
+
+            return $this->redirect(['index']);
         } else
         {
             return $this->render('update', [
