@@ -34,7 +34,7 @@ class AppAsset extends AssetBundle
     ];
     public $js = [
         'js/main.js',
-        'lib/bootstrap/js/bootstrap.min.js',
+//        'lib/bootstrap/js/bootstrap.min.js',
         'lib/select2/js/select2.min.js',        
         'js/jquery.actual.min.js',
         'lib/countdown/jquery.plugin.js',

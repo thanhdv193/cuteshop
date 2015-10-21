@@ -12,8 +12,10 @@ use app\models\SignupForm;
 use app\models\Auth;
 use app\models\User;
 use yii\authclient\OAuth2;
+
 class SiteController extends Controller
 {
+
     public function behaviors()
     {
         return [
@@ -61,15 +63,18 @@ class SiteController extends Controller
 
     public function actionLogin()
     {
-        if (!\Yii::$app->user->isGuest) {
+        if (!\Yii::$app->user->isGuest)
+        {
             return $this->goHome();
         }
         $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post()) && $model->login()) {
+        if ($model->load(Yii::$app->request->post()) && $model->login())
+        {
             return $this->goBack();
-        } else {
+        } else
+        {
             return $this->render('login', [
-                'model' => $model,
+                        'model' => $model,
             ]);
         }
     }
@@ -84,13 +89,15 @@ class SiteController extends Controller
     public function actionContact()
     {
         $model = new ContactForm();
-        if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
+        if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail']))
+        {
             Yii::$app->session->setFlash('contactFormSubmitted');
 
             return $this->refresh();
-        } else {
+        } else
+        {
             return $this->render('contact', [
-                'model' => $model,
+                        'model' => $model,
             ]);
         }
     }
@@ -99,47 +106,60 @@ class SiteController extends Controller
     {
         return $this->render('about');
     }
-    public function actionSignup(){
-        $model=new SignupForm();
-        if($model->load(Yii::$app->request->post())){
-            if($user=$model->signup()){
-                if(Yii::$app->getUser()->login($user)){
+
+    public function actionSignup()
+    {
+        $model = new SignupForm();
+        if ($model->load(Yii::$app->request->post()))
+        {
+            if ($user = $model->signup())
+            {
+                if (Yii::$app->getUser()->login($user))
+                {
                     return $this->goHome();
                 }
             }
         }
-        return $this->render('signup',[
-            'model'=>$model,
+        return $this->render('signup', [
+                    'model' => $model,
         ]);
     }
-    public function actionSeo($parametrel="",$parametrel2=""){
-        echo $parametrel;echo $parametrel2;
+
+    public function actionSeo($parametrel = "", $parametrel2 = "")
+    {
+        echo $parametrel;
+        echo $parametrel2;
     }
 
     public function onAuthSuccess($client)
     {
-       $attributes = $client->getUserAttributes();
+        $attributes = $client->getUserAttributes();
 
         /** @var Auth $auth */
         $auth = Auth::find()->where([
-            'source' => $client->getId(),
-            'source_id' => $attributes['id'],
-        ])->one();
+                    'source' => $client->getId(),
+                    'source_id' => $attributes['id'],
+                ])->one();
 
-        if (Yii::$app->user->isGuest) {
-            if ($auth) { // login
+        if (Yii::$app->user->isGuest)
+        {
+            if ($auth)
+            { // login
                 $user = $auth->user;
                 Yii::$app->user->login($user);
-            } else { // signup
-                if (isset($attributes['email']) && isset($attributes['username']) && User::find()->where(['email' => $attributes['email']])->exists()) {
+            } else
+            { // signup
+                if (isset($attributes['email']) && isset($attributes['username']) && User::find()->where(['email' => $attributes['email']])->exists())
+                {
                     Yii::$app->getSession()->setFlash('error', [
                         Yii::t('app', "User with the same email as in {client} account already exists but isn't linked to it. Login using email first to link it.", ['client' => $client->getTitle()]),
                     ]);
-                } else {
+                } else
+                {
                     $password = Yii::$app->security->generateRandomString(6);
 
                     $user = new User([
-                        'username'=> $attributes['last_name'].$attributes['first_name'],
+                        'username' => $attributes['last_name'] . $attributes['first_name'],
                         'email' => $attributes['email'],
                         'password' => $password,
                         'password_repeat' => $password,
@@ -147,33 +167,75 @@ class SiteController extends Controller
                     $user->generaAuthKey();
                     $user->generatePasswordResetToken();
                     $transaction = $user->getDb()->beginTransaction();
-                    
-                    if ($user->save(FALSE)) {
-                      //  echo 'xu';die;
+
+                    if ($user->save(FALSE))
+                    {
+                        //  echo 'xu';die;
                         $auth = new Auth([
                             'user_id' => $user->id,
                             'source' => $client->getId(),
-                            'source_id' => (string)$attributes['id'],
+                            'source_id' => (string) $attributes['id'],
                         ]);
-                        if ($auth->save()) {
+                        if ($auth->save())
+                        {
                             $transaction->commit();
                             Yii::$app->user->login($user);
-                        } else {
+                        } else
+                        {
                             print_r($auth->getErrors());
                         }
-                    } else {
+                    } else
+                    {
                         print_r($user->getErrors());
                     }
                 }
             }
-        } else { // user already logged in
-            if (!$auth) { // add auth provider
+        } else
+        { // user already logged in
+            if (!$auth)
+            { // add auth provider
                 $auth = new Auth([
                     'user_id' => Yii::$app->user->id,
                     'source' => $client->getId(),
                     'source_id' => $attributes['id'],
                 ]);
                 $auth->save();
+            }
+        }
+    }
+
+    public function actionLoginAjax()
+    {
+//        if (!\Yii::$app->user->isGuest) {
+//            return $this->goHome();
+//        }
+        $model = new LoginForm();
+//        if ($model->load(Yii::$app->request->post())) {
+        $data = array();
+        $post = Yii::$app->request->post();
+        if ($post['username'] == null)
+        {
+
+            return 'user_name_null';
+        }
+        if ($post['password'] == null)
+        {
+            return 'password_name_null';
+        }
+        $model->username = $post['username'];
+        $model->password = $post['password'];
+        $user = User::findByUsername($model->username);
+        if ($user == null)
+        {
+            return 'user_not_exist';
+        } else
+        {
+            if ($model->login())
+            {              
+                return 'successful';
+            } else
+            {
+                return 'password_exist';
             }
         }
     }
