@@ -206,9 +206,10 @@ class SiteController extends Controller
 
     public function actionLoginAjax()
     {
-//        if (!\Yii::$app->user->isGuest) {
-//            return $this->goHome();
-//        }
+        if (!\Yii::$app->user->isGuest)
+        {
+            return 'successful';
+        }
         $model = new LoginForm();
 //        if ($model->load(Yii::$app->request->post())) {
         $data = array();
