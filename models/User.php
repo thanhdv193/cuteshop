@@ -8,6 +8,7 @@ use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
 use yii\web\UploadedFile;
+use app\components\helpers\SystemHelper;
 
 class User extends ActiveRecord implements IdentityInterface {
 
@@ -150,7 +151,9 @@ class User extends ActiveRecord implements IdentityInterface {
     }
     public function upload($user_name) {
        
-        if ($this->Avatar) {                 
+        if ($this->Avatar) {      
+            $baseName = \app\components\helpers\SystemHelpe::convertMaTV($this->Avatar->baseName);
+            var_dump($baseName); die;
             $this->Avatar->saveAs('upload/User/Avatar/' . time() .'_'. $user_name .'_'.iconv('UTF-8', 'CP1258', $this->Avatar->baseName) . '.' . $this->Avatar->extension);
             return time() .'_'. $user_name .'_'. $this->Avatar->baseName . '.' . $this->Avatar->extension;
         } else {

@@ -10,6 +10,7 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
 use kartik\file\FileInput;
+use app\components\helpers\SystemHelpe;
 
 /**
  * UserController implements the CRUD actions for User model.
@@ -68,6 +69,10 @@ class UserController extends Controller
 
         if ($model->load(Yii::$app->request->post()))
         {
+            $helper = new SystemHelpe();
+            
+            $baseName = $helper->convertMaTV("Đỗ văn Thanh");
+            var_dump($baseName); die;
             $post = Yii::$app->request->post();            
             $model->Avatar = UploadedFile::getInstance($model, 'Avatar');            
             $model->password_hash = Yii::$app->security->generatePasswordHash($post['password_hash']);            
