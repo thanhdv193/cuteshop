@@ -6,7 +6,7 @@ use Yii;
 use app\models\XfUser;
 use yii\helpers\Url;
 
-class SystemHelpe
+class SystemHelper
 {   
 
     public static function convertMaTV($string)

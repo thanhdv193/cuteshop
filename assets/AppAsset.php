@@ -42,6 +42,7 @@ class AppAsset extends AssetBundle
         'lib/owl.carousel/owl.carousel.min.js',
         'lib/jquery.bxslider/jquery.bxslider.min.js',
         'js/theme-script.js',
+         'js/register/popup.js',
         
         
     ];
