@@ -96,7 +96,8 @@ class UserController extends Controller
     {
         $model = new User();
         $post = Yii::$app->request->getBodyParams();
-        $file_name = $_FILES['email'];
+        $file_name = $_FILES['image_id'];
+        echo'<pre>'; var_dump($file_name); die;
         $objecFile = new UploadedFile();
         foreach ($file_name as $key => $value)
         {
