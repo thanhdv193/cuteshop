@@ -12,9 +12,12 @@ use yii\helpers;
                     <div class="homeslider">
                         <div class="content-slide">
                             <ul id="slide-background">
-                                <li data-background="#ffcc33"><img alt="Funky roots" src="/images/slider/slider1.jpg" title="Funky roots" /></li>
-                                <li data-background="#666a69"><img alt="Funky roots" src="/images/slider/slider2.jpg" title="Funky roots" /></li>
-                                <li data-background="#c1ddf6"><img  alt="Funky roots" src="/images/slider/fb-covers-image.jpg" title="Funky roots" /></li>
+                                <?php foreach($data as $value) : ?>
+                                    <li data-background="#FFFFFF"><img alt="Funky roots" src="/<?php echo $value['image']['image_path']?><?php echo $value['image']['filename']?>" title="Funky roots" /></li>
+                                <?php endforeach; ?>
+<!--                                <li data-background="#FFFFFF"><img alt="Funky roots" src="/upload/banner/1445507895_tao-cover-anh-bia-facebook-vofurm.vn.jpg" title="Funky roots" /></li>
+                                <li data-background="#FFFFFF"><img alt="Funky roots" src="/upload/banner/1445585973_anh-bia-buon-fa-co-don-19.jpg" title="Funky roots" /></li>
+                                <li data-background="#FFFFFF"><img  alt="Funky roots" src="/upload/banner/1445585987_anh-bia-facebook-37265923_5__84273_std.jpg" title="Funky roots" /></li>-->
                             </ul>
                         </div>
                     </div>
