@@ -30,9 +30,12 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'banner_id',
                 'contentOptions' => ['style' => 'width:15px;'],
                 'label' => 'Mã'
+            ],                                    
+            [
+                'attribute' => 'image_type_id',
+                'label' => 'Loại ảnh',
+                'value' =>'image_type.object_name'
             ],
-            'image_type_id',
-            'image_id',
             [
                 'attribute' => 'created_at',
                 'format' => ['date', 'php:d/m/Y'],
@@ -41,6 +44,17 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute' => 'sort_order',
                 'label' => 'Thứ tự'
+            ],
+            [
+                'attribute' => 'image_id',
+                'format' => 'html',
+                'label' => 'Ảnh đại diện',
+                'value' => function ($model)
+                {
+                    $array = app\models\Image::find()->where(['id'=>$model['image_id']])->one();
+                    
+                    return Html::img('@web/'.$array['image_path'].'' . $array['filename'], ['width' => '100px','height'=>'70px']);
+                },
             ],
             ['class' => 'yii\grid\ActionColumn',
                 'header' => 'Thao tác',

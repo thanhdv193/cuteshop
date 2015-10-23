@@ -51,4 +51,10 @@ class Banner extends \yii\db\ActiveRecord
             'active' => 'Active',
         ];
     }
+    public function getImage() {
+        return $this->hasOne(Image::className(), ['id' => 'image_id']);
+    }
+    public function getImage_type() {
+        return $this->hasOne(ImageType::className(), ['id' => 'image_type_id']);
+    }
 }

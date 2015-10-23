@@ -18,7 +18,7 @@ class BannerSearch extends Banner
     public function rules()
     {
         return [
-            [['banner_id', 'image_type_id', 'image_id', 'created_at', 'sort_order', 'active'], 'integer'],
+            [['banner_id', 'image_type_id', 'created_at', 'active'], 'integer'],
         ];
     }
 
@@ -41,7 +41,7 @@ class BannerSearch extends Banner
     public function search($params)
     {
         $query = Banner::find();
-
+        
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);
@@ -53,11 +53,11 @@ class BannerSearch extends Banner
             // $query->where('0=1');
             return $dataProvider;
         }
-
+                       
+         $query->joinWith('image_type');       
+        
         $query->andFilterWhere([
-            'banner_id' => $this->banner_id,
-            'image_type_id' => $this->image_type_id,
-            'image_id' => $this->image_id,
+            'banner_id' => $this->banner_id,                        
             'created_at' => $this->created_at,
             'sort_order' => $this->sort_order,
             'active' => $this->active,
