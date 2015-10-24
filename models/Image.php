@@ -56,16 +56,16 @@ class Image extends \yii\db\ActiveRecord
         ];
     }
 
-    public function upload()
+    public function upload($type)
     {
 
         if ($this->filename)
         {
             $baseName = SystemHelper::convertMaTV($this->filename->baseName);            
-            $this->filename->saveAs('upload/banner/' . time() . '_' . $baseName . '.' . $this->filename->extension);
+            $this->filename->saveAs('upload/'.$type.'/' . time() . '_' . $baseName . '.' . $this->filename->extension);
             return array(
                 'filename' => time() . '_' . $baseName . '.' . $this->filename->extension,
-                'patch' => 'upload/banner/'
+                'patch' => 'upload/'.$type.'/'
             );
         } else
         {

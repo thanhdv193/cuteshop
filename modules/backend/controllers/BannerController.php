@@ -68,7 +68,7 @@ class BannerController extends Controller
         {
             $post = Yii::$app->request->post();
             $modelImage->filename = UploadedFile::getInstance($model, 'image_id');
-            $imageUpload = $modelImage->upload();
+            $imageUpload = $modelImage->upload('banner');
             if ($imageUpload)
             {
                 $modelImage->object_id = 0;

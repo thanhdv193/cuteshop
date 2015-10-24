@@ -77,6 +77,26 @@ class ProductController extends Controller
             ]);
         }
     }
+    public function actionUpLoadImage()
+    {
+        $model = new Product();
+        $modelImage = new Image(); 
+        $post = Yii::$app->request->getBodyParams();
+        $file_name = $_FILES['image_id'];        
+        $objecFile = new UploadedFile();
+        foreach ($file_name as $key => $value)
+        {
+            if ($key == 'tmp_name')
+            {
+                $objecFile->tempName = $value;
+            } else
+            {
+                $objecFile->$key = $value;
+            }
+        }
+        $model->image_id = $objecFile;
+        $model->upload();
+    }
 
     /**
      * Updates an existing Product model.

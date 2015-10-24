@@ -3,6 +3,8 @@
 namespace app\models;
 
 use Yii;
+use app\components\helpers\SystemHelper;
+use yii\web\UploadedFile;
 
 /**
  * This is the model class for table "product".
@@ -72,5 +74,15 @@ class Product extends \yii\db\ActiveRecord
             'old_price' => 'Old Price',
             'quantity_current' => 'Quantity Current',
         ];
+    }
+    public function upload($user_name) {
+       
+        if ($this->image_id) {      
+            $baseName = SystemHelper::convertMaTV($this->image_id->baseName);            
+            $this->image_id->saveAs('upload/product/' . time() .'_'. $user_name .'_'.$baseName. '.' . $this->image_id->extension);
+            return time() .'_'. $user_name .'_'.$baseName. '.' . $this->image_id->extension;
+        } else {
+            return false;
+        }
     }
 }

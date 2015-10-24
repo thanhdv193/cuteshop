@@ -39,12 +39,12 @@ use iutbay\yii2kcfinder\KCFinderInputWidget;
     ?>
     <?php
     echo FileInput::widget([
-        'name' => 'image_id[]',
+        'name' => 'image_id',
         'options' => [
             'multiple' => true
         ],
         'pluginOptions' => [
-            'uploadUrl' => Url::to(['/backend/user/up-load-image']),
+            'uploadUrl' => Url::to(['/backend/product/up-load-image']),
             'maxFileCount' => 10
         ]
     ]);
