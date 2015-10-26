@@ -44,6 +44,7 @@ use iutbay\yii2kcfinder\KCFinderInputWidget;
 //    ]);
 //    
     ?>
+    
     <?php if(isset($model['Avatar'])) {?> 
        <img src="/upload/User/Avatar/<?php echo $model['Avatar'] ?>" width="70" alt="">
     <?php }?>

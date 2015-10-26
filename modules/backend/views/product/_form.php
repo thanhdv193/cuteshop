@@ -38,15 +38,24 @@ use iutbay\yii2kcfinder\KCFinderInputWidget;
             $listData, ['prompt' => 'Select...', 'name' => 'product_group_id'])->label('Nhóm sản phẩm');
     ?>
     <?php
-    echo FileInput::widget([
-        'name' => 'image_id',
-        'options' => [
-            'multiple' => true
-        ],
+//    echo FileInput::widget([
+//        'name' => 'image_id[]',
+//        'options' => [
+//            'multiple' => true
+//        ],
+//        'pluginOptions' => [
+//            'uploadUrl' => Url::to(['/backend/product/up-load-image']),
+//            'maxFileCount' => 10
+//        ]
+//    ]);
+    ?>
+    <?= $form->field($model, 'image_id[]')->widget(FileInput::classname(), [
+        'options' => ['multiple' => true, 'accept' => 'image/*'],
         'pluginOptions' => [
-            'uploadUrl' => Url::to(['/backend/product/up-load-image']),
+            'previewFileType' => 'image',            
+            'showUpload' => false,
             'maxFileCount' => 10
-        ]
+        ],
     ]);
     ?>
      <?= $form->field($model, 'price')->textInput(['name'=>'price'])->label('Giá mới') ?>

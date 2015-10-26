@@ -63,11 +63,17 @@ class BannerController extends Controller
     public function actionCreate()
     {
         $model = new Banner();
-        $modelImage = new Image();                
+        $modelImage = new Image();   
+        if($_POST){
+            //below line will fetch all image related data and put it into $file as an object. Refer output of var_dump($file) after controller code.
+            $file = UploadedFile::getInstances($model, 'image_id');
+            echo '<pre>'; var_dump($file); die;
+        }
         if ($model->load(Yii::$app->request->post()))
         {
             $post = Yii::$app->request->post();
             $modelImage->filename = UploadedFile::getInstance($model, 'image_id');
+            var_dump($modelImage->filename); die;
             $imageUpload = $modelImage->upload('banner');
             if ($imageUpload)
             {

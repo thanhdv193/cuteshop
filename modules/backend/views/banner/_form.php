@@ -24,19 +24,28 @@ use yii\helpers\ArrayHelper;
     <?= $form->field($model, 'sort_order')->textInput(['name'=>'sort_order']) ?>   
     <?= $form->field($model, 'active')->dropDownList(['1' => 'Active', '0' => 'Không active'],['class'=>'txt_gender form-control','name'=>'active'])->label('Trạng thái'); ?>
     
-    <?php
-    echo $form->field($model, 'image_id')->widget(FileInput::classname(), [
+    <?= $form->field($model, 'image_id[]')->widget(FileInput::classname(), [
+        'options' => ['multiple' => true, 'accept' => 'image/*'],
         'pluginOptions' => [
-            'allowedFileExtensions' => ['jpg', 'gif', 'png'],
-            'showCaption' => false,
-            'showRemove' => false,
-            'showUpload' => FALSE,
-            'browseClass' => 'btn btn-primary btn-block btn-file-image',
-            'browseIcon' => '<i class="glyphicon glyphicon-camera"></i> ',
-            'browseLabel' => 'Chọn banner'
+            'previewFileType' => 'image',
+            //change here: below line is added just to hide upload button. Its up to you to add this code or not.
+            'showUpload' => false
         ],
-        'options' => ['accept' => 'image/*'],
-    ])->label('Ảnh ');
+    ]);
+    ?>
+    <?php
+//    echo $form->field($model, 'image_id')->widget(FileInput::classname(), [
+//        'pluginOptions' => [
+//            'allowedFileExtensions' => ['jpg', 'gif', 'png'],
+//            'showCaption' => false,
+//            'showRemove' => false,
+//            'showUpload' => FALSE,
+//            'browseClass' => 'btn btn-primary btn-block btn-file-image',
+//            'browseIcon' => '<i class="glyphicon glyphicon-camera"></i> ',
+//            'browseLabel' => 'Chọn banner'
+//        ],
+//        'options' => ['accept' => 'image/*'],
+//    ])->label('Ảnh ');
     ?>
 
     <div class="form-group">

@@ -33,6 +33,8 @@ class ProductController extends Controller
      */
     public function actionIndex()
     {
+        
+        
         $searchModel = new ProductSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
@@ -62,7 +64,12 @@ class ProductController extends Controller
     public function actionCreate()
     {
         $model = new Product();
-
+        //$hash = md5(uniqid('', true));
+        if($_POST){
+            //below line will fetch all image related data and put it into $file as an object. Refer output of var_dump($file) after controller code.
+            $file = UploadedFile::getInstances($model, 'image_id');
+            echo '<pre>'; var_dump($file); die;
+        }
         if ($model->load(Yii::$app->request->post())) {
             $post = Yii::$app->request->post();
             //$post = Yii::$app->request->getBodyParams();
