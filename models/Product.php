@@ -43,7 +43,7 @@ class Product extends \yii\db\ActiveRecord
     {
         return [
             [['product_category_id', 'product_node_id', 'name', 'view_count', 'quantity_current'], 'required'],
-            [['create_date','product_category_id', 'product_group_id', 'product_node_id', 'view_count', 'sort_order', 'active', 'quantity_current'], 'integer'],
+            [['image','create_date','product_category_id', 'product_group_id', 'product_node_id', 'view_count', 'sort_order', 'active', 'quantity_current'], 'integer'],
 //            [['image_id'], 'file','extensions' => 'PNG,JPG,png,jpg', 'maxFiles' => 4],
             [['content', 'announce'], 'string'],
             [['price', 'old_price'], 'number'],
