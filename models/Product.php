@@ -43,8 +43,8 @@ class Product extends \yii\db\ActiveRecord
     {
         return [
             [['product_category_id', 'product_node_id', 'name', 'view_count', 'quantity_current'], 'required'],
-            [['product_category_id', 'product_group_id', 'product_node_id', 'view_count', 'sort_order', 'active', 'quantity_current'], 'integer'],
-            [['image_id'], 'file','extensions' => 'PNG,JPG,png,jpg', 'maxFiles' => 4],
+            [['create_date','product_category_id', 'product_group_id', 'product_node_id', 'view_count', 'sort_order', 'active', 'quantity_current'], 'integer'],
+//            [['image_id'], 'file','extensions' => 'PNG,JPG,png,jpg', 'maxFiles' => 4],
             [['content', 'announce'], 'string'],
             [['price', 'old_price'], 'number'],
             [['name', 'title', 'h1', 'meta_description'], 'string', 'max' => 255]
@@ -75,14 +75,5 @@ class Product extends \yii\db\ActiveRecord
             'quantity_current' => 'Quantity Current',
         ];
     }
-    public function upload($user_name) {
-       
-        if ($this->image_id) {      
-            $baseName = SystemHelper::convertMaTV($this->image_id->baseName);            
-            $this->image_id->saveAs('upload/product/' . time() .'_'. $user_name .'_'.$baseName. '.' . $this->image_id->extension);
-            return time() .'_'. $user_name .'_'.$baseName. '.' . $this->image_id->extension;
-        } else {
-            return false;
-        }
-    }
+    
 }

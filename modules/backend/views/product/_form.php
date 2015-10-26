@@ -19,7 +19,7 @@ use iutbay\yii2kcfinder\KCFinderInputWidget;
     <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data', 'accept-charset' => "UTF-8"], 'id' => 'form_product_create']
     );
     ?>
-    <?= $form->field($model, 'name')->textInput(['maxlength' => true,'name'=>'name'])->label('Tên sản phẩm') ?>
+    <?= $form->field($model, 'name')->textInput(['maxlength' => true])->label('Tên sản phẩm') ?>
     <?= $form->field($model, 'content')->widget(CKEditor::className(), [
         'editorOptions' => [
             'preset' => 'full', 
@@ -28,14 +28,14 @@ use iutbay\yii2kcfinder\KCFinderInputWidget;
         ],
     ])->label('Nội dung');
     ?> 
-    <?= $form->field($model, 'quantity_current')->textInput(['maxlength' => true,'name'=>'quantity_current'])->label('Số lượng') ?>
-    <?= $form->field($model, 'product_category_id')->textInput(['maxlength' => true,'name'=>'product_category_id']) ?>
-    <?= $form->field($model, 'product_node_id')->textInput(['maxlength' => true,'name'=>'product_node_id']) ?>
+    <?= $form->field($model, 'quantity_current')->textInput(['maxlength' => true])->label('Số lượng') ?>
+    <?= $form->field($model, 'product_category_id')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'product_node_id')->textInput(['maxlength' => true]) ?>
     <?php
     $productGroup = ProductGroup::find()->where(['active' => 1])->all();
     $listData = ArrayHelper::map($productGroup, 'product_group_id', 'name');
     echo $form->field($model, 'product_group_id')->dropDownList(
-            $listData, ['prompt' => 'Select...', 'name' => 'product_group_id'])->label('Nhóm sản phẩm');
+            $listData, ['prompt' => 'Select...',])->label('Nhóm sản phẩm');
     ?>
     <?php
 //    echo FileInput::widget([
@@ -58,9 +58,9 @@ use iutbay\yii2kcfinder\KCFinderInputWidget;
         ],
     ]);
     ?>
-     <?= $form->field($model, 'price')->textInput(['name'=>'price'])->label('Giá mới') ?>
+     <?= $form->field($model, 'price')->textInput()->label('Giá mới') ?>
 
-    <?= $form->field($model, 'old_price')->textInput(['name'=>'old_price'])->label('Giá cũ') ?>
+    <?= $form->field($model, 'old_price')->textInput()->label('Giá cũ') ?>
 
     
 

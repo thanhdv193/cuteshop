@@ -36,7 +36,7 @@ class Image extends \yii\db\ActiveRecord
             [['object_id', 'object_type', 'create_date', 'image_path'], 'required'],
             [['filename'], 'file', 'extensions' => 'PNG,JPG,png,jpg', 'maxFiles' => 4],
             [['object_id', 'sort_order', 'create_date'], 'integer'],
-            [['object_type', 'filename', 'image_path'], 'string', 'max' => 255]
+            [['temp_hash','object_type', 'filename', 'image_path'], 'string', 'max' => 255]
         ];
     }
 

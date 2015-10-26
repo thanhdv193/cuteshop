@@ -9,12 +9,15 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
+use app\models\Image;
 
 /**
  * ProductController implements the CRUD actions for Product model.
  */
-class ProductController extends Controller
+class ProductController
+        extends Controller
 {
+
     public function behaviors()
     {
         return [
@@ -33,14 +36,14 @@ class ProductController extends Controller
      */
     public function actionIndex()
     {
-        
-        
+
+
         $searchModel = new ProductSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+                    'searchModel' => $searchModel,
+                    'dataProvider' => $dataProvider,
         ]);
     }
 
@@ -52,7 +55,7 @@ class ProductController extends Controller
     public function actionView($id)
     {
         return $this->render('view', [
-            'model' => $this->findModel($id),
+                    'model' => $this->findModel($id),
         ]);
     }
 
@@ -64,32 +67,64 @@ class ProductController extends Controller
     public function actionCreate()
     {
         $model = new Product();
-        //$hash = md5(uniqid('', true));
-        if($_POST){
-            //below line will fetch all image related data and put it into $file as an object. Refer output of var_dump($file) after controller code.
-            $file = UploadedFile::getInstances($model, 'image_id');
-            echo '<pre>'; var_dump($file); die;
+        if ($_POST)
+        {
+            $fileImage = UploadedFile::getInstances($model, 'image_id');
+            $hash = md5(uniqid('', true));
+            foreach ($fileImage as $key => $value)
+            {
+                $modelImage = new Image();
+                $modelImage->filename = $value;
+                $upload = $modelImage->upload('product');
+                if ($upload)
+                {
+
+                    $modelImage->object_id = 0;
+                    $modelImage->object_type = 'product';
+                    $modelImage->create_date = time();
+                    $modelImage->image_path = $upload['patch'];
+                    $modelImage->sort_order = 0;
+                    $modelImage->filename = $upload['filename'];
+                    $modelImage->temp_hash = $hash;
+                    $modelImage->save();
+                }
+            }
         }
-        if ($model->load(Yii::$app->request->post())) {
-            $post = Yii::$app->request->post();
-            //$post = Yii::$app->request->getBodyParams();
-            $file_name = $_FILES['image_id'];
-            $model->image_id = UploadedFile::getInstance($post['image_id']);
-            echo'<pre>'; var_dump($post['image_id']); die;
-            
-            return $this->redirect(['view', 'id' => $model->product_id]);
-        } else {
+        if ($model->load(Yii::$app->request->post()))
+        {
+            $model->create_date = time();
+            $model->sort_order = 0;
+            $model->view_count = 0;
+            $model->product_group_id = 0;
+
+            if ($model->save())
+            {
+                $imageUpload = Image::find()->where(['temp_hash' => $hash])->all();
+                if ($imageUpload != null)
+                {
+                    foreach ($imageUpload as $value)
+                    {
+                        $value->object_id = $model->product_id;
+                        $value->save();
+                    }
+                }
+            }
+
+            return $this->redirect(['index']);
+        } else
+        {
             return $this->render('create', [
-                'model' => $model,
+                        'model' => $model,
             ]);
         }
     }
+
     public function actionUpLoadImage()
     {
         $model = new Product();
-        $modelImage = new Image(); 
+        $modelImage = new Image();
         $post = Yii::$app->request->getBodyParams();
-        $file_name = $_FILES['image_id'];        
+        $file_name = $_FILES['image_id'];
         $objecFile = new UploadedFile();
         foreach ($file_name as $key => $value)
         {
@@ -115,11 +150,13 @@ class ProductController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post()) && $model->save())
+        {
             return $this->redirect(['view', 'id' => $model->product_id]);
-        } else {
+        } else
+        {
             return $this->render('update', [
-                'model' => $model,
+                        'model' => $model,
             ]);
         }
     }
@@ -146,10 +183,13 @@ class ProductController extends Controller
      */
     protected function findModel($id)
     {
-        if (($model = Product::findOne($id)) !== null) {
+        if (($model = Product::findOne($id)) !== null)
+        {
             return $model;
-        } else {
+        } else
+        {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
+
 }

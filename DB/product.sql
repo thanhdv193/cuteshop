@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : Home
-Source Server Version : 50626
+Source Server         : shop
+Source Server Version : 50611
 Source Host           : localhost:3306
 Source Database       : shop
 
 Target Server Type    : MYSQL
-Target Server Version : 50626
+Target Server Version : 50611
 File Encoding         : 65001
 
-Date: 2015-10-23 16:43:18
+Date: 2015-10-26 21:02:24
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -35,7 +35,8 @@ CREATE TABLE `product` (
   `active` tinyint(4) DEFAULT '1',
   `price` float unsigned DEFAULT '0',
   `old_price` float unsigned DEFAULT '0',
-  `quantity_current` int(10) unsigned NOT NULL,
+  `quantity_current` int(10) unsigned DEFAULT NULL,
   `image_id` int(10) DEFAULT NULL,
+  `create_date` int(10) NOT NULL,
   PRIMARY KEY (`product_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
