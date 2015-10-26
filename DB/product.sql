@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50611
 File Encoding         : 65001
 
-Date: 2015-10-26 21:02:24
+Date: 2015-10-26 22:41:53
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -36,7 +36,7 @@ CREATE TABLE `product` (
   `price` float unsigned DEFAULT '0',
   `old_price` float unsigned DEFAULT '0',
   `quantity_current` int(10) unsigned DEFAULT NULL,
-  `image_id` int(10) DEFAULT NULL,
   `create_date` int(10) NOT NULL,
+  `image` int(10) DEFAULT NULL,
   PRIMARY KEY (`product_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
