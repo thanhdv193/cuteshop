@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50626
 File Encoding         : 65001
 
-Date: 2015-10-20 15:43:40
+Date: 2015-10-26 17:25:53
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -27,5 +27,6 @@ CREATE TABLE `image` (
   `sort_order` int(11) DEFAULT '0',
   `create_date` int(10) unsigned NOT NULL,
   `image_path` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `temp_hash` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
