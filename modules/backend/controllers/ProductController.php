@@ -69,7 +69,7 @@ class ProductController
         $model = new Product();
         if ($_POST)
         {
-            $fileImage = UploadedFile::getInstances($model, 'image_id');
+            $fileImage = UploadedFile::getInstances($model, 'image');
             $hash = md5(uniqid('', true));
             foreach ($fileImage as $key => $value)
             {

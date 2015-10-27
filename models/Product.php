@@ -42,9 +42,9 @@ class Product extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['product_category_id', 'product_node_id', 'name', 'view_count', 'quantity_current'], 'required'],
-            [['image','create_date','product_category_id', 'product_group_id', 'product_node_id', 'view_count', 'sort_order', 'active', 'quantity_current'], 'integer'],
-//            [['image_id'], 'file','extensions' => 'PNG,JPG,png,jpg', 'maxFiles' => 4],
+            [['product_category_id', 'name', 'view_count', 'quantity_current'], 'required'],
+            [['create_date','product_category_id', 'product_group_id', 'view_count', 'sort_order', 'active', 'quantity_current'], 'integer'],
+            [['image'], 'file','extensions' => 'PNG,JPG,png,jpg', 'maxFiles' => 4],
             [['content', 'announce'], 'string'],
             [['price', 'old_price'], 'number'],
             [['name', 'title', 'h1', 'meta_description'], 'string', 'max' => 255]
@@ -59,8 +59,7 @@ class Product extends \yii\db\ActiveRecord
         return [
             'product_id' => 'Product ID',
             'product_category_id' => 'Product Category ID',
-            'product_group_id' => 'Product Group ID',
-            'product_node_id' => 'Product Node ID',
+            'product_group_id' => 'Product Group ID',            
             'name' => 'Name',
             'title' => 'Title',
             'h1' => 'H1',
@@ -72,7 +71,7 @@ class Product extends \yii\db\ActiveRecord
             'active' => 'Active',
             'price' => 'Price',
             'old_price' => 'Old Price',
-            'quantity_current' => 'Quantity Current',
+            'quantity_current' => 'Số lượng',
         ];
     }
     
