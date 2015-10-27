@@ -16139,6 +16139,7 @@ body.layout-boxed .infobar-wrapper {
 }
 .page-content {
     padding: 0 10px;
+    background-color: #e6e8ea;
 }
 /* Page Tabs */
 .page-tabs {
