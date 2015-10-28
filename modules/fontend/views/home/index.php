@@ -1,8 +1,11 @@
 <?php
 use yii\helpers;
+use app\widgets\HotDealWidget;
 ?>
+
 <!-- Hot deals -->
-<div class="hot-deals-row">
+<?= HotDealWidget::widget() ?>
+<!--<div class="hot-deals-row">
     <div class="container">
         <div class="hot-deals-box">
             <div class="row">
@@ -20,11 +23,11 @@ use yii\helpers;
                         </div>
                         <div class="hot-deals-tab-box">
                             <ul class="nav-tab">
-<!--                                <li class="active"><a data-toggle="tab" href="#hot-deal-1">UP TO 40% OFF</a></li>
+                                <li class="active"><a data-toggle="tab" href="#hot-deal-1">UP TO 40% OFF</a></li>
                                 <li><a data-toggle="tab" href="#hot-deal-2">UP TO 50% OFF</a></li>
                                 <li><a data-toggle="tab" href="#hot-deal-1">UP TO 60% OFF</a></li>
                                 <li><a data-toggle="tab" href="#hot-deal-2">UP TO 70% OFF</a></li>
-                                <li><a data-toggle="tab" href="#hot-deal-1">UP TO 80% OFF</a></li>-->
+                                <li><a data-toggle="tab" href="#hot-deal-1">UP TO 80% OFF</a></li>
                             </ul>
                             <di class="box-count-down">
                                 <span class="countdown-lastest" data-y="2015" data-m="9" data-d="1" data-h="00" data-i="00" data-s="00"></span>
@@ -171,7 +174,7 @@ use yii\helpers;
             </div>
         </div>
     </div>
-</div>
+</div>-->
 <!-- ./Hot deals -->
 <!-- box product new arrivals -->
 <div class="box-products new-arrivals">
