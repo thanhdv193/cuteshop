@@ -646,6 +646,9 @@
     -webkit-transform: translateY(-50%);
     -moz-transform: translateY(-50%);
 }
+table {
+    background:#fafbfc !important;
+}
 .vat,
 table.table-vat > thead > tr > th,
 table.table-vat > tbody > tr > td,

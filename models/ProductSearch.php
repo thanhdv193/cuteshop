@@ -18,7 +18,7 @@ class ProductSearch extends Product
     public function rules()
     {
         return [
-            [['product_id', 'product_category_id', 'product_group_id', 'product_node_id', 'view_count', 'sort_order', 'active', 'quantity_current'], 'integer'],
+            [['product_id', 'product_category_id', 'product_group_id', 'view_count', 'sort_order', 'active', 'quantity_current'], 'integer'],
             [['name', 'title', 'h1', 'meta_description', 'content', 'announce'], 'safe'],
             [['price', 'old_price'], 'number'],
         ];
@@ -55,12 +55,12 @@ class ProductSearch extends Product
             // $query->where('0=1');
             return $dataProvider;
         }
-
+        $query->joinWith('product_category');   
+        $query->joinWith('product_group');
         $query->andFilterWhere([
             'product_id' => $this->product_id,
             'product_category_id' => $this->product_category_id,
-            'product_group_id' => $this->product_group_id,
-            'product_node_id' => $this->product_node_id,
+            'product_group_id' => $this->product_group_id,            
             'view_count' => $this->view_count,
             'sort_order' => $this->sort_order,
             'active' => $this->active,
@@ -75,7 +75,7 @@ class ProductSearch extends Product
             ->andFilterWhere(['like', 'meta_description', $this->meta_description])
             ->andFilterWhere(['like', 'content', $this->content])
             ->andFilterWhere(['like', 'announce', $this->announce]);
-
+        
         return $dataProvider;
     }
 }

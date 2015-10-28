@@ -36,7 +36,7 @@ class BannerController extends Controller
     public function actionIndex()
     {
         $searchModel = new BannerSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);        
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
         return $this->render('index', [
                     'searchModel' => $searchModel,
                     'dataProvider' => $dataProvider,
@@ -63,50 +63,49 @@ class BannerController extends Controller
     public function actionCreate()
     {
         $model = new Banner();
-        $modelImage = new Image();   
-        if($_POST){
-            //below line will fetch all image related data and put it into $file as an object. Refer output of var_dump($file) after controller code.
-            $file = UploadedFile::getInstances($model, 'image_id');
-            echo '<pre>'; var_dump($file); die;
+        $modelImage = new Image();
+        $hash = md5(uniqid('', true));
+        if ($_POST)
+        {
+            $fileImage = UploadedFile::getInstances($model, 'image_id');
+
+            foreach ($fileImage as $key => $value)
+            {
+                $modelImage = new Image();
+                $modelImage->filename = $value;
+                $upload = $modelImage->upload('banner');
+                if ($upload)
+                {
+
+                    $modelImage->object_id = 0;
+                    $modelImage->object_type = 'banner';
+                    $modelImage->create_date = time();
+                    $modelImage->image_path = $upload['patch'];
+                    $modelImage->sort_order = 0;
+                    $modelImage->filename = $upload['filename'];
+                    $modelImage->temp_hash = $hash;
+                    $modelImage->save();
+                }
+            }
         }
         if ($model->load(Yii::$app->request->post()))
         {
-            $post = Yii::$app->request->post();
-            $modelImage->filename = UploadedFile::getInstance($model, 'image_id');
-            var_dump($modelImage->filename); die;
-            $imageUpload = $modelImage->upload('banner');
-            if ($imageUpload)
+            $model->image_id = 0;
+            $model->created_at = time();
+            if ($model->sort_order == null)
             {
-                $modelImage->object_id = 0;
-                $modelImage->object_type = $post['image_type_id'];
-                $modelImage->filename = $imageUpload['filename'];
-                $modelImage->sort_order = 0;
-                $modelImage->create_date = time();
-                $modelImage->image_path = $imageUpload['patch'];
-                if ($modelImage->save())
+                $model->sort_order = 0;
+            }                                           
+            if ($model->save())
+            {
+                $modelImg = Image::find()->where(['temp_hash' => $hash])->one();
+                if ($modelImg != null)
                 {
-                    $model->image_type_id = $post['image_type_id'];
-                    $model->image_id = $modelImage->id;                    
-                    $model->created_at = time();
-                    if ($post['sort_order'] == null)
-                    {
-                        $model->sort_order = 0;
-                    } else
-                    {
-                        $model->sort_order = $post['sort_order'];
-                    }
-                    $model->active = $post['active'];                    
-                    if($model->save()){
-                        $modelImg = Image::find()->where(['id'=>123])->one();
-                        if($modelImg != null)
-                        {
-                            $modelImg->object_id = $model->banner_id;
-                            $modelImg->save();
-                        }
-                        
-                    }
+                    $modelImg->object_id = $model->banner_id;
+                    $modelImg->save();
                 }
             }            
+
             return $this->redirect(['index']);
         } else
         {

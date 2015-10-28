@@ -57,7 +57,7 @@ class Product extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'product_id' => 'Product ID',
+            'product_id' => 'Mã',
             'product_category_id' => 'Chuyên mục',
             'product_group_id' => 'Nhóm sản phẩm',            
             'name' => 'Tên sản phẩm',
@@ -73,6 +73,13 @@ class Product extends \yii\db\ActiveRecord
             'old_price' => 'Giá',
             'quantity_current' => 'Số lượng',
         ];
+    }
+    
+    public function getProduct_category() {
+        return $this->hasOne(ProductCategory::className(), ['product_category_id' => 'product_category_id']);
+    }
+    public function getProduct_group() {
+        return $this->hasOne(ProductGroup::className(), ['product_group_id' => 'product_group_id']);
     }
     
 }

@@ -14,24 +14,26 @@ use yii\helpers\ArrayHelper;
 <div class="banner-form">
 
     <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data'], 'id' => 'form_menu_create']); ?>
-   
+
     <?php
     $imageType = ImageType::find()->all();
     $listData = ArrayHelper::map($imageType, 'id', 'object_name');
     echo $form->field($model, 'image_type_id')->dropDownList(
-            $listData, ['prompt' => 'Select...','name'=>'image_type_id'])->label('Loại ảnh') ;
+            $listData, ['prompt' => 'Select...'])->label('Loại ảnh');
     ?>
-    <?= $form->field($model, 'sort_order')->textInput(['name'=>'sort_order']) ?>   
-    <?= $form->field($model, 'active')->dropDownList(['1' => 'Active', '0' => 'Không active'],['class'=>'txt_gender form-control','name'=>'active'])->label('Trạng thái'); ?>
-    
-    <?= $form->field($model, 'image_id[]')->widget(FileInput::classname(), [
+    <?= $form->field($model, 'sort_order')->textInput() ?>   
+    <?= $form->field($model, 'active')->dropDownList(['1' => 'Hiển thị', '0' => 'Ẩn'], ['class' => 'txt_gender form-control'])->label('Trạng thái'); ?>
+
+    <?=
+    $form->field($model, 'image_id')->widget(FileInput::classname(), [
         'options' => ['multiple' => true, 'accept' => 'image/*'],
         'pluginOptions' => [
             'previewFileType' => 'image',
-            //change here: below line is added just to hide upload button. Its up to you to add this code or not.
-            'showUpload' => false
+            'showUpload' => false,
+            'maxFileCount' => 1,
+            'browseLabel' => 'Chọn ảnh'
         ],
-    ]);
+    ])->label('Ảnh ');
     ?>
     <?php
 //    echo $form->field($model, 'image_id')->widget(FileInput::classname(), [

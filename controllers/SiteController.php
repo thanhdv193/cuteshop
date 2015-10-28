@@ -304,7 +304,7 @@ class SiteController extends Controller
         $textnumber = str_replace("mươi một", "mươi mốt", $textnumber);
         $textnumber = str_replace("mười năm", "mười lăm", $textnumber);
 
-        var_dump('123.056.789');
+        
         var_dump(ucfirst($textnumber . " đồng"));
         die;
         return ucfirst($textnumber . " đồng chẵn");

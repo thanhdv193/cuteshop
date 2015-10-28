@@ -67,10 +67,12 @@ class ProductController
     public function actionCreate()
     {
         $model = new Product();
+        
+        $hash = md5(uniqid('', true));
         if ($_POST)
         {
             $fileImage = UploadedFile::getInstances($model, 'image');
-            $hash = md5(uniqid('', true));
+            
             foreach ($fileImage as $key => $value)
             {
                 $modelImage = new Image();
@@ -95,9 +97,12 @@ class ProductController
             $model->create_date = time();
             $model->sort_order = 0;
             $model->view_count = 0;
+            if($model->product_group_id == null){
+                $model->product_group_id = 0;
+            }
             //$model->product_group_id = 0;
             $model->image =0;
-           //echo'<pre>'; var_dump($model); die;
+           
             if ($model->save())
             {
                 $imageUpload = Image::find()->where(['temp_hash' => $hash])->all();

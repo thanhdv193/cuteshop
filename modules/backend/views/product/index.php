@@ -28,7 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
             [
 
                 'attribute' => 'product_id',
-                'contentOptions' => ['style' => 'width:15px;'],
+                'contentOptions' => ['style' => 'width:10px;'],
             ],
             [
                 'attribute' => 'image',
@@ -38,34 +38,51 @@ $this->params['breadcrumbs'][] = $this->title;
                 {
                     $array = app\models\Image::find()->where(['object_id' => $model['product_id']])->one();
 
-                    return Html::img('@web/' . $array['image_path'] . '' . $array['filename'], ['width' => '100px', 'height' => '70px']);
+                    return Html::img('@web/' . $array['image_path'] . '' . $array['filename'], ['width' => '100px', 'height' => '100px']);
                 },
                     ],
                     'name',
-                    'product_category_id',
-                    'product_group_id',
-                    'product_node_id',
+                    'product_category.name',
+                    [
+                        'attribute' => 'product_group.name',
+                        'label' => 'Nhóm sản phẩm',
+                    ],
                     [
                         'attribute' => 'content',
                         'format' => 'html',
-                    ],
-                    // 'title',
-                    // 'h1',
-                    // 'meta_description',
-                    // 'view_count',
-                    // 'content:ntext',
-                    // 'announce:ntext',
-                    // 'sort_order',
-                    // 'active',
-                    // 'price',
-                    // 'old_price',
-                    // 'quantity_current',
-                    ['class' => 'yii\grid\ActionColumn',
-                        'header' => 'Thao tác',
-                        'headerOptions' => ['width' => '80', 'text-align' => 'center'],
-                    ],
-                ],
-            ]);
-            ?>
+                        'contentOptions' => ['style' => 'width:250px;'],
+                    ],                    
+                    [
+                        'attribute' => 'active',
+                        'format' => 'html',
+                        'label' => 'Trạng thái',
+                        'value' => function ($model)
+                        {
+                            if ($model['active']== 1){
+                                return Html::tag('p', Html::encode('Hiển thị'), ['class' => 'username']) ;
+                            }else{
+                                return Html::tag('p', Html::encode('Ẩn'), ['class' => 'username']) ;
+                            }
+                           
+                        },
+                            ],
+                            // 'title',
+                            // 'h1',
+                            // 'meta_description',
+                            // 'view_count',
+                            // 'content:ntext',
+                            // 'announce:ntext',
+                            // 'sort_order',
+                            // 'active',
+                            // 'price',
+                            // 'old_price',
+                            // 'quantity_current',
+                            ['class' => 'yii\grid\ActionColumn',
+                                'header' => 'Thao tác',
+                                'headerOptions' => ['width' => '80', 'text-align' => 'center'],
+                            ],
+                        ],
+                    ]);
+                    ?>
 
 </div>

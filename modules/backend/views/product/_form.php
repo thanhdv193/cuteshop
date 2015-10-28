@@ -33,7 +33,8 @@ use app\models\ProductCategory;
                 <?=
                 $form->field($model, 'content')->widget(CKEditor::className(), [
                     'editorOptions' => [
-                        'preset' => 'full',
+//                         'preset' => 'full', 
+                        'preset' => 'advanced',
                         'inline' => false,
                         'filebrowserUploadUrl' => Yii::$app->getUrlManager()->createUrl('dashboard/test')
                     ],
@@ -72,7 +73,7 @@ use app\models\ProductCategory;
             <p class="text-muted">Lưu ý: Size mỗi file ảnh không được vượt quá 1 MB.</p>
         </div>
         <div class="col-md-8 col-lg-9">
-            <div class="group-p-infor container-fluid" style="margin-top: 20px;">
+            <div class="group-p-infor container-fluid" style="margin-top: 20px;min-height: 200px;">
                 <?=
                 $form->field($model, 'image[]')->widget(FileInput::classname(), [
                     'options' => ['multiple' => true, 'accept' => 'image/*'],
@@ -93,7 +94,7 @@ use app\models\ProductCategory;
         <div class="col-md-4 col-lg-3">
             <h4>Quản lý tùy chọn</h4>
             <p class="text-muted">Quản lý tùy chọn</p>
-            <p class="text-muted">Lưu ý: Size mỗi file ảnh không được vượt quá 1 MB.</p>
+            
         </div>
         <div class="col-md-8 col-lg-9">
             <div class="group-p-infor container-fluid" style="margin-top: 20px;">
