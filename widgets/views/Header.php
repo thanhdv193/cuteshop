@@ -39,9 +39,16 @@ use yii\helpers;
                 <div class="dropdown">
                     <a class="current-open" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"><span>My Account</span></a>
                     <ul class="dropdown-menu mega_dropdown" role="menu">
-                        <li><a title="My Account" href="#" data-toggle="modal" data-target="#basicModal" class="btn-login">Đăng nhập</a></li>
-                        <li><a href="#">Đăng ký</a></li>
+                        
+                        <?php if (Yii::$app->user->isGuest == false)
+                        { ?>
+                            <li><a title="My Account" href="/site/logout" data-method="post" data-toggle="modal" data-target="#basicModal" class="btn-login">Đăng xuất(<?php echo Yii::$app->user->identity->username ?>)</a>  </li>  
 
+                        <?php } else
+                        { ?>
+                            <li><a title="My Account" href="#" data-toggle="modal" data-target="#basicModal" class="btn-login">Đăng nhập</a></li>
+                        <li><a href="#">Đăng ký</a></li>
+                        <?php } ?>
                     </ul>
                 </div>
             </div>
@@ -132,8 +139,16 @@ use yii\helpers;
                             </div>
                         </div>
                     </div>
-                </div>                                                    
-                <a title="My Account" href="#" data-toggle="modal" data-target="#basicModal" class="btn-login">Đăng nhập</a>
+                </div>       
+                <?php if (Yii::$app->user->isGuest == false)
+                { ?>
+                    <a title="My Account" href="/site/logout" data-method="post" data-toggle="modal" data-target="#basicModal" class="btn-login">Đăng xuất(<?php echo Yii::$app->user->identity->username ?>)</a>  
+
+                <?php } else
+                { ?>
+                    <a title="My Account" href="#" data-toggle="modal" data-target="#basicModal" class="btn-login">Đăng nhập</a>
+                <?php } ?>
+
                 <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content messagepop">                
