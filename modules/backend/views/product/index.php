@@ -47,11 +47,11 @@ $this->params['breadcrumbs'][] = $this->title;
                         'attribute' => 'product_group.name',
                         'label' => 'Nhóm sản phẩm',
                     ],
-                    [
-                        'attribute' => 'content',
-                        'format' => 'html',
-                        'contentOptions' => ['style' => 'width:250px;'],
-                    ],                    
+//                    [
+//                        'attribute' => 'content',
+//                        'format' => 'html',
+//                        'contentOptions' => ['style' => 'width:250px;'],
+//                    ],                    
                     [
                         'attribute' => 'active',
                         'format' => 'html',
