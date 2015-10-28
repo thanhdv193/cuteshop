@@ -36,7 +36,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'label' => 'Ảnh đại diện',
                 'value' => function ($model)
                 {
-                    $array = app\models\Image::find()->where(['object_id' => $model['product_id']])->one();
+                    $array = app\models\Image::find()->where(['object_id' => $model['product_id'],'object_type'=>'product'])->one();
 
                     return Html::img('@web/' . $array['image_path'] . '' . $array['filename'], ['width' => '100px', 'height' => '100px']);
                 },
