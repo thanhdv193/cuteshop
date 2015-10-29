@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers;
+use app\components\helpers\SystemHelper;
 ?>
 <div class="hot-deals-row">
     <div class="container">
@@ -49,8 +50,8 @@ use yii\helpers;
                                         <div class="right-block">
                                             <h5 class="product-name"><a href="#"><?php echo $value['name'] ?></a></h5>
                                             <div class="content_price">
-                                                <span class="price product-price"><?php echo $value['price'] ?></span>
-                                                <span class="price old-price"><?php echo $value['old_price'] ?></span>
+                                                <span class="price product-price"><?php echo SystemHelper::product_price($value['price']) ?></span>
+                                                <span class="price old-price"><?php echo SystemHelper::product_price($value['old_price']) ?></span>
                                             </div>
                                         </div>
                                     </li>

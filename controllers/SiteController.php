@@ -12,7 +12,7 @@ use app\models\SignupForm;
 use app\models\Auth;
 use app\models\User;
 use yii\authclient\OAuth2;
-
+use yii\imagine\Image;
 
 class SiteController extends Controller
 {
@@ -256,11 +256,11 @@ class SiteController extends Controller
 
         for ($i = 0; $i < $length; $i++)
             $unread[$i] = 0;
-        
+
         for ($i = 0; $i < $length; $i++)
         {
             $so = substr($amount, $length - $i - 1, 1);
-            
+
             if (($so == 0) && ($i % 3 == 0) && ($unread[$i] == 0))
             {
                 for ($j = $i + 1; $j < $length; $j ++)
@@ -277,25 +277,25 @@ class SiteController extends Controller
                 }
             }
         }
-        
+
         for ($i = 0; $i < $length; $i++)
         {
             $so = substr($amount, $length - $i - 1, 1);
-            
+
             if ($unread[$i] == 1)
                 continue;
 
             if (($i % 3 == 0) && ($i > 0))
                 $textnumber = $TextLuythua[$i / 3] . " " . $textnumber;
-            
+
             if ($i % 3 == 2)
                 $textnumber = 'trăm ' . $textnumber;
             if ($i % 3 == 1)
                 $textnumber = 'mươi ' . $textnumber;
             $textnumber = $Text[$so] . " " . $textnumber;
         }
-        
-       
+
+
         //Phai de cac ham replace theo dung thu tu nhu the nay
         $textnumber = str_replace("không mươi", "lẻ", $textnumber);
         $textnumber = str_replace("lẻ không", "", $textnumber);
@@ -305,10 +305,31 @@ class SiteController extends Controller
         $textnumber = str_replace("mươi một", "mươi mốt", $textnumber);
         $textnumber = str_replace("mười năm", "mười lăm", $textnumber);
 
-        
+
         var_dump(ucfirst($textnumber . " đồng"));
         die;
         return ucfirst($textnumber . " đồng chẵn");
+    }
+
+    public function actionNumber()
+    {
+        $so = 109000000;
+        var_dump($this->product_price($so)); die;
+    }
+
+    function product_price($priceFloat)
+    {
+        $symbol = 'đ';
+        $symbol_thousand = '.';
+        $decimal_place = 0;
+        $price = number_format($priceFloat, $decimal_place, '', $symbol_thousand);
+        return $price . $symbol;
+    }
+
+    public function actionThumb()
+    {
+        Image::thumbnail('@app/web\upload\product/1446027360_14434952941174681974.png', 300, 300)
+                ->save(Yii::getAlias('@runtime/thumb-test-image2.jpg'), ['quality' => 80]);
     }
 
 }

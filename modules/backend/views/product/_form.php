@@ -16,6 +16,7 @@ use app\models\ProductCategory;
 ?>
 
 <link href="<?= Url::base('http') ?>/css/backend/backend.css" rel="stylesheet">
+
 <div class="product-form pull-right product-form-w">
 
     <?php
