@@ -49,7 +49,7 @@ use app\components\helpers\HelperLink;
                                             -33% OFF
                                         </div>
                                         <div class="right-block">
-                                            <h5 class="product-name"><a href="<?php echo HelperLink::rewriteUrl(1,$value['name'], 'nhan-su') ?>"><?php echo $value['name'] ?></a></h5>
+                                            <h5 class="product-name"><a href="<?php echo HelperLink::rewriteUrl(1,$value['name'], 'san-pham') ?>"><?php echo $value['name'] ?></a></h5>
                                             <div class="content_price">
                                                 <span class="price product-price"><?php echo SystemHelper::product_price($value['price']) ?></span>
                                                 <span class="price old-price"><?php echo SystemHelper::product_price($value['old_price']) ?></span>
