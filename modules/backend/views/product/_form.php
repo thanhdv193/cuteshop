@@ -49,7 +49,7 @@ use app\models\ProductCategory;
                         echo $form->field($model, 'product_category_id')->dropDownList(
                                 $listData, ['prompt' => 'Select...',])->label('Chuyên mục');
                         ?>
-                        
+
                     </div>
                     <div class="col-md-6">
                         <?php
@@ -95,11 +95,11 @@ use app\models\ProductCategory;
         <div class="col-md-4 col-lg-3">
             <h4>Quản lý tùy chọn</h4>
             <p class="text-muted">Quản lý tùy chọn</p>
-            
+
         </div>
         <div class="col-md-8 col-lg-9">
             <div class="group-p-infor container-fluid" style="margin-top: 20px;">
-                <?= $form->field($model, 'quantity_current')->textInput(['maxlength' => true,'placeholder' => 'Nhập số lượng'])->label('Số lượng') ?>
+                <?= $form->field($model, 'quantity_current')->textInput(['maxlength' => true, 'placeholder' => 'Nhập số lượng'])->label('Số lượng') ?>
                 <?php
 //    echo FileInput::widget([
 //        'name' => 'image_id[]',
@@ -112,8 +112,13 @@ use app\models\ProductCategory;
 //        ]
 //    ]);
                 ?>
-
-                <?= $form->field($model, 'price')->textInput(['placeholder' => 'Nhập giá'])->label('Giá mới') ?>
+                <div class="form-group field-product-price">
+                    <label class="control-label" for="product-price">Giá mới</label>
+                    <input type="text" id="price" maxlength="19" value="" class="form-control" name="Product[price]" placeholder="Nhập giá">
+                    <div class="trans_price" id="tprice"></div>
+                    <div class="help-block"></div>
+                </div>
+                <?php //$form->field($model, 'price')->textInput(['placeholder' => 'Nhập giá'])->label('Giá mới') ?>
 
                 <?= $form->field($model, 'old_price')->textInput(['placeholder' => 'Nhập giá'])->label('Giá cũ') ?>
             </div>
@@ -121,13 +126,13 @@ use app\models\ProductCategory;
     </div>
     <div class="row">
         <div class="col-md-4 col-lg-3">
-                    <h4>Tối ưu SEO</h4>
-                    <p class="text-muted">Thiết lập tiêu đề trang, thẻ mô tả, đường dẫn. Những thông tin này xác định cách bài viết xuất hiện trên công cụ tìm kiếm.</p>
-                </div>
+            <h4>Tối ưu SEO</h4>
+            <p class="text-muted">Thiết lập tiêu đề trang, thẻ mô tả, đường dẫn. Những thông tin này xác định cách bài viết xuất hiện trên công cụ tìm kiếm.</p>
+        </div>
         <div class="col-md-8 col-lg-9">
             <div class="group-p-infor container-fluid" style="margin-top: 20px; margin-bottom: 20px;">
-                <?= $form->field($model, 'title')->textInput(['maxlength' => true])  ?>               
-                <?= $form->field($model, 'meta_description')->textInput(['maxlength' => true])  ?>
+                <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>               
+                <?= $form->field($model, 'meta_description')->textInput(['maxlength' => true]) ?>
                 <?php //$form->field($model, 'h1')->textInput(['maxlength' => true])  ?>
             </div>
         </div>

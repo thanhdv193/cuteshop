@@ -1,11 +1,11 @@
 $(document).ready(function () {
     function insertPrice() {
         var a = validateNumber();        
-        var b = $("input#product-price").attr("maxlength");        
+        var b = $("input#price").attr("maxlength");        
         if (a.length > b) {
             a = a.substring(0, b)
         }
-        $("input#product-price").attr("value", a);
+        $("input#price").attr("value", a);
         
         formatPrice()
     }
@@ -33,9 +33,8 @@ $(document).ready(function () {
                     j = j.substr(0, (j.length - 1))
                 }
                 var string = j.split(' ').join('.');
-                //var string = j.replace('/" "/g','.');
-                
-                $("input#product-price").attr("value", string)
+                //var string = j.replace('/" "/g','.');                
+                $("#price").attr("value", string)
             }
         }
     }
@@ -43,8 +42,9 @@ $(document).ready(function () {
     function validateNumber() { 
         var a = "";
         //var e = $("input#price").attr("value");  
-        var e = $("input#product-price").val();                
-        var c = e.length;
+        var e = $("input#price").val(); 
+        
+        var c = e.length;        
         if ((c > 0)) {
             if (!(e === "") && (e != null)) {
                 var c = e.length;
@@ -202,7 +202,7 @@ $(document).ready(function () {
         return e
     }
 
-    $("#product-price").keydown(function (b) {
+    $("#price").keydown(function (b) {
         var a = (b.which) ? b.which : b.keyCode;
         if (a == 46 || a == 8 || a == 37 || a == 39 || a == 9 || a == 229) {
         } else {
@@ -212,7 +212,7 @@ $(document).ready(function () {
         }
     });
     formatPrice();
-    $("input#product-price").on("focusout", function () {
+    $("input#price").on("focusout", function () {
         insertPrice();
         translatePrice()
     }).on("keyup", function () {
