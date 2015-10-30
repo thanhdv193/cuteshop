@@ -112,6 +112,9 @@ use app\models\ProductCategory;
 //        ]
 //    ]);
                 ?>
+               
+
+
                 <div class="form-group field-product-price">
                     <label class="control-label" for="product-price">Giá mới</label>
                     <input type="text" id="price" maxlength="19" value="" class="form-control" name="Product[price]" placeholder="Nhập giá">                    

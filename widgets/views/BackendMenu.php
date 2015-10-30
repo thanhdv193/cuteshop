@@ -9,7 +9,9 @@ use yii\helpers;
         <ul class="acc-menu">
             <li><a href="index-2.html"><i class="fa fa-hom"></i><span>Dashboard</span><span class="badge badge-dark">1</span></a></li>
             <?php foreach ($menu as $key => $value): ?>
-                <li><a href="javascript:;"><i class="fa fa-columns"></i><span><?php echo $value['name'] ?></span>
+                <li><a href="javascript:;"><i class="fa fa-columns"></i><span>
+                    <img class="icon-menu" alt="Funky roots" src="/images/menu/12.png">
+                    <?php echo $value['name'] ?></span>
                         <?php if ($value['count_sub_menu'] > 0)
                         {
                             ?>

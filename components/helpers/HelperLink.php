@@ -6,9 +6,9 @@ use Yii;
 
 class HelperLink {
    public static function rewriteUrl($id,$title,$action){
-       //echo'<pre>'; var_dump($id);echo'<pre>'; var_dump($title); echo'<pre>';var_dump($action); die;
-		$link = Yii::getAlias('@web').'/'. $action.'-'.UrlTransliterate::cleanString($title).'-'.$id.'.html';
-		return urldecode($link);
+       
+		$link = Yii::getAlias('@web').'-'. $action.'-'.UrlTransliterate::cleanString($title).'-'.$id.'.html';		
+                return urldecode($link);
 	}
         public static function rewriteUrllink($id,$title,$action){
 		$link = Yii::getAlias('@web').'/'. $action.'/'.UrlTransliterate::cleanString($title).'-'.$id.'.html';
