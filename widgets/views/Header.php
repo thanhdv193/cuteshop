@@ -39,15 +39,19 @@ use yii\helpers;
                 <div class="dropdown">
                     <a class="current-open" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"><span>My Account</span></a>
                     <ul class="dropdown-menu mega_dropdown" role="menu">
-                        
-                        <?php if (Yii::$app->user->isGuest == false)
-                        { ?>
+
+                        <?php
+                        if (Yii::$app->user->isGuest == false)
+                        {
+                            ?>
                             <li><a title="My Account" href="/site/logout" data-method="post" data-toggle="modal" data-target="#basicModal" class="btn-login">Đăng xuất(<?php echo Yii::$app->user->identity->username ?>)</a>  </li>  
 
-                        <?php } else
-                        { ?>
+                            <?php
+                        } else
+                        {
+                            ?>
                             <li><a title="My Account" href="#" data-toggle="modal" data-target="#basicModal" class="btn-login">Đăng nhập</a></li>
-                        <li><a href="#">Đăng ký</a></li>
+                            <li><a href="#">Đăng ký</a></li>
                         <?php } ?>
                     </ul>
                 </div>
@@ -140,57 +144,97 @@ use yii\helpers;
                         </div>
                     </div>
                 </div>       
-                <?php if (Yii::$app->user->isGuest == false)
-                { ?>
+                <?php
+                if (Yii::$app->user->isGuest == false)
+                {
+                    ?>
                     <a title="My Account" href="/site/logout" data-method="post" data-toggle="modal" data-target="#basicModal" class="btn-login">Đăng xuất(<?php echo Yii::$app->user->identity->username ?>)</a>  
 
-                <?php } else
-                { ?>
+                    <?php
+                } else
+                {
+                    ?>
                     <a title="My Account" href="#" data-toggle="modal" data-target="#basicModal" class="btn-login">Đăng nhập</a>
                 <?php } ?>
 
                 <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content messagepop">                
-                            <button type="button" id="close_p" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            <form id="login-form" class="form-horizontal" action="/index.php/site/login" method="post">
-                                <div class="form-group field-loginform-username required">
-                                    <div class="col-lg-12" id=" messages_register">
-                                        <p style="color:red;" id="login-error" class="help-block help-block-error"></p>
-                                    </div>
-                                </div>
-
-                                <input type="hidden" name="_csrf" value="X0ljdlFmMUosEVE4NgFcOSUGIDsSEWF/KQVVHRwPXSMRGgsDJAtWHA==">
-                                <div class="form-group field-loginform-username required">
-                                    <label class="col-lg-2 control-label" for="loginform-username">Username</label>
-                                    <div class="col-lg-9"><input type="text" id="loginform-username" class="form-control" name="username" placeholder="User name"></div>
-                                    <div class="col-lg-12"><p class="help-block help-block-error"></p></div>
-                                </div>
-                                <div class="form-group field-loginform-password required">
-                                    <label class="col-lg-2 control-label" for="loginform-password">Password</label>
-                                    <div class="col-lg-9"><input type="password" id="loginform-password" class="form-control" name="password" placeholder="Password"></div>
-                                    <div class="col-lg-12"><p class="help-block help-block-error"></p></div>
-                                </div>
-
-                                <div class="form-group field-loginform-rememberme">
-                                    <div class="checkbox">
+                    <!--                    <div class="modal-dialog">
+                                            <div class="modal-content messagepop">                
+                                                <button type="button" id="close_p" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                <form id="login-form" class="form-horizontal" action="/index.php/site/login" method="post">
+                                                    <div class="form-group field-loginform-username required">
+                                                        <div class="col-lg-12" id=" messages_register">
+                                                            <p style="color:red;" id="login-error" class="help-block help-block-error"></p>
+                                                        </div>
+                                                    </div>
+                    
+                                                    <input type="hidden" name="_csrf" value="X0ljdlFmMUosEVE4NgFcOSUGIDsSEWF/KQVVHRwPXSMRGgsDJAtWHA==">
+                                                    <div class="form-group field-loginform-username required">
+                                                        <label class="col-lg-2 control-label" for="loginform-username">Username</label>
+                                                        <div class="col-lg-9"><input type="text" id="loginform-username" class="form-control" name="username" placeholder="User name"></div>
+                                                        <div class="col-lg-12"><p class="help-block help-block-error"></p></div>
+                                                    </div>
+                                                    <div class="form-group field-loginform-password required">
+                                                        <label class="col-lg-2 control-label" for="loginform-password">Password</label>
+                                                        <div class="col-lg-9"><input type="password" id="loginform-password" class="form-control" name="password" placeholder="Password"></div>
+                                                        <div class="col-lg-12"><p class="help-block help-block-error"></p></div>
+                                                    </div>
+                    
+                                                    <div class="form-group field-loginform-rememberme">
+                                                        <div class="checkbox">
+                                                            <input type="hidden" name="LoginForm[rememberMe]" value="0">
+                                                            <input type="checkbox" id="loginform-rememberme" name="LoginForm[rememberMe]" value="1" checked="">
+                                                            <span style="padding: 0px 0px 0px 16px;">Duy trì đăng nhập</span>                
+                                                        </div>
+                                                    </div>
+                    
+                                                    <div class="form-group">
+                                                        <div class="col-lg-offset-1 col-lg-11">
+                                                            <button type="submit" id="login-button" class="btn btn-primary" name="login-button">Login</button>       
+                                                            <button type="button"  class="close_popup btn btn-danger">Cance</button>
+                                                        </div>
+                                                    </div>
+                    
+                                                </form>                
+                    
+                                            </div>
+                                        </div>-->
+                    <!-- Form Module-->
+                    <div class="module form-module">
+                        <div class="toggle">
+<!--                            <i class="fa fa-times fa-pencil"></i>-->
+                            <img class="icon-menu" alt="Funky roots" src="/images/icon-close.png">
+                            <div class="tooltip register">Đăng ký</div>
+                        </div>
+                        <div class="form">
+                            <h2>Đăng nhập </h2>
+                            <form>
+                                <input type="text" placeholder="Username"/>
+                                <input type="password" placeholder="Password"/>
+                                <div class="checkbox">
+                                    <span>
                                         <input type="hidden" name="LoginForm[rememberMe]" value="0">
                                         <input type="checkbox" id="loginform-rememberme" name="LoginForm[rememberMe]" value="1" checked="">
-                                        <span style="padding: 0px 0px 0px 16px;">Duy trì đăng nhập</span>                
-                                    </div>
+                                    </span>
+
+                                    <span style="padding: 0px 0px 0px 16px;">Duy trì đăng nhập</span>                
                                 </div>
-
-                                <div class="form-group">
-                                    <div class="col-lg-offset-1 col-lg-11">
-                                        <button type="submit" id="login-button" class="btn btn-primary" name="login-button">Login</button>       
-                                        <button type="button"  class="close_popup btn btn-danger">Cance</button>
-                                    </div>
-                                </div>
-
-                            </form>                
-
+                                <button>Login</button>
+                            </form>
                         </div>
+                        <div class="form">
+                            <h2>Tạo tài khoản</h2>
+                            <form>
+                                <input type="text" placeholder="Username"/>
+                                <input type="password" placeholder="Password"/>
+                                <input type="email" placeholder="Email Address"/>
+                                <input type="tel" placeholder="Phone Number"/>
+                                <button>Đăng ký</button>
+                            </form>
+                        </div>
+                        <div class="cta"><a href="">Quên mật khẩu?</a></div>
                     </div>
+
                 </div> 
 
                 <!--                <a title="My Wishlist" href="#" class="btn-heart">Wish list</a>-->
