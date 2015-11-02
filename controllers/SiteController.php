@@ -314,7 +314,8 @@ class SiteController extends Controller
     public function actionNumber()
     {
         $so = 109000000;
-        var_dump($this->product_price($so)); die;
+        var_dump($this->product_price($so));
+        die;
     }
 
     function product_price($priceFloat)
@@ -335,6 +336,22 @@ class SiteController extends Controller
     {
         
         
+    }
+
+    public function actionCaptCha()
+    {
+        if (Yii::$app->request->post())
+        {
+           
+            $ip = $_SERVER['REMOTE_ADDR'];
+            $response = $_POST['g-recaptcha-response'];
+            $file = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6Ld2GBATAAAAAOhFiHtyCn6GMB1-5hBKkVGF2TCZ&response=".$response."&remoteip='.$ip.'");
+            $json = json_decode($file);
+            var_dump($json); die;
+        } else
+        {
+            return $this->render('captcha');
+        }
     }
 
 }
