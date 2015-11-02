@@ -331,5 +331,10 @@ class SiteController extends Controller
         Image::thumbnail('@app/web\upload\product/1446027360_14434952941174681974.png', 300, 300)
                 ->save(Yii::getAlias('@runtime/thumb-test-image2.jpg'), ['quality' => 80]);
     }
+    public function actionMenu()
+    {
+        
+        
+    }
 
 }
