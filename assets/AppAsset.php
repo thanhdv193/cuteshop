@@ -43,6 +43,7 @@ class AppAsset extends AssetBundle
         'lib/jquery.bxslider/jquery.bxslider.min.js',
         'js/theme-script.js',
          'js/register/popup.js',
+        'https://www.google.com/recaptcha/api.js'
         
         
     ];
