@@ -446,6 +446,11 @@ class SiteController extends Controller
         imagedestroy($img);
         return $returnvalue;
     }
+    public function actionMenu()
+    {
+        
+        
+    }
 
     public function actionCaptCha()
     {
