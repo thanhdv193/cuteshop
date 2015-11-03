@@ -15,6 +15,7 @@ use yii\authclient\OAuth2;
 use yii\imagine\Image;
 use yii\helpers\Url;
 use app\components\helpers\ImageHelper;
+use app\components\helpers\FunctionService;
 
 class SiteController extends Controller
 {
@@ -356,6 +357,7 @@ class SiteController extends Controller
 
     public function actionThumb()
     {
+       $a = FunctionService::getServices();
 
         $url1 = Yii::$app->request->baseUrl . 'upload/photos/demo3.jpg';
         $url2 = Yii::$app->request->baseUrl . 'upload/photos/thumbs/demo31.jpg';
