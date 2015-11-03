@@ -13,6 +13,8 @@ use app\models\Auth;
 use app\models\User;
 use yii\authclient\OAuth2;
 use yii\imagine\Image;
+use yii\helpers\Url;
+use app\components\helpers\ImageHelper;
 
 class SiteController extends Controller
 {
@@ -313,8 +315,33 @@ class SiteController extends Controller
 
     public function actionNumber()
     {
-        $so = 109000000;
-        var_dump($this->product_price($so));
+        $message_id = md5(uniqid('', true));
+        $otp = $randomString = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, 4);
+        $expiration = 10;
+        ;
+        $data = array('username' => 'muare_otp',
+            'password' => '3T6r5u',
+            'message' => 'Ma OTP cua ban la ' . $otp . '. Ma OTP ton tai trong ' . $expiration . ' phut. ',
+            'brandname' => 'Muare',
+            'recipients' => array(
+                array(
+                    'message_id' => '089hjd',
+                    'number' => '01647519202'
+                )
+        ));
+        $params = json_encode($data);
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, 'http://api.bipbip.vn/api/send');
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Accept: application/json', 'Content-Type: application/json'));
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+        $result = curl_exec($ch);
+        curl_close($ch);
+        $result = json_decode($result);
+        echo'<pre>';
+        var_dump($result);
         die;
     }
 
@@ -329,20 +356,108 @@ class SiteController extends Controller
 
     public function actionThumb()
     {
-        Image::thumbnail('@app/web\upload\product/1446027360_14434952941174681974.png', 300, 300)
-                ->save(Yii::getAlias('@runtime/thumb-test-image2.jpg'), ['quality' => 80]);
+
+        $url1 = Yii::$app->request->baseUrl . 'upload/photos/demo3.jpg';
+        $url2 = Yii::$app->request->baseUrl . 'upload/photos/thumbs/demo31.jpg';
+        ImageHelper::resizeImage($url1, $url2, '200', '200');       
+        die;
+    }
+    
+    
+
+    function set_thumb($file, $photos_dir, $thumbs_dir, $width_w = 150, $height_h = 167, $square_size = 167, $quality = 100)
+    {
+        //check if thumb exists
+        if (!file_exists($thumbs_dir . "/" . $file))
+        {
+//            echo '<pre>';
+//            var_dump(getimagesize($photos_dir . "/" . $file));
+//            die;
+            //get image info
+            list($width, $height, $type, $attr) = getimagesize($photos_dir . "/" . $file);
+
+            //set dimensions
+            if ($width > $height)
+            {
+                $width_t = $width_w;
+                //respect the ratio
+                $height_t = round($height / $width * $height_h);
+                //set the offset
+                $off_y = ceil(($width_t - $height_t) / 2);
+                $off_x = 0;
+            } elseif ($height > $width)
+            {
+                $height_t = $height_h;
+                $width_t = round($width / $height * $width_w);
+
+                $off_x = ceil(($height_t - $width_t) / 2);
+                $off_y = 0;
+            } else
+            {
+                $width_t = $height_t = $square_size;
+                $off_x = $off_y = 0;
+            }
+
+            $thumb = imagecreatefromjpeg($photos_dir . "/" . $file);
+            $thumb_p = imagecreatetruecolor($width_w, $height_h);
+            //default background is black
+            $bg = imagecolorallocate($thumb_p, 255, 255, 255);
+            imagefill($thumb_p, 0, 0, $bg);
+            imagecopyresampled($thumb_p, $thumb, $off_x, $off_y, 0, 0, $width_t, $height_t, $width, $height);
+            imagejpeg($thumb_p, $thumbs_dir . "/" . $file, $quality);
+        }
+    }
+
+    public function createThumbnailofSize($sourcefilepath, $destdir, $reqwidth, $reqheight, $aspectratio = false)
+    {
+        /*
+         * $sourcefilepath =  absolute source file path of jpeg
+         * $destdir =  absolute path of destination directory of thumbnail ending with "/"
+         */
+        $thumbWidth = $reqwidth; /* pixels */
+        $filename = split("[/\\]", $sourcefilepath);
+        $filename = $filename[count($filename) - 1];
+        $thumbnail_path = $destdir . $filename;
+        $image_file = $sourcefilepath;
+
+        $img = imagecreatefromjpeg($image_file);
+        $width = imagesx($img);
+        $height = imagesy($img);
+
+        // calculate thumbnail size
+        $new_width = $thumbWidth;
+        if ($aspectratio == true)
+        {
+            $new_height = floor($height * ( $thumbWidth / $width ));
+        } else
+        {
+            $new_height = $reqheight;
+        }
+
+        // create a new temporary image
+        $tmp_img = imagecreatetruecolor($new_width, $new_height);
+
+        // copy and resize old image into new image
+        imagecopyresized($tmp_img, $img, 0, 0, 0, 0, $new_width, $new_height, $width, $height);
+
+        // save thumbnail into a file
+
+        $returnvalue = imagejpeg($tmp_img, $thumbnail_path, 100);
+        imagedestroy($img);
+        return $returnvalue;
     }
 
     public function actionCaptCha()
     {
         if (Yii::$app->request->post())
         {
-           
+
             $ip = $_SERVER['REMOTE_ADDR'];
             $response = $_POST['g-recaptcha-response'];
-            $file = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6Ld2GBATAAAAAOhFiHtyCn6GMB1-5hBKkVGF2TCZ&response=".$response."&remoteip='.$ip.'");
+            $file = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6Ld2GBATAAAAAOhFiHtyCn6GMB1-5hBKkVGF2TCZ&response=" . $response . "&remoteip='.$ip.'");
             $json = json_decode($file);
-            var_dump($json); die;
+            var_dump($json);
+            die;
         } else
         {
             return $this->render('captcha');
