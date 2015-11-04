@@ -20,7 +20,7 @@ class AppAsset extends AssetBundle
     public $css = [
         'css/site.css',
         'css/layout/style.css',
-        'css/lib/bootstrap/css/bootstrap.min.css',
+        'lib/bootstrap/css/bootstrap.min.css',
         'css/layout/reset.css',
         'css/layout/option3.css',
         'css/layout/animate.css',
@@ -41,6 +41,8 @@ class AppAsset extends AssetBundle
         'lib/countdown/jquery.countdown.js',        
         'lib/owl.carousel/owl.carousel.min.js',
         'lib/jquery.bxslider/jquery.bxslider.min.js',
+        'js/jquery.elevatezoom.js',
+        'lib/fancyBox/jquery.fancybox.js',
         'js/theme-script.js',
          'js/register/popup.js',
         'https://www.google.com/recaptcha/api.js'

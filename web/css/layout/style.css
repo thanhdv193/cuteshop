@@ -3169,7 +3169,7 @@ span.notify-right{
     width: 16px;
     height: 100%;
     float: left;
-    background:url("../images/cart.png") no-repeat scroll left center;
+    background:url("/images/cart.png") no-repeat scroll left center;
     content: " ";
     margin-right: 15px;
 }

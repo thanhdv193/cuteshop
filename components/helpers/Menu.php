@@ -31,7 +31,7 @@ class Menu
             echo '<ul class="items">';
             foreach ($menu_tmp as $item)
             {             
-                echo '<li class="node_'.$item['id'].'">';
+                echo '<li class="cl_li node_'.$item['id'].'">';
                             
                 echo '<a href="'.$item['route'].'">'.$item['name'].'</a>';                                                                 
                 // Gọi lại đệ quy

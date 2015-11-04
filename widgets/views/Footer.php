@@ -9,7 +9,7 @@ use yii\helpers;
              <div class="row">
                  <div class="col-sm-3">
                      <div class="footer-logo">
-                         <a href="#"><img src="assets/data/option3/logo3.png" alt="Logo"></a>
+                         <a href="#"><img src="" alt="Logo"></a>
                      </div>
                  </div>
                  <div class="col-sm-6">
@@ -126,7 +126,7 @@ use yii\helpers;
                          </div>
                          <div class="col-sm-4">
                              <div class="footer-payment-logo">
-                                 <img src="assets/data/option3/payment-logo.png" alt="payment logo">
+                                 <img src="" alt="payment logo">
                              </div>
                          </div>
                      </div>
