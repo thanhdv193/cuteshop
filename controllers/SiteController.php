@@ -16,6 +16,7 @@ use yii\imagine\Image;
 use yii\helpers\Url;
 use app\components\helpers\ImageHelper;
 use app\components\helpers\FunctionService;
+use app\models\Menu;
 
 class SiteController extends Controller
 {
@@ -450,7 +451,8 @@ class SiteController extends Controller
     }
     public function actionMenu()
     {
-        
+        $menu = Menu::find()->asArray()->all();
+        return $this->render('menu',['data'=>$menu]);
         
     }
 
