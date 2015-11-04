@@ -358,7 +358,7 @@ class SiteController extends Controller
     public function actionThumb()
     {
        $a = FunctionService::getServices();
-
+       echo'<pre>'; var_dump($a); die;
         $url1 = Yii::$app->request->baseUrl . 'upload/photos/demo3.jpg';
         $url2 = Yii::$app->request->baseUrl . 'upload/photos/thumbs/demo31.jpg';
         ImageHelper::resizeImage($url1, $url2, '200', '200');       

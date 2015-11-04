@@ -21,9 +21,9 @@ use yii\rbac\DbManager;
 class FunctionService
 {
 
-    //private static $root = "../../backend/controllers";
-   // private static $root = "modules/backend/controllers";
-    private static $root = 'http://localhost:803/modules/backend/controllers';
+    //private static $root = "/../../backend/controllers";
+    private static $root = "../modules/backend/controllers";
+    
     /**
      * get all quyền 
      * @return string

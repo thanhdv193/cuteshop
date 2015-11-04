@@ -8,14 +8,15 @@ class FileUtils {
         $files = array('files' => array(), 'dirs' => array());
         $directories = array();
         $last_letter = $root[strlen($root) - 1];
-        $root = ($last_letter == '\\' || $last_letter == '/') ? $root : $root . DIRECTORY_SEPARATOR;
+        $root = ($last_letter == '\\' || $last_letter == '/') ? $root : $root . DIRECTORY_SEPARATOR;  
         
         $directories[] = $root;
-
+        
         while (sizeof($directories)) {
             $dir = array_pop($directories);
             
-            if ($handle = opendir($_SERVER[$dir])) {
+            if ($handle = opendir($dir)) {
+                
                 while (false !== ($file = readdir($handle))) {
                     if ($file == '.' || $file == '..') {
                         continue;
