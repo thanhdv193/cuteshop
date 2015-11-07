@@ -18,11 +18,13 @@
         if ($('#product-zoom').length > 0) {
             $('#product-zoom').elevateZoom({
                 zoomType: "window",
-                cursor: "crosshair",
+                cursor: "pointer",
+                galleryActiveClass: 'active',
+                
                 zoomWindowFadeIn: 500,
                 zoomWindowFadeOut: 750,
                 gallery: 'gallery_01',
-                zoomWindowWidth: 500,
+                zoomWindowWidth: 400,
                 zoomWindowHeight: 400,
                 responsive: true,
                 //zoomType:"Window",
