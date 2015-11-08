@@ -20,4 +20,13 @@ class ProductController extends Controller
         $product['list-image'] = $imageProduct;
         return $this->render('product-detail',['data'=>$product]);
     }
+    public function actionProductCategory($id)
+    {
+        return $this->render('product-category');
+    }
+    
+    public function actionContact()
+    {
+        return $this->render('contact ');
+    }
 }

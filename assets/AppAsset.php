@@ -33,6 +33,7 @@ class AppAsset extends AssetBundle
         
     ];
     public $js = [
+        'lib/jquery-ui/jquery-ui.min.js',
         'js/main.js',
         'lib/bootstrap/js/bootstrap.min.js',
         'lib/select2/js/select2.min.js',        
@@ -45,7 +46,7 @@ class AppAsset extends AssetBundle
         'lib/fancyBox/jquery.fancybox.js',
         'js/theme-script.js',
          'js/register/popup.js',
-        'https://www.google.com/recaptcha/api.js'
+//        'https://www.google.com/recaptcha/api.js'
         
         
     ];
