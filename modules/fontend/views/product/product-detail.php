@@ -304,7 +304,7 @@ use app\widgets\HotDealWidget;
                             <!-- product-imge-->
                         </div>
                         <div class="pb-right-column col-xs-12 col-sm-6">
-                            <h1 class="product-name">Maecenas consequat mauris</h1>
+                            <h1 class="product-name">Tên sản phẩm</h1>
                             <div class="product-comments">
                                 <div class="product-star">
                                     <i class="fa fa-star"></i>
@@ -319,8 +319,22 @@ use app\widgets\HotDealWidget;
                                 </div>
                             </div>
                             <div class="product-price-group">
-                                <span class="price">$38.95</span>
-                                <span class="old-price">$52.00</span>
+                                <span class="price">38.95
+                                    <label style="
+                                                   position: absolute;
+                                                   top: 0;
+                                                   right: -16px;
+                                                   font-size: 12px;
+                                                   ">đ</label>
+                                </span>
+                                <span class="old-price">52.00
+                                    <label style="
+                                                   position: absolute;
+                                                   top: 0;
+                                                   right: -16px;
+                                                   font-size: 12px;
+                                                   ">đ</label>
+                                </span>
                                 <span class="discount">-30%</span>
                             </div>
                             <div class="info-orther">

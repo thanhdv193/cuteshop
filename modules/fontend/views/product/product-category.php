@@ -1,15 +1,16 @@
 <?php
 
 use yii\helpers;
-use app\widgets\HotDealWidget;
+use app\components\helpers\HelperLink;
+$this->title = 'Danh mục';
 ?>
 <div class="columns-container">
     <div class="container" id="columns">
         <!-- breadcrumb -->
         <div class="breadcrumb clearfix">
-            <a class="home" href="#" title="Return to Home">Home</a>
+            <a class="home" href="#" title="Return to Home">Trang chủ</a>
             <span class="navigation-pipe">&nbsp;</span>
-            <span class="navigation_page">Fashion</span>
+            <span class="navigation_page">Thời trang nữ</span>
         </div>
         <!-- ./breadcrumb -->
         <!-- row -->
@@ -29,7 +30,7 @@ use app\widgets\HotDealWidget;
                                             <div class="product-conatainer">
                                                 <div class="product-thumb">
                                                     <a href="#">
-                                                        <img src="assets/data/ld2.jpg" alt="Product">
+                                                        <img src="" alt="Product">
                                                     </a>
                                                 </div>
                                                 <div class="product-info">
@@ -57,7 +58,7 @@ use app\widgets\HotDealWidget;
                                             <div class="product-conatainer">
                                                 <div class="product-thumb">
                                                     <a href="#">
-                                                        <img src="assets/data/ld1.jpg" alt="Product">
+                                                        <img src="" alt="Product">
                                                     </a>
                                                 </div>
                                                 <div class="product-info">
@@ -85,7 +86,7 @@ use app\widgets\HotDealWidget;
                                             <div class="product-conatainer">
                                                 <div class="product-thumb">
                                                     <a href="#">
-                                                        <img src="assets/data/ld3.jpg" alt="Product">
+                                                        <img src="" alt="Product">
                                                     </a>
                                                 </div>
                                                 <div class="product-info">
@@ -404,9 +405,9 @@ use app\widgets\HotDealWidget;
                 <!-- left silide -->
                 <div class="col-left-slide left-module">
                     <ul class="owl-carousel owl-style2" data-loop="true" data-nav = "false" data-margin = "30" data-autoplayTimeout="1000" data-autoplayHoverPause = "true" data-items="1" data-autoplay="true">
-                        <li><a href="#"><img src="assets/data/slide-left.jpg" alt="slide-left"></a></li>
-                        <li><a href="#"><img src="assets/data/slide-left2.jpg" alt="slide-left"></a></li>
-                        <li><a href="#"><img src="assets/data/slide-left3.png" alt="slide-left"></a></li>
+                        <li><a href="#"><img src="" alt="slide-left"></a></li>
+                        <li><a href="#"><img src="" alt="slide-left"></a></li>
+                        <li><a href="#"><img src="" alt="slide-left"></a></li>
                     </ul>
 
                 </div>
@@ -419,7 +420,7 @@ use app\widgets\HotDealWidget;
                             <li>
                                 <div class="products-block-left">
                                     <a href="#">
-                                        <img src="assets/data/product-100x122.jpg" alt="SPECIAL PRODUCTS">
+                                        <img src="" alt="SPECIAL PRODUCTS">
                                     </a>
                                 </div>
                                 <div class="products-block-right">
@@ -482,7 +483,7 @@ use app\widgets\HotDealWidget;
                             <li>
                                 <div class="client-mane">Roverto & Maria</div>
                                 <div class="client-avarta">
-                                    <img src="assets/data/testimonial.jpg" alt="client-avarta">
+                                    <img src="" alt="client-avarta">
                                 </div>
                                 <div class="testimonial">
                                     "Your product needs to improve more. To suit the needs and update your image up"
@@ -491,7 +492,7 @@ use app\widgets\HotDealWidget;
                             <li>
                                 <div class="client-mane">Roverto & Maria</div>
                                 <div class="client-avarta">
-                                    <img src="assets/data/testimonial.jpg" alt="client-avarta">
+                                    <img src="" alt="client-avarta">
                                 </div>
                                 <div class="testimonial">
                                     "Your product needs to improve more. To suit the needs and update your image up"
@@ -500,7 +501,7 @@ use app\widgets\HotDealWidget;
                             <li>
                                 <div class="client-mane">Roverto & Maria</div>
                                 <div class="client-avarta">
-                                    <img src="assets/data/testimonial.jpg" alt="client-avarta">
+                                    <img src="" alt="client-avarta">
                                 </div>
                                 <div class="testimonial">
                                     "Your product needs to improve more. To suit the needs and update your image up"
@@ -515,74 +516,74 @@ use app\widgets\HotDealWidget;
             <!-- Center colunm-->
             <div class="center_column col-xs-12 col-sm-9" id="center_column">
                 <!-- category-slider -->
-<!--                <div class="category-slider">
-                    <ul class="owl-carousel owl-style2" data-dots="false" data-loop="true" data-nav = "true" data-autoplayTimeout="1000" data-autoplayHoverPause = "true" data-items="1">
-                        <li>
-                            <img src="assets/data/category-slide.jpg" alt="category-slider">
-                        </li>
-                        <li>
-                            <img src="assets/data/slide-cart2.jpg" alt="category-slider">
-                        </li>
-                    </ul>
-                </div>-->
+                <!--                <div class="category-slider">
+                                    <ul class="owl-carousel owl-style2" data-dots="false" data-loop="true" data-nav = "true" data-autoplayTimeout="1000" data-autoplayHoverPause = "true" data-items="1">
+                                        <li>
+                                            <img src="assets/data/category-slide.jpg" alt="category-slider">
+                                        </li>
+                                        <li>
+                                            <img src="assets/data/slide-cart2.jpg" alt="category-slider">
+                                        </li>
+                                    </ul>
+                                </div>-->
                 <!-- ./category-slider -->
 
                 <!-- category short-description -->
-<!--                <div class="cat-short-desc">
-                    <div class="desc-text text-left">
-                        <p>
-                            Mauris accumsan nulla vel diam. Sed in lacus ut enim adipiscing aliquet. Nulla venenatis. In pede mi, aliquet sit amet, euismod in, auctor ut, ligula. Aliquam dapibus tincidunt metus. Praesent justo dolor, lobortis quis, lobortis dignissim, pulvinar ac, lorem. Vestibulum sed ante. Donec sagittis euismod purus. Sed ut perspiciatis sit voluptatem accusantim doloremque laudantim.
-                        </p>
-                    </div>
-                    <div class="cat-short-desc-products">
-                        <ul class="row">
-                            <li class="col-sm-3">
-                                <div class="product-container">
-                                    <div class="product-thumb">
-                                        <a href="#"><img src="assets/data/sub-cat1.jpg" alt="Product"></a>
+                <!--                <div class="cat-short-desc">
+                                    <div class="desc-text text-left">
+                                        <p>
+                                            Mauris accumsan nulla vel diam. Sed in lacus ut enim adipiscing aliquet. Nulla venenatis. In pede mi, aliquet sit amet, euismod in, auctor ut, ligula. Aliquam dapibus tincidunt metus. Praesent justo dolor, lobortis quis, lobortis dignissim, pulvinar ac, lorem. Vestibulum sed ante. Donec sagittis euismod purus. Sed ut perspiciatis sit voluptatem accusantim doloremque laudantim.
+                                        </p>
                                     </div>
-                                    <h5 class="product-name">
-                                        <a href="#">Sub category 1</a>
-                                        <span>(90)</span>
-                                    </h5>
-                                </div>
-                            </li>
-                            <li class="col-sm-3">
-                                <div class="product-container">
-                                    <div class="product-thumb">
-                                        <a href="#"><img src="assets/data/sub-cat2.jpg" alt="Product"></a>
+                                    <div class="cat-short-desc-products">
+                                        <ul class="row">
+                                            <li class="col-sm-3">
+                                                <div class="product-container">
+                                                    <div class="product-thumb">
+                                                        <a href="#"><img src="assets/data/sub-cat1.jpg" alt="Product"></a>
+                                                    </div>
+                                                    <h5 class="product-name">
+                                                        <a href="#">Sub category 1</a>
+                                                        <span>(90)</span>
+                                                    </h5>
+                                                </div>
+                                            </li>
+                                            <li class="col-sm-3">
+                                                <div class="product-container">
+                                                    <div class="product-thumb">
+                                                        <a href="#"><img src="assets/data/sub-cat2.jpg" alt="Product"></a>
+                                                    </div>
+                                                    <h5 class="product-name">
+                                                        <a href="#">Sub category 2</a>
+                                                        <span>(55)</span>
+                                                    </h5>
+                                                </div>
+                                            </li>
+                                            <li class="col-sm-3">
+                                                <div class="product-container">
+                                                    <div class="product-thumb">
+                                                        <a href="#"><img src="assets/data/sub-cat3.jpg" alt="Product"></a>
+                                                    </div>
+                                                    <h5 class="product-name">
+                                                        <a href="#">Sub category 3</a>
+                                                        <span>(100)</span>
+                                                    </h5>
+                                                </div>
+                                            </li>
+                                            <li class="col-sm-3">
+                                                <div class="product-container">
+                                                    <div class="product-thumb">
+                                                        <a href="#"><img src="assets/data/sub-cat4.jpg" alt="Product"></a>
+                                                    </div>
+                                                    <h5 class="product-name">
+                                                        <a href="#">Sub category 4</a>
+                                                        <span>(70)</span>
+                                                    </h5>
+                                                </div>
+                                            </li>
+                                        </ul>
                                     </div>
-                                    <h5 class="product-name">
-                                        <a href="#">Sub category 2</a>
-                                        <span>(55)</span>
-                                    </h5>
-                                </div>
-                            </li>
-                            <li class="col-sm-3">
-                                <div class="product-container">
-                                    <div class="product-thumb">
-                                        <a href="#"><img src="assets/data/sub-cat3.jpg" alt="Product"></a>
-                                    </div>
-                                    <h5 class="product-name">
-                                        <a href="#">Sub category 3</a>
-                                        <span>(100)</span>
-                                    </h5>
-                                </div>
-                            </li>
-                            <li class="col-sm-3">
-                                <div class="product-container">
-                                    <div class="product-thumb">
-                                        <a href="#"><img src="assets/data/sub-cat4.jpg" alt="Product"></a>
-                                    </div>
-                                    <h5 class="product-name">
-                                        <a href="#">Sub category 4</a>
-                                        <span>(70)</span>
-                                    </h5>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>-->
+                                </div>-->
                 <!-- ./category short-description -->
                 <!-- view-product-list-->
                 <div id="view-product-list" class="view-product-list">
@@ -613,7 +614,7 @@ use app\widgets\HotDealWidget;
                                     </div>
                                 </div>
                                 <div class="right-block">
-                                    <h5 class="product-name"><a href="#">Áo váy nữ giá siêu rẻ</a></h5>
+                                    <h5 class="product-name"><a href="<?php echo HelperLink::rewriteUrllink(1,'Áo váy nữ', 'san-pham') ?>">Áo váy nữ giá siêu rẻ</a></h5>
                                     <div class="product-star">
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
@@ -622,8 +623,22 @@ use app\widgets\HotDealWidget;
                                         <i class="fa fa-star-half-o"></i>
                                     </div>
                                     <div class="content_price">
-                                        <span class="price product-price">1.000.000 vnd</span>
-                                        <span class="price old-price">1.500.000 vnd</span>
+                                        <span class="price product-price">1.000.000 
+                                            <label style="
+                                                   position: absolute;
+                                                   top: 0;
+                                                   right: -9px;
+                                                   font-size: 12px;
+                                                   ">đ</label>
+                                        </span>
+                                        <span class="price old-price">1.500.000 
+                                            <label style="
+                                                   position: absolute;
+                                                   top: 0;
+                                                   right: -9px;
+                                                   font-size: 12px;
+                                                   ">đ</label>
+                                        </span>
                                     </div>
                                     <div class="info-orther">
                                         <p>Item Code: #453217907</p>
