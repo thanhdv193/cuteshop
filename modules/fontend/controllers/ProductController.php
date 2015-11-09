@@ -25,8 +25,5 @@ class ProductController extends Controller
         return $this->render('product-category');
     }
     
-    public function actionContact()
-    {
-        return $this->render('contact ');
-    }
+    
 }

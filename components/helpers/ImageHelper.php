@@ -80,7 +80,7 @@ class ImageHelper
         {
             if ($newH > $oldH)
             {
-                $dims = $this->resizeBoundary($oldW, $oldH, '', $oldH);
+                $dims = self::resizeBoundary($oldW, $oldH, '', $oldH);
                 $finalH = $dims['height'];
                 $finalW = $dims['width'];
             } else
@@ -92,7 +92,7 @@ class ImageHelper
         {
             if ($newW > $oldW)
             {
-                $dims = $this->resizeBoundary($oldW, $oldH, $oldW, '');
+                $dims = self::resizeBoundary($oldW, $oldH, $oldW, '');
                 $finalH = $dims['height'];
                 $finalW = $dims['width'];
             } else
@@ -106,7 +106,7 @@ class ImageHelper
             {
                 if ($newW > $oldW)
                 {
-                    $dims = $this->resizeBoundary($oldW, $oldH, $oldW, '');
+                    $dims = self::resizeBoundary($oldW, $oldH, $oldW, '');
                     $finalH = $dims['height'];
                     $finalW = $dims['width'];
                 } else
@@ -118,7 +118,7 @@ class ImageHelper
             {
                 if ($newH > $oldH)
                 {
-                    $dims = $this->resizeBoundary($oldW, $oldH, '', $oldH);
+                    $dims = self::resizeBoundary($oldW, $oldH, '', $oldH);
                     $finalH = $dims['height'];
                     $finalW = $dims['width'];
                 } else

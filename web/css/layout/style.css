@@ -4072,10 +4072,10 @@ span.notify-right{
 /* ----------------
  [19. Contact page]
 */
-#contact{
+#contact_form{
     margin-top: 20px;
 }
-#contact .page-subheading {
+#contact_form .page-subheading {
     padding-left: 0px;
     border: none;
     margin: 14px 0 30px;
@@ -4084,32 +4084,32 @@ span.notify-right{
     color: #666;
 }
 
-#contact .contact-form-box {
+#contact_form .contact-form-box {
     padding: 0;
     margin: 0 0 30px 0;
 }
-#contact .contact-form-box label{
+#contact_form .contact-form-box label{
     padding-bottom: 5px;
 }
-#contact .contact-form-box .form-selector{
+#contact_form .contact-form-box .form-selector{
     padding-bottom: 25px;
 }
-#contact input,
-#contact select,
-#contact textarea{
+#contact_form input,
+#contact_form select,
+#contact_form textarea{
     border-radius: 0;
     border-color: #eaeaea;
     box-shadow: inherit;
     outline: 0 none;
 }
 
-#contact input:focus,
-#contact select:focus,
-#contact textarea:focus{
+#contact_form input:focus,
+#contact_form select:focus,
+#contact_form textarea:focus{
     box-shadow: inherit;
     outline: 0 none;
 }
-#contact #btn-send-contact{
+#contact_form #btn-send-contact{
     font-size: 14px;
     line-height: 18px;
     color: white;
@@ -4122,7 +4122,7 @@ span.notify-right{
     border: none;
     padding: 10px 25px;
 }
-#contact #btn-send-contact:hover{
+#contact_form #btn-send-contact:hover{
     background: #F36;
 }
 #contact_form_map ul {
