@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50626
 File Encoding         : 65001
 
-Date: 2015-10-22 12:24:23
+Date: 2015-11-09 17:15:58
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -26,3 +26,10 @@ CREATE TABLE `image_type` (
   `create_date` int(10) unsigned NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- ----------------------------
+-- Records of image_type
+-- ----------------------------
+INSERT INTO `image_type` VALUES ('1', 'banner', 'Ảnh banner', '1445490758');
+INSERT INTO `image_type` VALUES ('2', 'product', 'Ảnh sản phẩm', '1445490839');
+INSERT INTO `image_type` VALUES ('3', 'logo', 'Ảnh logo', '1445490883');
