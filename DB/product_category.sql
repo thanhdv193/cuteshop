@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : shop
-Source Server Version : 50611
+Source Server         : Home
+Source Server Version : 50626
 Source Host           : localhost:3306
 Source Database       : shop
 
 Target Server Type    : MYSQL
-Target Server Version : 50611
+Target Server Version : 50626
 File Encoding         : 65001
 
-Date: 2015-10-27 22:49:54
+Date: 2015-11-09 14:50:54
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -30,4 +30,11 @@ CREATE TABLE `product_category` (
   `create_date` int(10) unsigned NOT NULL,
   `product_node_id` int(10) NOT NULL,
   PRIMARY KEY (`product_category_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- ----------------------------
+-- Records of product_category
+-- ----------------------------
+INSERT INTO `product_category` VALUES ('1', 'Thời trang nam', 'Thời trang nam', null, 'Thời trang nam', '0', '1', '1446012071', '1');
+INSERT INTO `product_category` VALUES ('2', 'Thời trang nữ', 'Thời trang nữ', null, 'Thời trang nữ', '0', '1', '1446012086', '1');
+INSERT INTO `product_category` VALUES ('3', 'Trẻ em', 'Trẻ em', null, 'Trẻ em', '0', '1', '1446012099', '1');
