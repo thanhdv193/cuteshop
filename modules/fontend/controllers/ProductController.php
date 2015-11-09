@@ -22,7 +22,8 @@ class ProductController extends Controller
     }
     public function actionProductCategory($id)
     {
-        return $this->render('product-category');
+        $product = Product::find()->where(['product_category_id'=>$id,'active'=>1])->asArray()->all();        
+        return $this->render('product-category',['data' => $product]);
     }
     
     

@@ -2,6 +2,8 @@
 
 use yii\helpers;
 use app\components\helpers\HelperLink;
+use app\components\helpers\SystemHelper;
+
 $this->title = 'Danh mục';
 ?>
 <div class="columns-container">
@@ -120,7 +122,7 @@ $this->title = 'Danh mục';
                 <!-- ./block category  -->
                 <!-- block filter -->
                 <div class="block left-module">
-                    <p class="title_block">Filter selection</p>
+                    <p class="title_block">Lọc</p>
                     <div class="block_content">
                         <!-- layered -->
                         <div class="layered layered-filter-price">
@@ -132,58 +134,23 @@ $this->title = 'Danh mục';
                                         <input type="checkbox" id="c1" name="cc" />
                                         <label for="c1">
                                             <span class="button"></span>
-                                            Tops<span class="count">(10)</span>
+                                            Áo <span class="count">(10)</span>
                                         </label>
                                     </li>
                                     <li>
                                         <input type="checkbox" id="c2" name="cc" />
                                         <label for="c2">
                                             <span class="button"></span>
-                                            T-shirts<span class="count">(10)</span>
+                                            Váy áo<span class="count">(10)</span>
                                         </label>
                                     </li>
                                     <li>
                                         <input type="checkbox" id="c3" name="cc" />
                                         <label for="c3">
                                             <span class="button"></span>
-                                            Dresses<span class="count">(10)</span>
+                                            Giày<span class="count">(10)</span>
                                         </label>
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" id="c4" name="cc" />
-                                        <label for="c4">
-                                            <span class="button"></span>
-                                            Jackets and coats<span class="count">(10)</span>
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" id="c5" name="cc" />
-                                        <label for="c5">
-                                            <span class="button"></span>
-                                            Knitted<span class="count">(10)</span>
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" id="c6" name="cc" />
-                                        <label for="c6">
-                                            <span class="button"></span>
-                                            Pants<span class="count">(10)</span>
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" id="c7" name="cc" />
-                                        <label for="c7">
-                                            <span class="button"></span>
-                                            Bags & Shoes<span class="count">(10)</span>
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" id="c8" name="cc" />
-                                        <label for="c8">
-                                            <span class="button"></span>
-                                            Best selling<span class="count">(10)</span>
-                                        </label>
-                                    </li>
+                                    </li>                                    
                                 </ul>
                             </div> 
                             <!-- ./filter categgory -->
@@ -191,91 +158,91 @@ $this->title = 'Danh mục';
                             <div class="layered_subtitle">Giá</div>
                             <div class="layered-content slider-range">
 
-                                <div data-label-reasult="Range:" data-min="0" data-max="10000000" data-unit="$" class="slider-range-price" data-value-min="50" data-value-max="1000000"></div>
-                                <div class="amount-range-price">Range: $50 - $350</div>
+                                <div data-label-reasult="Giá từ :" data-min="0" data-max="10000000" data-unit=" đ" class="slider-range-price" data-value-min="50" data-value-max="1000000"></div>
+                                <div class="amount-range-price">Giá từ : 0đ - 100đ</div>
                                 <ul class="check-box-list">
                                     <li>
                                         <input type="checkbox" id="p1" name="cc" />
                                         <label for="p1">
                                             <span class="button"></span>
-                                            $20 - $50<span class="count">(0)</span>
+                                            20 - 50<span class="count">(0)</span>
                                         </label>   
                                     </li>
                                     <li>
                                         <input type="checkbox" id="p2" name="cc" />
                                         <label for="p2">
                                             <span class="button"></span>
-                                            $50 - $100<span class="count">(0)</span>
+                                            50 - 100<span class="count">(0)</span>
                                         </label>   
                                     </li>
                                     <li>
                                         <input type="checkbox" id="p3" name="cc" />
                                         <label for="p3">
                                             <span class="button"></span>
-                                            $100 - $250<span class="count">(0)</span>
+                                            100 - 250<span class="count">(0)</span>
                                         </label>   
                                     </li>
                                 </ul>
                             </div>
                             <!-- ./filter price -->
                             <!-- filter color -->
-                            <div class="layered_subtitle">Color</div>
-                            <div class="layered-content filter-color">
-                                <ul class="check-box-list">
-                                    <li>
-                                        <input type="checkbox" id="color1" name="cc" />
-                                        <label style=" background:#aab2bd;" for="color1"><span class="button"></span></label>   
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" id="color2" name="cc" />
-                                        <label style=" background:#cfc4a6;" for="color2"><span class="button"></span></label>   
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" id="color3" name="cc" />
-                                        <label style=" background:#aab2bd;" for="color3"><span class="button"></span></label>   
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" id="color4" name="cc" />
-                                        <label style=" background:#fccacd;" for="color4"><span class="button"></span></label>   
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" id="color5" name="cc" />
-                                        <label style="background:#964b00;" for="color5"><span class="button"></span></label>   
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" id="color6" name="cc" />
-                                        <label style=" background:#faebd7;" for="color6"><span class="button"></span></label>   
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" id="color7" name="cc" />
-                                        <label style=" background:#e84c3d;" for="color7"><span class="button"></span></label>   
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" id="color8" name="cc" />
-                                        <label style=" background:#c19a6b;" for="color8"><span class="button"></span></label>   
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" id="color9" name="cc" />
-                                        <label style=" background:#f39c11;" for="color9"><span class="button"></span></label>   
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" id="color10" name="cc" />
-                                        <label style=" background:#5d9cec;" for="color10"><span class="button"></span></label>   
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" id="color11" name="cc" />
-                                        <label style=" background:#a0d468;" for="color11"><span class="button"></span></label>   
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" id="color12" name="cc" />
-                                        <label style=" background:#f1c40f;" for="color12"><span class="button"></span></label>   
-                                    </li>
-
-                                </ul>
-                            </div>
+                            <!--                            <div class="layered_subtitle">Color</div>
+                                                        <div class="layered-content filter-color">
+                                                            <ul class="check-box-list">
+                                                                <li>
+                                                                    <input type="checkbox" id="color1" name="cc" />
+                                                                    <label style=" background:#aab2bd;" for="color1"><span class="button"></span></label>   
+                                                                </li>
+                                                                <li>
+                                                                    <input type="checkbox" id="color2" name="cc" />
+                                                                    <label style=" background:#cfc4a6;" for="color2"><span class="button"></span></label>   
+                                                                </li>
+                                                                <li>
+                                                                    <input type="checkbox" id="color3" name="cc" />
+                                                                    <label style=" background:#aab2bd;" for="color3"><span class="button"></span></label>   
+                                                                </li>
+                                                                <li>
+                                                                    <input type="checkbox" id="color4" name="cc" />
+                                                                    <label style=" background:#fccacd;" for="color4"><span class="button"></span></label>   
+                                                                </li>
+                                                                <li>
+                                                                    <input type="checkbox" id="color5" name="cc" />
+                                                                    <label style="background:#964b00;" for="color5"><span class="button"></span></label>   
+                                                                </li>
+                                                                <li>
+                                                                    <input type="checkbox" id="color6" name="cc" />
+                                                                    <label style=" background:#faebd7;" for="color6"><span class="button"></span></label>   
+                                                                </li>
+                                                                <li>
+                                                                    <input type="checkbox" id="color7" name="cc" />
+                                                                    <label style=" background:#e84c3d;" for="color7"><span class="button"></span></label>   
+                                                                </li>
+                                                                <li>
+                                                                    <input type="checkbox" id="color8" name="cc" />
+                                                                    <label style=" background:#c19a6b;" for="color8"><span class="button"></span></label>   
+                                                                </li>
+                                                                <li>
+                                                                    <input type="checkbox" id="color9" name="cc" />
+                                                                    <label style=" background:#f39c11;" for="color9"><span class="button"></span></label>   
+                                                                </li>
+                                                                <li>
+                                                                    <input type="checkbox" id="color10" name="cc" />
+                                                                    <label style=" background:#5d9cec;" for="color10"><span class="button"></span></label>   
+                                                                </li>
+                                                                <li>
+                                                                    <input type="checkbox" id="color11" name="cc" />
+                                                                    <label style=" background:#a0d468;" for="color11"><span class="button"></span></label>   
+                                                                </li>
+                                                                <li>
+                                                                    <input type="checkbox" id="color12" name="cc" />
+                                                                    <label style=" background:#f1c40f;" for="color12"><span class="button"></span></label>   
+                                                                </li>
+                            
+                                                            </ul>
+                                                        </div>-->
                             <!-- ./filter color -->
                             <!-- ./filter brand -->
-                            <div class="layered_subtitle">brand</div>
+                            <div class="layered_subtitle">Nhãn hiệu</div>
                             <div class="layered-content filter-brand">
                                 <ul class="check-box-list">
                                     <li>
@@ -317,83 +284,83 @@ $this->title = 'Danh mục';
                             </div>
                             <!-- ./filter brand -->
                             <!-- ./filter size -->
-                            <div class="layered_subtitle">Size</div>
-                            <div class="layered-content filter-size">
-                                <ul class="check-box-list">
-                                    <li>
-                                        <input type="checkbox" id="size1" name="cc" />
-                                        <label for="size1">
-                                            <span class="button"></span>X
-                                        </label>   
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" id="size2" name="cc" />
-                                        <label for="size2">
-                                            <span class="button"></span>XXL
-                                        </label>   
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" id="size3" name="cc" />
-                                        <label for="size3">
-                                            <span class="button"></span>XL
-                                        </label>   
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" id="size4" name="cc" />
-                                        <label for="size4">
-                                            <span class="button"></span>XXL
-                                        </label>   
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" id="size5" name="cc" />
-                                        <label for="size5">
-                                            <span class="button"></span>M
-                                        </label>   
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" id="size6" name="cc" />
-                                        <label for="size6">
-                                            <span class="button"></span>XXS
-                                        </label>   
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" id="size7" name="cc" />
-                                        <label for="size7">
-                                            <span class="button"></span>S
-                                        </label>   
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" id="size8" name="cc" />
-                                        <label for="size8">
-                                            <span class="button"></span>XS
-                                        </label>   
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" id="size9" name="cc" />
-                                        <label for="size9">
-                                            <span class="button"></span>34
-                                        </label>   
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" id="size10" name="cc" />
-                                        <label for="size10">
-                                            <span class="button"></span>36
-                                        </label>   
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" id="size11" name="cc" />
-                                        <label for="size11">
-                                            <span class="button"></span>35
-                                        </label>   
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" id="size12" name="cc" />
-                                        <label for="size12">
-                                            <span class="button"></span>37
-                                        </label>   
-                                    </li>
-                                </ul>
-                            </div>
+                            <!--                            <div class="layered_subtitle">Size</div>
+                                                        <div class="layered-content filter-size">
+                                                            <ul class="check-box-list">
+                                                                <li>
+                                                                    <input type="checkbox" id="size1" name="cc" />
+                                                                    <label for="size1">
+                                                                        <span class="button"></span>X
+                                                                    </label>   
+                                                                </li>
+                                                                <li>
+                                                                    <input type="checkbox" id="size2" name="cc" />
+                                                                    <label for="size2">
+                                                                        <span class="button"></span>XXL
+                                                                    </label>   
+                                                                </li>
+                                                                <li>
+                                                                    <input type="checkbox" id="size3" name="cc" />
+                                                                    <label for="size3">
+                                                                        <span class="button"></span>XL
+                                                                    </label>   
+                                                                </li>
+                                                                <li>
+                                                                    <input type="checkbox" id="size4" name="cc" />
+                                                                    <label for="size4">
+                                                                        <span class="button"></span>XXL
+                                                                    </label>   
+                                                                </li>
+                                                                <li>
+                                                                    <input type="checkbox" id="size5" name="cc" />
+                                                                    <label for="size5">
+                                                                        <span class="button"></span>M
+                                                                    </label>   
+                                                                </li>
+                                                                <li>
+                                                                    <input type="checkbox" id="size6" name="cc" />
+                                                                    <label for="size6">
+                                                                        <span class="button"></span>XXS
+                                                                    </label>   
+                                                                </li>
+                                                                <li>
+                                                                    <input type="checkbox" id="size7" name="cc" />
+                                                                    <label for="size7">
+                                                                        <span class="button"></span>S
+                                                                    </label>   
+                                                                </li>
+                                                                <li>
+                                                                    <input type="checkbox" id="size8" name="cc" />
+                                                                    <label for="size8">
+                                                                        <span class="button"></span>XS
+                                                                    </label>   
+                                                                </li>
+                                                                <li>
+                                                                    <input type="checkbox" id="size9" name="cc" />
+                                                                    <label for="size9">
+                                                                        <span class="button"></span>34
+                                                                    </label>   
+                                                                </li>
+                                                                <li>
+                                                                    <input type="checkbox" id="size10" name="cc" />
+                                                                    <label for="size10">
+                                                                        <span class="button"></span>36
+                                                                    </label>   
+                                                                </li>
+                                                                <li>
+                                                                    <input type="checkbox" id="size11" name="cc" />
+                                                                    <label for="size11">
+                                                                        <span class="button"></span>35
+                                                                    </label>   
+                                                                </li>
+                                                                <li>
+                                                                    <input type="checkbox" id="size12" name="cc" />
+                                                                    <label for="size12">
+                                                                        <span class="button"></span>37
+                                                                    </label>   
+                                                                </li>
+                                                            </ul>
+                                                        </div>-->
                             <!-- ./filter size -->
                         </div>
                         <!-- ./layered -->
@@ -414,7 +381,7 @@ $this->title = 'Danh mục';
                 <!--./left silde-->
                 <!-- SPECIAL -->
                 <div class="block left-module">
-                    <p class="title_block">SPECIAL PRODUCTS</p>
+                    <p class="title_block">Sản phẩm đặc biệt</p>
                     <div class="block_content">
                         <ul class="products-block">
                             <li>
@@ -477,7 +444,7 @@ $this->title = 'Danh mục';
                 <!-- ./TAGS -->
                 <!-- Testimonials -->
                 <div class="block left-module">
-                    <p class="title_block">Testimonials</p>
+                    <p class="title_block">Quà tặng</p>
                     <div class="block_content">
                         <ul class="testimonials owl-carousel" data-loop="true" data-nav = "false" data-margin = "30" data-autoplayTimeout="1000" data-autoplay="true" data-autoplayHoverPause = "true" data-items="1">
                             <li>
@@ -601,58 +568,62 @@ $this->title = 'Danh mục';
                     <!-- PRODUCT LIST -->
                     <ul class="row product-list style2 grid">
                         <!-- foreach -->
-                        <li class="col-sx-12 col-sm-4">
-                            <div class="product-container">
-                                <div class="left-block">
-                                    <a href="#">
-                                        <img class="img-responsive" alt="product" src="/upload/product/1446013596_1445842528307974273.jpg" />
-                                    </a>
-                                    <div class="quick-view">
-                                        <a title="Add to my wishlist" class="heart" href="#"></a>
-                                        <a title="Add to compare" class="compare" href="#"></a>
-                                        <a title="Quick view" class="search" href="#"></a>
-                                    </div>
-                                </div>
-                                <div class="right-block">
-                                    <h5 class="product-name"><a href="<?php echo HelperLink::rewriteUrllink(1,'Áo váy nữ', 'san-pham') ?>">Áo váy nữ giá siêu rẻ</a></h5>
-                                    <div class="product-star">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-half-o"></i>
-                                    </div>
-                                    <div class="content_price">
-                                        <span class="price product-price">1.000.000 
-                                            <label style="
-                                                   position: absolute;
-                                                   top: 0;
-                                                   right: -9px;
-                                                   font-size: 12px;
-                                                   ">đ</label>
-                                        </span>
-                                        <span class="price old-price">1.500.000 
-                                            <label style="
-                                                   position: absolute;
-                                                   top: 0;
-                                                   right: -9px;
-                                                   font-size: 12px;
-                                                   ">đ</label>
-                                        </span>
-                                    </div>
-                                    <div class="info-orther">
-                                        <p>Item Code: #453217907</p>
-                                        <p class="availability">Availability: <span>In stock</span></p>
-                                        <div class="product-desc">
-                                            Vestibulum eu odio. Suspendisse potenti. Morbi mollis tellus ac sapien. Praesent egestas tristique nibh. Nullam dictum felis eu pede mollis pretium. Fusce egestas elit eget lorem. In auctor lobortis lacus. Suspendisse faucibus, nunc et pellentesque egestas, lacus ante convallis tellus, vitae iaculis lacus elit id tortor.
+                        <?php foreach ($data as $value) { ?>
+
+
+                            <li class="col-sx-12 col-sm-4">
+                                <div class="product-container">
+                                    <div class="left-block">
+                                        <a href="#">
+                                            <img class="img-responsive" alt="product" src="<?php $array = app\models\Image::find()->where(['object_id' => $value['product_id'],'object_type'=>'product'])->one();?><?php echo '/'.$array['image_path']. '' .$array['filename'] ?>" />
+                                        </a>
+                                        <div class="quick-view">
+                                            <a title="Add to my wishlist" class="heart" href="#"></a>
+                                            <a title="Add to compare" class="compare" href="#"></a>
+                                            <a title="Quick view" class="search" href="#"></a>
                                         </div>
                                     </div>
-                                    <div class="add-to-cart">
-                                        <a title="Thêm vào giỏ hàng" href="#add"><span></span>Thêm vào giỏ hàng</a>
+                                    <div class="right-block">
+                                        <h5 class="product-name"><a href="<?php echo HelperLink::rewriteUrllink(1,$value['name'], 'san-pham') ?>"><?php echo $value['name'] ?></a></h5>
+                                        <div class="product-star">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-half-o"></i>
+                                        </div>
+                                        <div class="content_price">
+                                            <span class="price product-price"><?php echo SystemHelper::product_price($value['price']) ?>
+                                                <label style="
+                                                       position: absolute;
+                                                       top: 0;
+                                                       right: -9px;
+                                                       font-size: 12px;
+                                                       ">đ</label>
+                                            </span>
+                                            <span class="price old-price"><?php echo SystemHelper::product_price($value['old_price']) ?>
+                                                <label style="
+                                                       position: absolute;
+                                                       top: 0;
+                                                       right: -9px;
+                                                       font-size: 12px;
+                                                       ">đ</label>
+                                            </span>
+                                        </div>
+                                        <div class="info-orther">
+                                            <p>Item Code: #453217907</p>
+                                            <p class="availability">Availability: <span>In stock</span></p>
+                                            <div class="product-desc">
+                                                <?php echo $value['content'] ?>
+                                            </div>
+                                        </div>
+                                        <div class="add-to-cart">
+                                            <a title="Thêm vào giỏ hàng" href="#add"><span></span>Thêm vào giỏ hàng</a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </li>      
+                            </li>     
+                        <?php } ?>
                         <!-- end foreach -->
                     </ul>
                     <!-- ./PRODUCT LIST -->

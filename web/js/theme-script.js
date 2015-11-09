@@ -20,7 +20,6 @@
                 zoomType: "window",
                 cursor: "pointer",
                 galleryActiveClass: 'active',
-                
                 zoomWindowFadeIn: 500,
                 zoomWindowFadeOut: 750,
                 gallery: 'gallery_01',
@@ -165,6 +164,56 @@
             $('#' + id).addClass('active');
             return false;
         })
+        function validateNumber(price) {
+            var a = "";
+            var e = price.toString();
+            var c = e.length;
+            if ((c > 0)) {
+                if (!(e === "") && (e != null)) {
+                    var c = e.length;
+                    for (var b = 0; b < c; b++) {
+                        var d = e.charAt(b);
+                        if ((d >= "0") && (d <= "9") && !(d == "")) {
+                            a = a + d
+                        }
+                    }
+                }
+            }
+            return a
+        }
+        function formatPrice(price) {
+            
+            var b = validateNumber(price);
+            var j = "";
+            var f = "";
+            var c = (b.length).toString();
+            //alert(c);
+            if ((c > 0)) {
+                if (!(b === "") && (b != null)) {
+                    var a = 0;
+                    var d = 0;
+                    for ( var i = c - 1; i >= 0; i--) {
+                        a++;
+                        if ((a % 3 == 0) && (a < c)) {
+                            var e = c - a;
+                            var g = b.substr(e, 3);
+                            f = g + " " + f;
+                            d++
+                        }
+                    }
+                    var h = c - (d * 3);
+                    j = b.substring(0, h) + " " + f;
+                    if (j.charAt(j.length - 1) == " ") {
+                        j = j.substr(0, (j.length - 1))
+                    }
+                    var string = j.split(' ').join('.');
+                    //var string = j.replace('/" "/g','.');
+
+                    return string;
+                }
+            }
+        }
+
         // CATEGORY FILTER 
         $('.slider-range-price').each(function () {
             var min = $(this).data('min');
@@ -180,8 +229,7 @@
                 max: max,
                 values: [value_min, value_max],
                 slide: function (event, ui) {
-                    var result = label_reasult + " " + unit + ui.values[ 0 ] + ' - ' + unit + ui.values[ 1 ];
-                    console.log(t);
+                    var result = label_reasult + " " + formatPrice(ui.values[ 0 ])+ unit + ' - ' + formatPrice(ui.values[ 1 ])+ unit;
                     t.closest('.slider-range').find('.amount-range-price').html(result);
                 }
             });

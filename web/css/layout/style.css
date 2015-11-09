@@ -2876,7 +2876,7 @@ span.notify-right{
     padding-bottom: 12px;
 }
 #left_column .block .block_content{
-    padding:  15px 20px;
+    padding:  15px 15px;
 }
 .layered .layered_subtitle{
     color: #666;
@@ -2968,7 +2968,7 @@ span.notify-right{
 }
 .layered-filter-price .slider-range-price{
     height: 7px;
-    background: #ff3366;
+    background: #073D58;
     border: none;
     border-radius: 0;
 }
