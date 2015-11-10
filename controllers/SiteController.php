@@ -17,6 +17,8 @@ use yii\helpers\Url;
 use app\components\helpers\ImageHelper;
 use app\components\helpers\FunctionService;
 use app\models\Menu;
+use yii\data\Pagination;
+use app\models\Product;
 
 class SiteController extends Controller
 {
@@ -63,7 +65,15 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        return $this->render('index');
+        $id =2;
+        $query = Product::find()->where(['product_category_id' => $id, 'active' => 1]);
+        $count = $query->count();
+        $pagination = new Pagination(['totalCount' => $count,'defaultPageSize' => 5]);
+        $product = $query->offset($pagination->offset)
+                ->limit(5)
+                ->all();
+        //echo'<pre>'; var_dump($pagination); die;
+        return $this->render('index',['data' => $product,'pages'=>$pagination]);
     }
 
     public function actionLogin()

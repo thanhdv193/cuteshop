@@ -3,6 +3,8 @@
 use yii\helpers;
 use app\components\helpers\HelperLink;
 use app\components\helpers\SystemHelper;
+use yii\helpers\Html;
+use yii\widgets\LinkPager;
 
 $this->title = 'Danh mục';
 ?>
@@ -628,6 +630,19 @@ $this->title = 'Danh mục';
                     </ul>
                     <!-- ./PRODUCT LIST -->
                 </div>
+                
+               <?php
+    echo LinkPager::widget([
+        'pagination' => $pages,
+        
+//        'options' => [
+//            'id' => 'pagination'
+//        ],
+//        'linkOptions' => [
+//            'class' => 'page'
+//        ],
+    ]);
+    ?>
                 <!-- ./view-product-list-->
                 <div class="sortPagiBar">
                     <div class="bottom-pagination">

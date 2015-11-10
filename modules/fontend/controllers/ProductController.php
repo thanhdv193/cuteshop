@@ -28,12 +28,22 @@ class ProductController extends Controller
     {
         $query = Product::find()->where(['product_category_id' => $id, 'active' => 1]);
         $count = $query->count();
+        $pagination = new Pagination(['totalCount' => $count,'defaultPageSize' => 5]);
+        $product = $query->offset($pagination->offset)
+                ->limit($pagination->limit)
+                ->all();
+        //echo'<pre>'; var_dump($pagination); die;
+        return $this->render('product-category', ['data' => $product,'pages'=>$pagination]);
+    }
+    public function actionProductTest($id = 2)
+    {
+        $query = Product::find()->where(['product_category_id' => $id, 'active' => 1]);
+        $count = $query->count();
         $pagination = new Pagination(['totalCount' => $count]);
         $product = $query->offset($pagination->offset)
                 ->limit(5)
                 ->all();
-        //echo'<pre>'; var_dump($product); die;
-        return $this->render('product-category', ['data' => $product]);
+        //echo'<pre>'; var_dump($pagination); die;
+        return $this->render('product-category', ['data' => $product,'pages'=>$pagination]);
     }
-
 }
