@@ -5,6 +5,7 @@ namespace app\modules\backend\controllers;
 use Yii;
 use app\models\User;
 use app\models\UserSearch;
+use app\components\BaseController;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -16,7 +17,7 @@ use kartik\file\FileInput;
 /**
  * UserController implements the CRUD actions for User model.
  */
-class UserController extends Controller
+class UserController extends BaseController
 {
 
     public function behaviors()

@@ -39,7 +39,7 @@ class AppAssetBackend extends AssetBundle
         'js/backend/demo.js',
         'js/backend/demo-switcher.js',
         'js/backend/plugins/simpleWeather/jquery.simpleWeather.min.js',
-        'js/translate-price/translatePrice.js'
+//        'js/translate-price/translatePrice.js'
         
     ];
     public $depends = [
