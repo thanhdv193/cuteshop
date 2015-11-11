@@ -485,7 +485,7 @@ class SiteController
 
     public function actionSetCookie()
     {
-        $data = array('a'=>'1','a1'=>'2');        
+        $data = array('a' => '1222', 'a1' => '2222');
 
         $cookies = Yii::$app->response->cookies;
 
@@ -504,10 +504,14 @@ class SiteController
         $cookies1 = Yii::$app->request->cookies;
 
         if ($cookies1->has('abc'))
-            $cookieValue = $cookies1->getValue('abc');
+        {
+            $cookieValue = $cookies1->getValue('abc', '');
+            
             $b = unserialize($cookieValue);
-          
-        echo 'value : ' . $b;
+            var_dump($b);
+            die;
+            echo 'value : ' . $b;
+        }
     }
 
 }
