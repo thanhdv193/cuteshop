@@ -29,7 +29,8 @@ class AppAsset extends AssetBundle
         'lib/owl.carousel/owl.carousel.css',
         'lib/jquery.bxslider/jquery.bxslider.css',
         'lib/select2/css/select2.min.css',
-        'lib/font-awesome/css/font-awesome.min.css'
+        'lib/font-awesome/css/font-awesome.min.css',
+        'js/tour/hopscotch.css'
         
     ];
     public $js = [
@@ -46,6 +47,8 @@ class AppAsset extends AssetBundle
         'lib/fancyBox/jquery.fancybox.js',
         'js/theme-script.js',
          'js/register/popup.js',
+        'js/tour/hopscotch.js',
+        'js/tour/demo_tour.js',
 //        'https://www.google.com/recaptcha/api.js'
         
         
