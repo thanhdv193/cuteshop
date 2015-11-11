@@ -19,8 +19,10 @@ use app\components\helpers\FunctionService;
 use app\models\Menu;
 use yii\data\Pagination;
 use app\models\Product;
+use yii\web\Cookie;
 
-class SiteController extends Controller
+class SiteController
+        extends Controller
 {
 
     public function behaviors()
@@ -65,15 +67,15 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        $id =2;
+        $id = 2;
         $query = Product::find()->where(['product_category_id' => $id, 'active' => 1]);
         $count = $query->count();
-        $pagination = new Pagination(['totalCount' => $count,'defaultPageSize' => 5]);
+        $pagination = new Pagination(['totalCount' => $count, 'defaultPageSize' => 5]);
         $product = $query->offset($pagination->offset)
                 ->limit(5)
                 ->all();
         //echo'<pre>'; var_dump($pagination); die;
-        return $this->render('index',['data' => $product,'pages'=>$pagination]);
+        return $this->render('index', ['data' => $product, 'pages' => $pagination]);
     }
 
     public function actionLogin()
@@ -372,11 +374,9 @@ class SiteController extends Controller
 //       echo'<pre>'; var_dump($a); die;
         $url1 = Yii::$app->request->baseUrl . 'upload/photos/demo1.jpg';
         $url2 = Yii::$app->request->baseUrl . 'upload/photos/thumbs/demo1.jpg';
-        ImageHelper::resizeImage($url1, $url2, '700', '700');       
+        ImageHelper::resizeImage($url1, $url2, '700', '700');
         die;
     }
-    
-    
 
     function set_thumb($file, $photos_dir, $thumbs_dir, $width_w = 150, $height_h = 167, $square_size = 167, $quality = 100)
     {
@@ -459,11 +459,11 @@ class SiteController extends Controller
         imagedestroy($img);
         return $returnvalue;
     }
+
     public function actionMenu()
     {
         $menu = Menu::find()->asArray()->all();
-        return $this->render('menu',['data'=>$menu]);
-        
+        return $this->render('menu', ['data' => $menu]);
     }
 
     public function actionCaptCha()
@@ -481,6 +481,33 @@ class SiteController extends Controller
         {
             return $this->render('captcha');
         }
+    }
+
+    public function actionSetCookie()
+    {
+        $data = array('a'=>'1','a1'=>'2');        
+
+        $cookies = Yii::$app->response->cookies;
+
+        $cookies->add(new \yii\web\Cookie([
+            'name' => 'abc',
+            'value' => serialize($data),
+            'expire' => time() + 86400 * 365,
+        ]));
+
+        echo 'Cookie set!';
+    }
+
+    public function actionGetCookie()
+    {
+
+        $cookies1 = Yii::$app->request->cookies;
+
+        if ($cookies1->has('abc'))
+            $cookieValue = $cookies1->getValue('abc');
+            $b = unserialize($cookieValue);
+          
+        echo 'value : ' . $b;
     }
 
 }
