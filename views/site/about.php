@@ -20,7 +20,7 @@ $this->params['breadcrumbs'][] = $this->title;
 </div>
 <div class="row">
     <div class="container" style="width: 50%;">
-        <input type="button" name="Demo" value="Step2" id="hopscotch-title" >
+        <input type="button" name="Demo" value="Step2" class="hopscotch-title" id="hopscotch-title2" >
     </div>
     
 </div>

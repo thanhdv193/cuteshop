@@ -5382,3 +5382,6 @@ Thanks :)*/
 .site-link a:hover{
     color: #E62600;
 }
+.pagination>.disabled>span{
+    display:none;
+}

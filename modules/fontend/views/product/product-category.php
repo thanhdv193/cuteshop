@@ -634,18 +634,17 @@ $this->title = 'Danh mục';
                <?php
     echo LinkPager::widget([
         'pagination' => $pages,
-        
-//        'options' => [
-//            'id' => 'pagination'
-//        ],
-//        'linkOptions' => [
-//            'class' => 'page'
-//        ],
+        'prevPageLabel' => '<< Prev',
+        'nextPageLabel' => 'Next >>',
+        'lastPageLabel'=>'LAST',
+        'firstPageLabel'=>'FIRST',
+        'maxButtonCount'=>10
+ 
     ]);
     ?>
                 <!-- ./view-product-list-->
                 <div class="sortPagiBar">
-                    <div class="bottom-pagination">
+<!--                    <div class="bottom-pagination">
                         <nav>
                             <ul class="pagination">
                                 <li class="active"><a href="#">1</a></li>
@@ -660,7 +659,7 @@ $this->title = 'Danh mục';
                                 </li>
                             </ul>
                         </nav>
-                    </div>
+                    </div>-->
                     <div class="show-product-item">
                         <select name="">
                             <option value="">Show 18</option>
