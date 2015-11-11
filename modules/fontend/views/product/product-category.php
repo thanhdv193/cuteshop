@@ -6,8 +6,11 @@ use app\components\helpers\SystemHelper;
 use yii\helpers\Html;
 use yii\widgets\LinkPager;
 
+$this->registerJsFile('http://example.com/js/main.js', ['depends' => [\yii\web\JqueryAsset::className()]]);
+
 $this->title = 'Danh mục';
 ?>
+
 <div class="columns-container">
     <div class="container" id="columns">
         <!-- breadcrumb -->
@@ -620,7 +623,7 @@ $this->title = 'Danh mục';
                                             </div>
                                         </div>
                                         <div class="add-to-cart">
-                                            <a title="Thêm vào giỏ hàng" href="#add"><span></span>Thêm vào giỏ hàng</a>
+                                            <a title="Mua hàng" href="#add"><span></span>Mua hàng</a>
                                         </div>
                                     </div>
                                 </div>
@@ -634,8 +637,8 @@ $this->title = 'Danh mục';
                <?php
     echo LinkPager::widget([
         'pagination' => $pages,
-        'prevPageLabel' => '<< Prev',
-        'nextPageLabel' => 'Next >>',
+        'prevPageLabel' => '<<',
+        'nextPageLabel' => '>>',
         'lastPageLabel'=>'LAST',
         'firstPageLabel'=>'FIRST',
         'maxButtonCount'=>10

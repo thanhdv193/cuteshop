@@ -47,8 +47,8 @@ class AppAsset extends AssetBundle
         'lib/fancyBox/jquery.fancybox.js',
         'js/theme-script.js',
          'js/register/popup.js',
-        'js/tour/hopscotch.js',
-        'js/tour/demo_tour.js',
+//        'js/tour/hopscotch.js',
+//        'js/tour/demo_tour.js',
 //        'https://www.google.com/recaptcha/api.js'
         
         

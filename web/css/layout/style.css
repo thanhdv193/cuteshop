@@ -3510,6 +3510,7 @@ span.notify-right{
 }
 .product-list.style2.grid .add-to-cart a:hover{
     opacity: 0.8;
+    text-decoration: none;
 }
 .product-list.style2.grid .add-to-cart a:before{
     content: '';
