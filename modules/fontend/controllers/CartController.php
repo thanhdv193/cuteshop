@@ -23,7 +23,7 @@ class CartController extends \yii\web\Controller
                 $product = unserialize($cookieValue);
             }
         }
-        
+
         foreach ($product as $value)
         {
             $product_sl[$value['id']] = $value;
@@ -38,8 +38,7 @@ class CartController extends \yii\web\Controller
             if ($value['product_id'] == $product_sl[$value['product_id']]['id'])
             {
                 $value['product_sl'] = $product_sl[$value['product_id']]['sl'];
-                $value['money_all']  = $value['product_sl'] * (int)$value['price'];
-                
+                $value['money_all'] = $value['product_sl'] * (int) $value['price'];
             }
         }
 
@@ -50,9 +49,9 @@ class CartController extends \yii\web\Controller
     {
 //        $cookies = Yii::$app->response->cookies;
 //        $cookies->remove('user_guest_pc');
-        
+
         $product_id = array(
-            array('id' => $id, 'sl' => 1)            
+            array('id' => $id, 'sl' => 1)
         );
         if (Yii::$app->user->isGuest == false)
         { // user ->save db
@@ -78,22 +77,22 @@ class CartController extends \yii\web\Controller
                 {
                     //$product_extra = 15;
                     $value = unserialize($cookieValue);
-                   
+
                     if (is_array($value))
                     {
                         $check = false;
-                        foreach ($value as &$data){                            
-                            if($data['id'] == $id)
+                        foreach ($value as &$data)
+                        {
+                            if ($data['id'] == $id)
                             {
                                 $check = true;
-                                $data['sl'] = $data['sl']+ 1; 
+                                $data['sl'] = $data['sl'] + 1;
                             }
-                        }    
-                        if($check == false)
+                        }
+                        if ($check == false)
                         {
                             array_push($value, array('id' => $id, 'sl' => 1));
                         }
-                        
                     }
                     $cookies = Yii::$app->response->cookies;
                     $cookies->add(new \yii\web\Cookie([
@@ -117,7 +116,35 @@ class CartController extends \yii\web\Controller
 
     public function actionDeleteCart()
     {
-        
+        if (Yii::$app->request->post())
+        {
+            $id = 1;
+            if (Yii::$app->user->isGuest == false)
+            { // user ->save db
+                echo Yii::$app->user->identity->username;
+                die();
+            } else
+            {
+                $cookies = Yii::$app->request->cookies;
+                if ($cookies->has('user_guest_pc'))
+                {
+                    $cookieValue = $cookies->getValue('user_guest_pc', null);
+                    if ($cookieValue == null)
+                    {
+                        $data = $product_id;
+                        $cookies = Yii::$app->response->cookies;
+                        $cookies->add(new \yii\web\Cookie([
+                            'name' => 'user_guest_pc',
+                            'value' => serialize($data),
+                            'expire' => time() + 300, // 5p
+                        ]));
+                    }
+                } else
+                {
+                    
+                }
+            }
+        }
     }
 
 }
