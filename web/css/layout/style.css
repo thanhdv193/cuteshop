@@ -3743,10 +3743,10 @@ span.notify-right{
 }
 
 .cart_summary .action a{
-    background: url("/images/delete_icon.png") no-repeat center center;
+    background: url("/images/delete_16x16.gif") no-repeat center center;
     font-size: 0;
-    height: 9px;
-    width: 9px;
+    height: 16px;
+    width: 14px;
     display: inline-block;
     line-height: 24px;
 }

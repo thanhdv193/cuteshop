@@ -5,8 +5,10 @@ use app\components\helpers\HelperLink;
 use app\components\helpers\SystemHelper;
 use yii\helpers\Html;
 use yii\widgets\LinkPager;
+use yii\helpers\Url;
 
-$this->registerJsFile('http://example.com/js/main.js', ['depends' => [\yii\web\JqueryAsset::className()]]);
+
+$this->registerJsFile(Url::base('').'/js/product/add_to_cart.js', ['depends' => [\yii\web\JqueryAsset::className()]]);
 
 $this->title = 'Danh mục';
 ?>
@@ -623,7 +625,7 @@ $this->title = 'Danh mục';
                                             </div>
                                         </div>
                                         <div class="add-to-cart">
-                                            <a title="Mua hàng" href="#add"><span></span>Mua hàng</a>
+                                            <a title="Mua hàng" data-value="<?php echo $value['product_id'] ?>" class="add-cart" href="#add"><span></span>Mua hàng</a>
                                         </div>
                                     </div>
                                 </div>

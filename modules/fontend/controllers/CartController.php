@@ -6,7 +6,8 @@ use Yii;
 use yii\web\Cookie;
 use app\models\Product;
 
-class CartController extends \yii\web\Controller
+class CartController
+        extends \yii\web\Controller
 {
 
     public function actionIndex()
@@ -23,7 +24,9 @@ class CartController extends \yii\web\Controller
                 $product = unserialize($cookieValue);
             }
         }
-
+//        echo'<pre>';
+//        var_dump($product);
+//        die;
         foreach ($product as $value)
         {
             $product_sl[$value['id']] = $value;
@@ -42,29 +45,77 @@ class CartController extends \yii\web\Controller
             }
         }
 
-        return $this->renderPartial('index', ['data' => $listCart]);
+        return $this->render('index', ['data' => $listCart]);
+        //return $this->renderPartial('index', ['data' => $listCart]);
     }
 
-    public function actionAdd($id)
+    public function actionAdd()
     {
 //        $cookies = Yii::$app->response->cookies;
 //        $cookies->remove('user_guest_pc');
-
-        $product_id = array(
-            array('id' => $id, 'sl' => 1)
-        );
-        if (Yii::$app->user->isGuest == false)
-        { // user ->save db
-            echo Yii::$app->user->identity->username;
-            die();
-        } else
+        $post = Yii::$app->request->post();
+        if ($post)
         {
-            // guest -> save cookie
-            $cookies = Yii::$app->request->cookies;
-            if ($cookies->has('user_guest_pc'))
+            $id = $post['product_id'];
+            $product_id = array(
+                array('id' => $id, 'sl' => 1)
+            );
+            if (Yii::$app->user->isGuest == false)
+            { // user ->save db
+                echo Yii::$app->user->identity->username;
+                die();
+            } else
             {
-                $cookieValue = $cookies->getValue('user_guest_pc', null);
-                if ($cookieValue == null)
+                // guest -> save cookie
+                $cookies = Yii::$app->request->cookies;
+                if ($cookies->has('user_guest_pc'))
+                {
+                    $cookieValue = $cookies->getValue('user_guest_pc', null);
+                    if ($cookieValue == null)
+                    {
+                        $data = $product_id;
+                        $cookies = Yii::$app->response->cookies;
+                        $cookies->add(new \yii\web\Cookie([
+                            'name' => 'user_guest_pc',
+                            'value' => serialize($data),
+                            'expire' => time() + 300, // 5p
+                        ]));
+                        return true;
+//                        die(json_encode(array(
+//                            'status' => 'successful',
+//                        )));
+                    } else
+                    {
+                        //$product_extra = 15;
+                        $value = unserialize($cookieValue);
+                        if (is_array($value))
+                        {
+                            $check = false;
+                            foreach ($value as &$data)
+                            {
+                                if ($data['id'] == $id)
+                                {
+                                    $check = true;
+                                    $data['sl'] = $data['sl'] + 1;
+                                }
+                            }
+                            if ($check == false)
+                            {
+                                array_push($value, array('id' => $id, 'sl' => 1));
+                            }
+                        }
+                        $cookies = Yii::$app->response->cookies;
+                        $cookies->add(new \yii\web\Cookie([
+                            'name' => 'user_guest_pc',
+                            'value' => serialize($value),
+                            'expire' => time() + 300, // 5p
+                        ]));
+                        return true;
+//                        die(json_encode(array(
+//                            'status' => 'successful',
+//                        )));
+                    }
+                } else
                 {
                     $data = $product_id;
                     $cookies = Yii::$app->response->cookies;
@@ -73,43 +124,11 @@ class CartController extends \yii\web\Controller
                         'value' => serialize($data),
                         'expire' => time() + 300, // 5p
                     ]));
-                } else
-                {
-                    //$product_extra = 15;
-                    $value = unserialize($cookieValue);
-
-                    if (is_array($value))
-                    {
-                        $check = false;
-                        foreach ($value as &$data)
-                        {
-                            if ($data['id'] == $id)
-                            {
-                                $check = true;
-                                $data['sl'] = $data['sl'] + 1;
-                            }
-                        }
-                        if ($check == false)
-                        {
-                            array_push($value, array('id' => $id, 'sl' => 1));
-                        }
-                    }
-                    $cookies = Yii::$app->response->cookies;
-                    $cookies->add(new \yii\web\Cookie([
-                        'name' => 'user_guest_pc',
-                        'value' => serialize($value),
-                        'expire' => time() + 300, // 5p
-                    ]));
+                    return true;
+//                    die(json_encode(array(
+//                        'status' => 'successful',
+//                    )));
                 }
-            } else
-            {
-                $data = $product_id;
-                $cookies = Yii::$app->response->cookies;
-                $cookies->add(new \yii\web\Cookie([
-                    'name' => 'user_guest_pc',
-                    'value' => serialize($data),
-                    'expire' => time() + 300, // 5p
-                ]));
             }
         }
     }
