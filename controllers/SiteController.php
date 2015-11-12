@@ -21,8 +21,7 @@ use yii\data\Pagination;
 use app\models\Product;
 use yii\web\Cookie;
 
-class SiteController
-        extends Controller
+class SiteController extends Controller
 {
 
     public function behaviors()
@@ -485,16 +484,30 @@ class SiteController
 
     public function actionSetCookie()
     {
-        $data = array('a' => '1222', 'a1' => '2222');
+        $data = array('1', '2', '3', '4', '5', '6', '7');
 
         $cookies = Yii::$app->response->cookies;
 
         $cookies->add(new \yii\web\Cookie([
-            'name' => 'abc',
+            'name' => 'user_guest',
             'value' => serialize($data),
             'expire' => time() + 86400 * 365,
         ]));
-
+        $cookies1 = Yii::$app->request->cookies;
+        if ($cookies1->has('user_guest'))
+        {
+            $cookieValue = $cookies1->getValue('user_guest', '');
+            $value = unserialize($cookieValue);
+            array_push($value, '12');
+            if (($key = array_search('1', $value)) !== false)
+            {
+                unset($value[$key]);
+            }
+            echo'<pre>';
+            var_dump($value);
+            die;
+            echo 'value : ' . $b;
+        }
         echo 'Cookie set!';
     }
 
@@ -505,9 +518,10 @@ class SiteController
 
         if ($cookies1->has('abc'))
         {
-            $cookieValue = $cookies1->getValue('abc', '');
-            
+            $cookieValue = $cookies1->getValue('user_guest', '');
+
             $b = unserialize($cookieValue);
+            echo'<pre>';
             var_dump($b);
             die;
             echo 'value : ' . $b;
