@@ -134,7 +134,7 @@ $config = [
         'allowActions' => [
             'site/*',
             //'admin/*',
-            'backend/*',
+            //'backend/*',
             //'user/*',
             //'gii/*',
             'fontend/*',

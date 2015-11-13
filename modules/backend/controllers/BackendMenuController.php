@@ -85,8 +85,8 @@ class BackendMenuController extends Controller
             {
                 $model->sort_order = $post['sort_order'];
             }
-
             $model->route = Url::base('http') . '/' . $post['route'];
+
 
             $model->save(false);
             return $this->redirect(['index']);
