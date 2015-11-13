@@ -1,5 +1,8 @@
 <?php
 use app\components\helpers\SystemHelper;
+use yii\helpers\Url;
+
+$this->registerJsFile(Url::base('').'/js/product/process_cart.js', ['depends' => [\yii\web\JqueryAsset::className()]]);
 ?>
 
 <div class="columns-container">
@@ -42,7 +45,7 @@ use app\components\helpers\SystemHelper;
                     </thead>
                     <tbody>
                         <?php foreach ($data as $value){ ?>
-                        <tr>
+                        <tr class="tr-<?php echo $value['product_id']?>">
                             <td class="cart_product">
                                 <a href="#"><img src="<?php $array = app\models\Image::find()->where(['object_id' => $value['product_id'],'object_type'=>'product'])->one();?><?php echo '/'.$array['image_path']. '' .$array['filename'] ?>" alt="<?php echo $value['name'] ?>"></a>
                             </td>
@@ -55,7 +58,7 @@ use app\components\helpers\SystemHelper;
                             <td class="cart_avail"><span class="label label-success">In stock</span></td>
                             <td class="price"><span id="p-<?php echo $value['product_id']?>"><?php echo SystemHelper::product_price($value['price']) ?></span></td>
                             <td class="qty">
-                                <input class="form-control input-sm" type="text" value="<?php echo $value['product_sl'] ?>">
+                                <input class="form-control input-sm input_price" maxlength="4" name="<?php echo $value['product_id']?>" type="text" value="<?php echo $value['product_sl'] ?>">
 <!--                                <a href="#"><i class="fa fa-caret-up"></i></a>
                                 <a href="#"><i class="fa fa-caret-down"></i></a>-->
                             </td>
@@ -63,7 +66,7 @@ use app\components\helpers\SystemHelper;
                                 <span id="p-final-<?php echo $value['product_id']?>"><?php echo SystemHelper::product_price($value['money_all']) ?></span>
                             </td>
                             <td class="action">
-                                <a href="#" data-value="<?php echo $value['product_id'] ?>" title="Xóa sản phẩm">Delete item</a>
+                                <a href="#" class="delete-product" data-value="<?php echo $value['product_id'] ?>" title="Xóa sản phẩm">Delete item</a>
                             </td>
                         </tr>
                         <?php } ?>

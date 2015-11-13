@@ -5,9 +5,9 @@ namespace app\modules\fontend\controllers;
 use Yii;
 use yii\web\Cookie;
 use app\models\Product;
+use app\components\helpers\CookieHelper;
 
-class CartController
-        extends \yii\web\Controller
+class CartController extends \yii\web\Controller
 {
 
     public function actionIndex()
@@ -67,67 +67,32 @@ class CartController
             } else
             {
                 // guest -> save cookie
-                $cookies = Yii::$app->request->cookies;
-                if ($cookies->has('user_guest_pc'))
+                $getCookies = CookieHelper::getCookie('user_guest_pc');
+                if ($getCookies == false)
                 {
-                    $cookieValue = $cookies->getValue('user_guest_pc', null);
-                    if ($cookieValue == null)
-                    {
-                        $data = $product_id;
-                        $cookies = Yii::$app->response->cookies;
-                        $cookies->add(new \yii\web\Cookie([
-                            'name' => 'user_guest_pc',
-                            'value' => serialize($data),
-                            'expire' => time() + 300, // 5p
-                        ]));
-                        return true;
-//                        die(json_encode(array(
-//                            'status' => 'successful',
-//                        )));
-                    } else
-                    {
-                        //$product_extra = 15;
-                        $value = unserialize($cookieValue);
-                        if (is_array($value))
-                        {
-                            $check = false;
-                            foreach ($value as &$data)
-                            {
-                                if ($data['id'] == $id)
-                                {
-                                    $check = true;
-                                    $data['sl'] = $data['sl'] + 1;
-                                }
-                            }
-                            if ($check == false)
-                            {
-                                array_push($value, array('id' => $id, 'sl' => 1));
-                            }
-                        }
-                        $cookies = Yii::$app->response->cookies;
-                        $cookies->add(new \yii\web\Cookie([
-                            'name' => 'user_guest_pc',
-                            'value' => serialize($value),
-                            'expire' => time() + 300, // 5p
-                        ]));
-                        return true;
-//                        die(json_encode(array(
-//                            'status' => 'successful',
-//                        )));
-                    }
+                    CookieHelper::addCookie('user_guest_pc', $product_id, 600);
+                    return true;
                 } else
                 {
-                    $data = $product_id;
-                    $cookies = Yii::$app->response->cookies;
-                    $cookies->add(new \yii\web\Cookie([
-                        'name' => 'user_guest_pc',
-                        'value' => serialize($data),
-                        'expire' => time() + 300, // 5p
-                    ]));
+                    $value = unserialize($getCookies);
+                    if (is_array($value))
+                    {
+                        $check = false;
+                        foreach ($value as &$data)
+                        {
+                            if ($data['id'] == $id)
+                            {
+                                $check = true;
+                                $data['sl'] = $data['sl'] + 1;
+                            }
+                        }
+                        if ($check == false)
+                        {
+                            array_push($value, array('id' => $id, 'sl' => 1));
+                        }
+                    }
+                    CookieHelper::addCookie('user_guest_pc', $value, 600);
                     return true;
-//                    die(json_encode(array(
-//                        'status' => 'successful',
-//                    )));
                 }
             }
         }
@@ -135,32 +100,40 @@ class CartController
 
     public function actionDeleteCart()
     {
-        if (Yii::$app->request->post())
+        $post = Yii::$app->request->post();
+        if ($post)
         {
-            $id = 1;
-            if (Yii::$app->user->isGuest == false)
-            { // user ->save db
-                echo Yii::$app->user->identity->username;
-                die();
-            } else
+            $id = $post['product_id'];
+            $type = $post['type'];
+            if ($type == 'delete')
             {
-                $cookies = Yii::$app->request->cookies;
-                if ($cookies->has('user_guest_pc'))
-                {
-                    $cookieValue = $cookies->getValue('user_guest_pc', null);
-                    if ($cookieValue == null)
-                    {
-                        $data = $product_id;
-                        $cookies = Yii::$app->response->cookies;
-                        $cookies->add(new \yii\web\Cookie([
-                            'name' => 'user_guest_pc',
-                            'value' => serialize($data),
-                            'expire' => time() + 300, // 5p
-                        ]));
-                    }
+                if (Yii::$app->user->isGuest == false)
+                { // user ->save db
+                    echo Yii::$app->user->identity->username;
+                    die();
                 } else
                 {
-                    
+                    //guest ->save cookie
+                    $getCookies = CookieHelper::getCookie('user_guest_pc');
+                    if ($getCookies == false)
+                    {
+                        
+                    } else
+                    {
+                        $value = unserialize($getCookies);
+
+                        if (is_array($value))
+                        {
+                            foreach ($value as $key => &$data)
+                            {
+                                if ($data['id'] == $id)
+                                {
+                                    unset($value[$key]);
+                                }
+                            }
+                            CookieHelper::addCookie('user_guest_pc', $value, 600);
+                        }
+                    }
                 }
             }
         }
