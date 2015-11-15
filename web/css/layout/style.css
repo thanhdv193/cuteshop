@@ -2038,7 +2038,7 @@ span.notify-right{
 
 }
 .product-list li .add-to-cart:hover{
-    background-color: rgba(255,51,102,0.5);
+    background-color: #31a5df;
 }
 .product-list li .add-to-cart a{
     background: url("/images/add-cart.png") no-repeat left center;
@@ -4784,7 +4784,7 @@ span.notify-right{
     background: #da4735;
 }
 #footer2 .footer-paralax{
-    background: url("../images/brand_prlx_bg-small.jpg") 50% 0 no-repeat fixed;
+    background: url("/images/slider/slider2_1.jpg") 50% 0 no-repeat fixed;
     color: #fff;
 }
 #footer2 .footer-row{

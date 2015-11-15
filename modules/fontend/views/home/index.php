@@ -1,4 +1,5 @@
 <?php
+
 use yii\helpers;
 use app\widgets\HotDealWidget;
 
@@ -37,12 +38,12 @@ $this->title = 'Trang mua bán online';
                                 <div class="left-block">
                                     <a href="#"><img class="img-responsive" alt="product" src="/images/product/p13.jpg" /></a>
                                     <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
+                                        <a title="Add to my wishlist" class="heart" href="#"></a>
+                                        <a title="Add to compare" class="compare" href="#"></a>
+                                        <a title="Quick view" class="search" href="#"></a>
                                     </div>
                                     <div class="add-to-cart">
-                                        <a title="Add to Cart" href="#">Add to Cart</a>
+                                        <a title="Add to Cart" href="#">Mua hàng</a>
                                     </div>
                                 </div>
                                 <div class="right-block">
@@ -60,12 +61,12 @@ $this->title = 'Trang mua bán online';
                                 <div class="left-block">
                                     <a href="#"><img class="img-responsive" alt="product" src="/images/product/p14.jpg" /></a>
                                     <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
+                                        <a title="Add to my wishlist" class="heart" href="#"></a>
+                                        <a title="Add to compare" class="compare" href="#"></a>
+                                        <a title="Quick view" class="search" href="#"></a>
                                     </div>
                                     <div class="add-to-cart">
-                                        <a title="Add to Cart" href="#">Add to Cart</a>
+                                        <a title="Add to Cart" href="#">Mua hàng</a>
                                     </div>
                                 </div>
                                 <div class="right-block">
@@ -79,12 +80,12 @@ $this->title = 'Trang mua bán online';
                                 <div class="left-block">
                                     <a href="#"><img class="img-responsive" alt="product" src="/images/product/p15.jpg" /></a>
                                     <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
+                                        <a title="Add to my wishlist" class="heart" href="#"></a>
+                                        <a title="Add to compare" class="compare" href="#"></a>
+                                        <a title="Quick view" class="search" href="#"></a>
                                     </div>
                                     <div class="add-to-cart">
-                                        <a title="Add to Cart" href="#">Add to Cart</a>
+                                        <a title="Add to Cart" href="#">Mua hàng</a>
                                     </div>
                                 </div>
                                 <div class="right-block">
@@ -98,12 +99,12 @@ $this->title = 'Trang mua bán online';
                                 <div class="left-block">
                                     <a href="#"><img class="img-responsive" alt="product" src="/images/product/p16.jpg" /></a>
                                     <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
+                                        <a title="Add to my wishlist" class="heart" href="#"></a>
+                                        <a title="Add to compare" class="compare" href="#"></a>
+                                        <a title="Quick view" class="search" href="#"></a>
                                     </div>
                                     <div class="add-to-cart">
-                                        <a title="Add to Cart" href="#">Add to Cart</a>
+                                        <a title="Add to Cart" href="#">Mua hàng</a>
                                     </div>
                                 </div>
                                 <div class="right-block">
@@ -118,12 +119,12 @@ $this->title = 'Trang mua bán online';
                                 <div class="left-block">
                                     <a href="#"><img class="img-responsive" alt="product" src="/images/product/p17.jpg" /></a>
                                     <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
+                                        <a title="Add to my wishlist" class="heart" href="#"></a>
+                                        <a title="Add to compare" class="compare" href="#"></a>
+                                        <a title="Quick view" class="search" href="#"></a>
                                     </div>
                                     <div class="add-to-cart">
-                                        <a title="Add to Cart" href="#">Add to Cart</a>
+                                        <a title="Add to Cart" href="#">Mua hàng</a>
                                     </div>
                                 </div>
                                 <div class="right-block">
@@ -142,12 +143,12 @@ $this->title = 'Trang mua bán online';
                                 <div class="left-block">
                                     <a href="#"><img class="img-responsive" alt="product" src="/images/product/p17.jpg" /></a>
                                     <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
+                                        <a title="Add to my wishlist" class="heart" href="#"></a>
+                                        <a title="Add to compare" class="compare" href="#"></a>
+                                        <a title="Quick view" class="search" href="#"></a>
                                     </div>
                                     <div class="add-to-cart">
-                                        <a title="Add to Cart" href="#">Add to Cart</a>
+                                        <a title="Add to Cart" href="#">Mua hàng</a>
                                     </div>
                                 </div>
                                 <div class="right-block">
@@ -162,12 +163,12 @@ $this->title = 'Trang mua bán online';
                                 <div class="left-block">
                                     <a href="#"><img class="img-responsive" alt="product" src="/images/product/p18.jpg" /></a>
                                     <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
+                                        <a title="Add to my wishlist" class="heart" href="#"></a>
+                                        <a title="Add to compare" class="compare" href="#"></a>
+                                        <a title="Quick view" class="search" href="#"></a>
                                     </div>
                                     <div class="add-to-cart">
-                                        <a title="Add to Cart" href="#">Add to Cart</a>
+                                        <a title="Add to Cart" href="#">Mua hàng</a>
                                     </div>
                                 </div>
                                 <div class="right-block">
@@ -184,12 +185,12 @@ $this->title = 'Trang mua bán online';
                                 <div class="left-block">
                                     <a href="#"><img class="img-responsive" alt="product" src="/images/product/p19.jpg" /></a>
                                     <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
+                                        <a title="Add to my wishlist" class="heart" href="#"></a>
+                                        <a title="Add to compare" class="compare" href="#"></a>
+                                        <a title="Quick view" class="search" href="#"></a>
                                     </div>
                                     <div class="add-to-cart">
-                                        <a title="Add to Cart" href="#">Add to Cart</a>
+                                        <a title="Add to Cart" href="#">Mua hàng</a>
                                     </div>
                                 </div>
                                 <div class="right-block">
@@ -203,12 +204,12 @@ $this->title = 'Trang mua bán online';
                                 <div class="left-block">
                                     <a href="#"><img class="img-responsive" alt="product" src="/images/product/p20.jpg" /></a>
                                     <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
+                                        <a title="Add to my wishlist" class="heart" href="#"></a>
+                                        <a title="Add to compare" class="compare" href="#"></a>
+                                        <a title="Quick view" class="search" href="#"></a>
                                     </div>
                                     <div class="add-to-cart">
-                                        <a title="Add to Cart" href="#">Add to Cart</a>
+                                        <a title="Add to Cart" href="#">Mua hàng</a>
                                     </div>
                                 </div>
                                 <div class="right-block">
@@ -223,12 +224,12 @@ $this->title = 'Trang mua bán online';
                                 <div class="left-block">
                                     <a href="#"><img class="img-responsive" alt="product" src="/images/product/p21.jpg" /></a>
                                     <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
+                                        <a title="Add to my wishlist" class="heart" href="#"></a>
+                                        <a title="Add to compare" class="compare" href="#"></a>
+                                        <a title="Quick view" class="search" href="#"></a>
                                     </div>
                                     <div class="add-to-cart">
-                                        <a title="Add to Cart" href="#">Add to Cart</a>
+                                        <a title="Add to Cart" href="#">Mua hàng</a>
                                     </div>
                                 </div>
                                 <div class="right-block">
@@ -275,12 +276,12 @@ $this->title = 'Trang mua bán online';
                                 <div class="left-block">
                                     <a href="#"><img class="img-responsive" alt="product" src="/images/product/p17.jpg" /></a>
                                     <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
+                                        <a title="Add to my wishlist" class="heart" href="#"></a>
+                                        <a title="Add to compare" class="compare" href="#"></a>
+                                        <a title="Quick view" class="search" href="#"></a>
                                     </div>
                                     <div class="add-to-cart">
-                                        <a title="Add to Cart" href="#">Add to Cart</a>
+                                        <a title="Add to Cart" href="#">Mua hàng</a>
                                     </div>
                                 </div>
                                 <div class="right-block">
@@ -298,12 +299,12 @@ $this->title = 'Trang mua bán online';
                                 <div class="left-block">
                                     <a href="#"><img class="img-responsive" alt="product" src="" /></a>
                                     <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
+                                        <a title="Add to my wishlist" class="heart" href="#"></a>
+                                        <a title="Add to compare" class="compare" href="#"></a>
+                                        <a title="Quick view" class="search" href="#"></a>
                                     </div>
                                     <div class="add-to-cart">
-                                        <a title="Add to Cart" href="#">Add to Cart</a>
+                                        <a title="Add to Cart" href="#">Mua hàng</a>
                                     </div>
                                 </div>
                                 <div class="right-block">
@@ -317,12 +318,12 @@ $this->title = 'Trang mua bán online';
                                 <div class="left-block">
                                     <a href="#"><img class="img-responsive" alt="product" src="" /></a>
                                     <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
+                                        <a title="Add to my wishlist" class="heart" href="#"></a>
+                                        <a title="Add to compare" class="compare" href="#"></a>
+                                        <a title="Quick view" class="search" href="#"></a>
                                     </div>
                                     <div class="add-to-cart">
-                                        <a title="Add to Cart" href="#">Add to Cart</a>
+                                        <a title="Add to Cart" href="#">Mua hàng</a>
                                     </div>
                                 </div>
                                 <div class="right-block">
@@ -336,12 +337,12 @@ $this->title = 'Trang mua bán online';
                                 <div class="left-block">
                                     <a href="#"><img class="img-responsive" alt="product" src="" /></a>
                                     <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
+                                        <a title="Add to my wishlist" class="heart" href="#"></a>
+                                        <a title="Add to compare" class="compare" href="#"></a>
+                                        <a title="Quick view" class="search" href="#"></a>
                                     </div>
                                     <div class="add-to-cart">
-                                        <a title="Add to Cart" href="#">Add to Cart</a>
+                                        <a title="Add to Cart" href="#">Mua hàng</a>
                                     </div>
                                 </div>
                                 <div class="right-block">
@@ -356,12 +357,12 @@ $this->title = 'Trang mua bán online';
                                 <div class="left-block">
                                     <a href="#"><img class="img-responsive" alt="product" src="" /></a>
                                     <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
+                                        <a title="Add to my wishlist" class="heart" href="#"></a>
+                                        <a title="Add to compare" class="compare" href="#"></a>
+                                        <a title="Quick view" class="search" href="#"></a>
                                     </div>
                                     <div class="add-to-cart">
-                                        <a title="Add to Cart" href="#">Add to Cart</a>
+                                        <a title="Add to Cart" href="#">Mua hàng</a>
                                     </div>
                                 </div>
                                 <div class="right-block">
@@ -380,12 +381,12 @@ $this->title = 'Trang mua bán online';
                                 <div class="left-block">
                                     <a href="#"><img class="img-responsive" alt="product" src="" /></a>
                                     <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
+                                        <a title="Add to my wishlist" class="heart" href="#"></a>
+                                        <a title="Add to compare" class="compare" href="#"></a>
+                                        <a title="Quick view" class="search" href="#"></a>
                                     </div>
                                     <div class="add-to-cart">
-                                        <a title="Add to Cart" href="#">Add to Cart</a>
+                                        <a title="Add to Cart" href="#">Mua hàng</a>
                                     </div>
                                 </div>
                                 <div class="right-block">
@@ -403,12 +404,12 @@ $this->title = 'Trang mua bán online';
                                 <div class="left-block">
                                     <a href="#"><img class="img-responsive" alt="product" src="" /></a>
                                     <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
+                                        <a title="Add to my wishlist" class="heart" href="#"></a>
+                                        <a title="Add to compare" class="compare" href="#"></a>
+                                        <a title="Quick view" class="search" href="#"></a>
                                     </div>
                                     <div class="add-to-cart">
-                                        <a title="Add to Cart" href="#">Add to Cart</a>
+                                        <a title="Add to Cart" href="#">Mua hàng</a>
                                     </div>
                                 </div>
                                 <div class="right-block">
@@ -422,12 +423,12 @@ $this->title = 'Trang mua bán online';
                                 <div class="left-block">
                                     <a href="#"><img class="img-responsive" alt="product" src="" /></a>
                                     <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
+                                        <a title="Add to my wishlist" class="heart" href="#"></a>
+                                        <a title="Add to compare" class="compare" href="#"></a>
+                                        <a title="Quick view" class="search" href="#"></a>
                                     </div>
                                     <div class="add-to-cart">
-                                        <a title="Add to Cart" href="#">Add to Cart</a>
+                                        <a title="Add to Cart" href="#">Mua hàng</a>
                                     </div>
                                 </div>
                                 <div class="right-block">
@@ -441,12 +442,12 @@ $this->title = 'Trang mua bán online';
                                 <div class="left-block">
                                     <a href="#"><img class="img-responsive" alt="product" src="" /></a>
                                     <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
+                                        <a title="Add to my wishlist" class="heart" href="#"></a>
+                                        <a title="Add to compare" class="compare" href="#"></a>
+                                        <a title="Quick view" class="search" href="#"></a>
                                     </div>
                                     <div class="add-to-cart">
-                                        <a title="Add to Cart" href="#">Add to Cart</a>
+                                        <a title="Add to Cart" href="#">Mua hàng</a>
                                     </div>
                                 </div>
                                 <div class="right-block">
@@ -461,12 +462,12 @@ $this->title = 'Trang mua bán online';
                                 <div class="left-block">
                                     <a href="#"><img class="img-responsive" alt="product" src="" /></a>
                                     <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
+                                        <a title="Add to my wishlist" class="heart" href="#"></a>
+                                        <a title="Add to compare" class="compare" href="#"></a>
+                                        <a title="Quick view" class="search" href="#"></a>
                                     </div>
                                     <div class="add-to-cart">
-                                        <a title="Add to Cart" href="#">Add to Cart</a>
+                                        <a title="Add to Cart" href="#">Mua hàng</a>
                                     </div>
                                 </div>
                                 <div class="right-block">
@@ -530,12 +531,12 @@ $this->title = 'Trang mua bán online';
                                 <div class="left-block">
                                     <a href="#"><img class="img-responsive" alt="product" src="" /></a>
                                     <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
+                                        <a title="Add to my wishlist" class="heart" href="#"></a>
+                                        <a title="Add to compare" class="compare" href="#"></a>
+                                        <a title="Quick view" class="search" href="#"></a>
                                     </div>
                                     <div class="add-to-cart">
-                                        <a title="Add to Cart" href="#">Add to Cart</a>
+                                        <a title="Add to Cart" href="#">Mua hàng</a>
                                     </div>
                                 </div>
                                 <div class="right-block">
@@ -546,19 +547,19 @@ $this->title = 'Trang mua bán online';
                                     </div>
                                 </div>
                                 <div class="price-percent-reduction2">
-                                        -8% OFF
+                                    -8% OFF
                                 </div>
                             </li>
                             <li>
                                 <div class="left-block">
                                     <a href="#"><img class="img-responsive" alt="product" src="" /></a>
                                     <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
+                                        <a title="Add to my wishlist" class="heart" href="#"></a>
+                                        <a title="Add to compare" class="compare" href="#"></a>
+                                        <a title="Quick view" class="search" href="#"></a>
                                     </div>
                                     <div class="add-to-cart">
-                                        <a title="Add to Cart" href="#">Add to Cart</a>
+                                        <a title="Add to Cart" href="#">Mua hàng</a>
                                     </div>
                                 </div>
                                 <div class="right-block">
@@ -572,12 +573,12 @@ $this->title = 'Trang mua bán online';
                                 <div class="left-block">
                                     <a href="#"><img class="img-responsive" alt="product" src="" /></a>
                                     <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
+                                        <a title="Add to my wishlist" class="heart" href="#"></a>
+                                        <a title="Add to compare" class="compare" href="#"></a>
+                                        <a title="Quick view" class="search" href="#"></a>
                                     </div>
                                     <div class="add-to-cart">
-                                        <a title="Add to Cart" href="#">Add to Cart</a>
+                                        <a title="Add to Cart" href="#">Mua hàng</a>
                                     </div>
                                 </div>
                                 <div class="right-block">
@@ -591,12 +592,12 @@ $this->title = 'Trang mua bán online';
                                 <div class="left-block">
                                     <a href="#"><img class="img-responsive" alt="product" src="" /></a>
                                     <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
+                                        <a title="Add to my wishlist" class="heart" href="#"></a>
+                                        <a title="Add to compare" class="compare" href="#"></a>
+                                        <a title="Quick view" class="search" href="#"></a>
                                     </div>
                                     <div class="add-to-cart">
-                                        <a title="Add to Cart" href="#">Add to Cart</a>
+                                        <a title="Add to Cart" href="#">Mua hàng</a>
                                     </div>
                                 </div>
                                 <div class="right-block">
@@ -611,9 +612,9 @@ $this->title = 'Trang mua bán online';
                                 <div class="left-block">
                                     <a href="#"><img class="img-responsive" alt="product" src="" /></a>
                                     <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
+                                        <a title="Add to my wishlist" class="heart" href="#"></a>
+                                        <a title="Add to compare" class="compare" href="#"></a>
+                                        <a title="Quick view" class="search" href="#"></a>
                                     </div>
                                     <div class="add-to-cart">
                                         <a title="Add to Cart" href="#">Add to Cart</a>
@@ -635,9 +636,9 @@ $this->title = 'Trang mua bán online';
                                 <div class="left-block">
                                     <a href="#"><img class="img-responsive" alt="product" src="" /></a>
                                     <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
+                                        <a title="Add to my wishlist" class="heart" href="#"></a>
+                                        <a title="Add to compare" class="compare" href="#"></a>
+                                        <a title="Quick view" class="search" href="#"></a>
                                     </div>
                                     <div class="add-to-cart">
                                         <a title="Add to Cart" href="#">Add to Cart</a>
@@ -658,9 +659,9 @@ $this->title = 'Trang mua bán online';
                                 <div class="left-block">
                                     <a href="#"><img class="img-responsive" alt="product" src="" /></a>
                                     <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
+                                        <a title="Add to my wishlist" class="heart" href="#"></a>
+                                        <a title="Add to compare" class="compare" href="#"></a>
+                                        <a title="Quick view" class="search" href="#"></a>
                                     </div>
                                     <div class="add-to-cart">
                                         <a title="Add to Cart" href="#">Add to Cart</a>
@@ -677,9 +678,9 @@ $this->title = 'Trang mua bán online';
                                 <div class="left-block">
                                     <a href="#"><img class="img-responsive" alt="product" src="" /></a>
                                     <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
+                                        <a title="Add to my wishlist" class="heart" href="#"></a>
+                                        <a title="Add to compare" class="compare" href="#"></a>
+                                        <a title="Quick view" class="search" href="#"></a>
                                     </div>
                                     <div class="add-to-cart">
                                         <a title="Add to Cart" href="#">Add to Cart</a>
@@ -696,9 +697,9 @@ $this->title = 'Trang mua bán online';
                                 <div class="left-block">
                                     <a href="#"><img class="img-responsive" alt="product" src="" /></a>
                                     <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
+                                        <a title="Add to my wishlist" class="heart" href="#"></a>
+                                        <a title="Add to compare" class="compare" href="#"></a>
+                                        <a title="Quick view" class="search" href="#"></a>
                                     </div>
                                     <div class="add-to-cart">
                                         <a title="Add to Cart" href="#">Add to Cart</a>
@@ -716,9 +717,9 @@ $this->title = 'Trang mua bán online';
                                 <div class="left-block">
                                     <a href="#"><img class="img-responsive" alt="product" src="" /></a>
                                     <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
+                                        <a title="Add to my wishlist" class="heart" href="#"></a>
+                                        <a title="Add to compare" class="compare" href="#"></a>
+                                        <a title="Quick view" class="search" href="#"></a>
                                     </div>
                                     <div class="add-to-cart">
                                         <a title="Add to Cart" href="#">Add to Cart</a>
@@ -768,9 +769,9 @@ $this->title = 'Trang mua bán online';
                                 <div class="left-block">
                                     <a href="#"><img class="img-responsive" alt="product" src="" /></a>
                                     <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
+                                        <a title="Add to my wishlist" class="heart" href="#"></a>
+                                        <a title="Add to compare" class="compare" href="#"></a>
+                                        <a title="Quick view" class="search" href="#"></a>
                                     </div>
                                     <div class="add-to-cart">
                                         <a title="Add to Cart" href="#">Add to Cart</a>
@@ -791,9 +792,9 @@ $this->title = 'Trang mua bán online';
                                 <div class="left-block">
                                     <a href="#"><img class="img-responsive" alt="product" src="" /></a>
                                     <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
+                                        <a title="Add to my wishlist" class="heart" href="#"></a>
+                                        <a title="Add to compare" class="compare" href="#"></a>
+                                        <a title="Quick view" class="search" href="#"></a>
                                     </div>
                                     <div class="add-to-cart">
                                         <a title="Add to Cart" href="#">Add to Cart</a>
@@ -810,9 +811,9 @@ $this->title = 'Trang mua bán online';
                                 <div class="left-block">
                                     <a href="#"><img class="img-responsive" alt="product" src="" /></a>
                                     <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
+                                        <a title="Add to my wishlist" class="heart" href="#"></a>
+                                        <a title="Add to compare" class="compare" href="#"></a>
+                                        <a title="Quick view" class="search" href="#"></a>
                                     </div>
                                     <div class="add-to-cart">
                                         <a title="Add to Cart" href="#">Add to Cart</a>
@@ -829,9 +830,9 @@ $this->title = 'Trang mua bán online';
                                 <div class="left-block">
                                     <a href="#"><img class="img-responsive" alt="product" src="" /></a>
                                     <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
+                                        <a title="Add to my wishlist" class="heart" href="#"></a>
+                                        <a title="Add to compare" class="compare" href="#"></a>
+                                        <a title="Quick view" class="search" href="#"></a>
                                     </div>
                                     <div class="add-to-cart">
                                         <a title="Add to Cart" href="#">Add to Cart</a>
@@ -849,9 +850,9 @@ $this->title = 'Trang mua bán online';
                                 <div class="left-block">
                                     <a href="#"><img class="img-responsive" alt="product" src="" /></a>
                                     <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
+                                        <a title="Add to my wishlist" class="heart" href="#"></a>
+                                        <a title="Add to compare" class="compare" href="#"></a>
+                                        <a title="Quick view" class="search" href="#"></a>
                                     </div>
                                     <div class="add-to-cart">
                                         <a title="Add to Cart" href="#">Add to Cart</a>
@@ -873,9 +874,9 @@ $this->title = 'Trang mua bán online';
                                 <div class="left-block">
                                     <a href="#"><img class="img-responsive" alt="product" src="" /></a>
                                     <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
+                                        <a title="Add to my wishlist" class="heart" href="#"></a>
+                                        <a title="Add to compare" class="compare" href="#"></a>
+                                        <a title="Quick view" class="search" href="#"></a>
                                     </div>
                                     <div class="add-to-cart">
                                         <a title="Add to Cart" href="#">Add to Cart</a>
@@ -893,9 +894,9 @@ $this->title = 'Trang mua bán online';
                                 <div class="left-block">
                                     <a href="#"><img class="img-responsive" alt="product" src="" /></a>
                                     <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
+                                        <a title="Add to my wishlist" class="heart" href="#"></a>
+                                        <a title="Add to compare" class="compare" href="#"></a>
+                                        <a title="Quick view" class="search" href="#"></a>
                                     </div>
                                     <div class="add-to-cart">
                                         <a title="Add to Cart" href="#">Add to Cart</a>
@@ -915,9 +916,9 @@ $this->title = 'Trang mua bán online';
                                 <div class="left-block">
                                     <a href="#"><img class="img-responsive" alt="product" src="" /></a>
                                     <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
+                                        <a title="Add to my wishlist" class="heart" href="#"></a>
+                                        <a title="Add to compare" class="compare" href="#"></a>
+                                        <a title="Quick view" class="search" href="#"></a>
                                     </div>
                                     <div class="add-to-cart">
                                         <a title="Add to Cart" href="#">Add to Cart</a>
@@ -934,9 +935,9 @@ $this->title = 'Trang mua bán online';
                                 <div class="left-block">
                                     <a href="#"><img class="img-responsive" alt="product" src="" /></a>
                                     <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
+                                        <a title="Add to my wishlist" class="heart" href="#"></a>
+                                        <a title="Add to compare" class="compare" href="#"></a>
+                                        <a title="Quick view" class="search" href="#"></a>
                                     </div>
                                     <div class="add-to-cart">
                                         <a title="Add to Cart" href="#">Add to Cart</a>
@@ -954,9 +955,9 @@ $this->title = 'Trang mua bán online';
                                 <div class="left-block">
                                     <a href="#"><img class="img-responsive" alt="product" src="" /></a>
                                     <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
+                                        <a title="Add to my wishlist" class="heart" href="#"></a>
+                                        <a title="Add to compare" class="compare" href="#"></a>
+                                        <a title="Quick view" class="search" href="#"></a>
                                     </div>
                                     <div class="add-to-cart">
                                         <a title="Add to Cart" href="#">Add to Cart</a>

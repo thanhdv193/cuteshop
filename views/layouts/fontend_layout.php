@@ -82,6 +82,7 @@ AppAsset::register($this);
         <!-- Footer -->
         <?= FooterWidget::widget() ?>
         <!--END Footer -->
+        <a href="#" class="scroll_top" title="Lên đầu trang" style="display: inline;">Scroll</a>
         <?php $this->endBody() ?>
     </body>
 </html>
