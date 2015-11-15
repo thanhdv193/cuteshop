@@ -53,7 +53,8 @@ jQuery(document).ready(function () {
                 }
                 if (result == 'successful')
                 {
-                    $('#close_p').click();
+                    $('.btn-login').text('Đăng xuất('+username+')');
+                    $('.form-module').css('display','none');
                 }
             }
         });
@@ -69,19 +70,37 @@ jQuery(document).ready(function () {
         $('#basicModal').css('display', 'none');
 
     });
+    
+    $('.login').on('click', function (e) {
+        e.preventDefault();
 
+        $('.form-register').css('display', 'none');
+        $('.form-login').css('display', 'block');
+        $('.login').css('display', 'none');
+        $('.register').css('display', 'block');
+
+    });
+    $('.register').on('click', function (e) {
+        e.preventDefault();
+
+        $('.form-register').css('display', 'block');
+        $('.form-login').css('display', 'none');
+        $('.register').css('display', 'none');
+        $('.login').css('display', 'block');
+    });
     // Toggle Function
     
-    $('.register').click(function () { 
-        // Switches the Icon
-        //$(this).children('i').toggleClass('fa-pencil');
-        // Switches the forms  
-        $('.form').animate({
-            height: "toggle",
-            'padding-top': 'toggle',
-            'padding-bottom': 'toggle',
-            opacity: "toggle"
-        }, "slow");
-        
-    });
+//    $('.register').click(function () { 
+//        // Switches the Icon
+//        //$(this).children('i').toggleClass('fa-pencil');
+//        // Switches the forms  
+//        $('.form').animate({
+//            height: "toggle",
+//            'padding-top': 'toggle',
+//            'padding-bottom': 'toggle',
+//            opacity: "toggle"
+//        }, "slow");
+//        $(".register").text("Đăng nhập");
+//    });
+    
 })

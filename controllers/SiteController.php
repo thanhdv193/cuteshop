@@ -232,7 +232,6 @@ class SiteController extends Controller
         $post = Yii::$app->request->post();
         if ($post['username'] == null)
         {
-
             return 'user_name_null';
         }
         if ($post['password'] == null)
@@ -241,7 +240,9 @@ class SiteController extends Controller
         }
         $model->username = $post['username'];
         $model->password = $post['password'];
+        $model->rememberMe = false;
         $user = User::findByUsername($model->username);
+        
         if ($user == null)
         {
             return 'user_not_exist';

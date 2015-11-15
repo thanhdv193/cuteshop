@@ -5239,7 +5239,7 @@ span.notify-right{
     background: #ffffff;
     max-width: 320px;
     width: 100%;
-    border-top: 10px solid #33b5e5;
+    border-top: 1px solid #33b5e5;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
     margin: 0 auto;
 }
@@ -5261,7 +5261,7 @@ span.notify-right{
     vertical-align: initial;
 }
 .form-module .toggle img{
-    vertical-align: initial;
+    vertical-align: middle;
 }
 .form-module .toggle .tooltip {
     position: absolute;
@@ -5287,9 +5287,15 @@ span.notify-right{
     border-bottom: 5px solid transparent;
     border-right: 5px solid rgba(0, 0, 0, 0.6);
 }
+.form-module .login{
+    display: none;
+}
+.form-module .form-register {
+    display: none;
+}
 .form-module .form {
     display: none;
-    padding: 40px;
+    padding: 40px 15px 40px 15px;
 }
 .form-module .form:nth-child(2) {
     display: block;
@@ -5300,6 +5306,10 @@ span.notify-right{
     font-size: 18px;
     font-weight: 400;
     line-height: 1;
+}
+.form-module .remenber-ac
+{
+    width:20px !important;
 }
 .form-module input {
     outline: none;
@@ -5338,6 +5348,7 @@ span.notify-right{
     color: #666666;
     font-size: 12px;
     text-align: center;
+    cursor: pointer;
 }
 .form-module .cta a {
     color: #333333;

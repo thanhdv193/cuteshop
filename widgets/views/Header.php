@@ -2,6 +2,7 @@
 
 use yii\helpers\Url;
 use yii\helpers;
+use yii\widgets\ActiveForm;
 ?>
 <link href="<?= Url::base('http') ?>/css/popup.css" rel="stylesheet">
 
@@ -17,7 +18,7 @@ use yii\helpers;
                                 </ul>
                             </div>
                         </div>-->
-            <div class="language ">
+<!--            <div class="language ">
                 <div class="dropdown">
                     <a class="current-open" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
                         <img alt="email" src="/images/vietnam.jpg" />Việt nam
@@ -28,8 +29,8 @@ use yii\helpers;
                         <li><a href="#"><img alt="email" src="/images/vietnam.jpg" />Việt nam</a></li>
                     </ul>
                 </div>
-            </div>
-            <a class="btn-fb-login" href="#">Login fb</a>
+            </div>-->
+<!--            <a class="btn-fb-login" href="#">Login fb</a>-->
             <div class="support-link">
                 <a href="#">Dịch vụ</a>
                 <a href="#">Hỗ trợ</a>
@@ -74,7 +75,7 @@ use yii\helpers;
             </div>
             <div class="col-sm-5 col-md-3">
                 <div class="header-text">
-                    <i class="fa fa-info-circle"></i> Buy 10 Product or $1000 Get Free Shipping 
+                    <i class="fa fa-info-circle"></i> Miễn phí giao hàng toàn quốc
                 </div>
             </div>
         </div>
@@ -148,13 +149,13 @@ use yii\helpers;
                 if (Yii::$app->user->isGuest == false)
                 {
                     ?>
-                    <a title="My Account" href="/site/logout" data-method="post" data-toggle="modal" data-target="#basicModal" class="btn-login">Đăng xuất(<?php echo Yii::$app->user->identity->username ?>)</a>  
+                    <a title="My Account" href="/site/logout" data-method="post" data-toggle="modal" data-target="#basicModal" class=" btn-login">Đăng xuất(<?php echo Yii::$app->user->identity->username ?>)</a>  
 
                     <?php
                 } else
                 {
                     ?>
-                    <a title="My Account" href="#" data-toggle="modal" data-target="#basicModal" class="btn-login">Đăng nhập</a>
+                    <a title="My Account" href="#" data-toggle="modal" data-target="#basicModal" class="popup-login btn-login">Đăng nhập</a>
                 <?php } ?>
 
                 <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
@@ -204,35 +205,51 @@ use yii\helpers;
                         <div class="toggle">
 <!--                            <i class="fa fa-times fa-pencil"></i>-->
                             <img class="icon-menu" alt="Funky roots" src="/images/icon-close.png">
-                            <div class="tooltip register">Đăng ký</div>
+
                         </div>
-                        <div class="form">
+                        <div class="form form-login">                                                        
                             <h2>Đăng nhập </h2>
-                            <form>
-                                <input type="text" placeholder="Username"/>
-                                <input type="password" placeholder="Password"/>
+                            <?php $form = ActiveForm::begin(['action' => ['contact/create'], 'method' => 'post']); ?>
+                                <div class="form-group field-loginform-username required">
+                                    <input type="text" id="loginform-username" name="username" placeholder="Username"/>
+                                </div>
+                                <div class="form-group field-loginform-username required">
+                                    <input type="password" id="loginform-password" name="password" placeholder="Password"/>
+                                </div>
+                                <div class="form-group field-loginform-username required">
+                                    <div class="" id="messages_register">
+                                        <p style="text-align: center;color:red;" id="login-error" class="help-block help-block-error"></p>
+                                    </div>
+                                </div>
+                                <div class="form-group field-loginform-username required">
                                 <div class="checkbox">
                                     <span>
-                                        <input type="hidden" name="LoginForm[rememberMe]" value="0">
+                                        <input type="hidden" class="remenber-ac" name="LoginForm[rememberMe]" value="0">
                                         <input type="checkbox" id="loginform-rememberme" name="LoginForm[rememberMe]" value="1" checked="">
                                     </span>
 
                                     <span style="padding: 0px 0px 0px 16px;">Duy trì đăng nhập</span>                
                                 </div>
-                                <button>Login</button>
-                            </form>
+                                </div>
+                                <button type="submit" id="login-button" class="btn btn-primary" name="login-button">Login</button>
+
+                            <?php ActiveForm::end(); ?>    
                         </div>
-                        <div class="form">
+                        <div class="form form-register">
+
                             <h2>Tạo tài khoản</h2>
-                            <form>
+                            <?php $form = ActiveForm::begin(['action' => ['contact/create'], 'method' => 'post']); ?>
                                 <input type="text" placeholder="Username"/>
                                 <input type="password" placeholder="Password"/>
                                 <input type="email" placeholder="Email Address"/>
                                 <input type="tel" placeholder="Phone Number"/>
-                                <button>Đăng ký</button>
-                            </form>
+                                <button type="submit" id="login-button" class="btn btn-primary" name="login-button">Đăng ký</button>
+                            <?php ActiveForm::end(); ?>    
                         </div>
+                        <div class="cta register">Đăng ký</div>
+                        <div class="cta login">Đăng nhập</div>
                         <div class="cta"><a href="">Quên mật khẩu?</a></div>
+
                     </div>
 
                 </div> 
