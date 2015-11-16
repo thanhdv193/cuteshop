@@ -81,7 +81,7 @@ use yii\widgets\ActiveForm;
         </div>
         <div class="row">
             <div class="col-xs-12 col-sm-3 logo">
-                <a href="index-2.html"><img class="img_logo" alt="Logo" src="/images/banner/logoshop.jpg" /></a>
+                <a href="index-2.html"><img class="img_logo" alt="Logo" src="/images/logo/logo-men-shop.jpg" /></a>
             </div>
             <div class="col-xs-6 col-sm-6 header-search-box">
                 <form class="form-inline">

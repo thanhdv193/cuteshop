@@ -6,24 +6,12 @@ use yii\helpers;
 <footer id="footer2">
      <div class="footer-top">
          <div class="container">
-             <div class="row">
+<!--             <div class="row">
                  <div class="col-sm-3">
                      <div class="footer-logo">
                          <a href="#"><img src="" alt="Logo"></a>
                      </div>
                  </div>
-<!--                 <div class="col-sm-6">
-                     <div class="footer-menu">       
-                         <ul>
-                             <li><a href="#">About Us</a></li>
-                             <li><a href="#">Affiliates</a></li>
-                             <li><a href="#">Careers</a></li>
-                             <li><a href="#">Privacy Policy</a></li>
-                             <li><a href="#">Terms of Use</a></li>
-                             <li><a href="#">Contact Us</a></li>
-                         </ul>
-                     </div>
-                 </div>-->
                  <div class="col-sm-3">
                      <div class="footer-social">
                          <ul>
@@ -35,7 +23,7 @@ use yii\helpers;
                          </ul>
                      </div>
                  </div>
-             </div>
+             </div>-->
          </div>
      </div>
 
