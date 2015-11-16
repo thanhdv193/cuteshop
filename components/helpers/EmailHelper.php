@@ -14,7 +14,7 @@ class EmailHelper
     {
         $mail = new Mailer();
        
-        $teamplate = $mail->render($link, ['param' => $param]);
+        $teamplate = $mail->render($link, ['param' => $param],'/mailtemplate' . DIRECTORY_SEPARATOR . 'layouts' . DIRECTORY_SEPARATOR . 'html');
         $compose =  Yii::$app->mailer->compose()
                 ->setFrom('from@domain.com')
                 ->setCharset($charset)
