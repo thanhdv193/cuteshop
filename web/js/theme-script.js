@@ -55,25 +55,25 @@
             $(this).owlCarousel(config);
         });
         /** COUNT DOWN **/
-        $('[data-countdown]').each(function () {
-            var $this = $(this), finalDate = $(this).data('countdown');
-            $this.countdown(finalDate, function (event) {
-                var fomat = '<span>%H</span><b></b><span>%M</span><b></b><span>%S</span>';
-                $this.html(event.strftime(fomat));
-            });
-        });
-        if ($('.countdown-lastest').length > 0) {
-            var labels = ['Years', 'Months', 'Weeks', 'Days', 'Hrs', 'Mins', 'Secs'];
-            var layout = '<span class="box-count"><span class="number">{dnn}</span> <span class="text">Days</span></span><span class="dot">:</span><span class="box-count"><span class="number">{hnn}</span> <span class="text">Hrs</span></span><span class="dot">:</span><span class="box-count"><span class="number">{mnn}</span> <span class="text">Mins</span></span><span class="dot">:</span><span class="box-count"><span class="number">{snn}</span> <span class="text">Secs</span></span>';
-            $('.countdown-lastest').each(function () {
-                var austDay = new Date($(this).data('y'), $(this).data('m') - 1, $(this).data('d'), $(this).data('h'), $(this).data('i'), $(this).data('s'));
-                $(this).countdown({
-                    until: austDay,
-                    labels: labels,
-                    layout: layout
-                });
-            });
-        }
+//        $('[data-countdown]').each(function () {
+//            var $this = $(this), finalDate = $(this).data('countdown');
+//            $this.countdown(finalDate, function (event) {
+//                var fomat = '<span>%H</span><b></b><span>%M</span><b></b><span>%S</span>';
+//                $this.html(event.strftime(fomat));
+//            });
+//        });
+//        if ($('.countdown-lastest').length > 0) {
+//            var labels = ['Years', 'Months', 'Weeks', 'Days', 'Hrs', 'Mins', 'Secs'];
+//            var layout = '<span class="box-count"><span class="number">{dnn}</span> <span class="text">Days</span></span><span class="dot">:</span><span class="box-count"><span class="number">{hnn}</span> <span class="text">Hrs</span></span><span class="dot">:</span><span class="box-count"><span class="number">{mnn}</span> <span class="text">Mins</span></span><span class="dot">:</span><span class="box-count"><span class="number">{snn}</span> <span class="text">Secs</span></span>';
+//            $('.countdown-lastest').each(function () {
+//                var austDay = new Date($(this).data('y'), $(this).data('m') - 1, $(this).data('d'), $(this).data('h'), $(this).data('i'), $(this).data('s'));
+//                $(this).countdown({
+//                    until: austDay,
+//                    labels: labels,
+//                    layout: layout
+//                });
+//            });
+//        }
         /* Close top banner*/
         $(document).on('click', '.btn-close', function () {
             $(this).closest('.top-banner').animate({height: 0, opacity: 0}, 1000);

@@ -20,6 +20,7 @@ use app\models\Menu;
 use yii\data\Pagination;
 use app\models\Product;
 use yii\web\Cookie;
+use app\components\helpers\EmailHelper;
 
 class SiteController extends Controller
 {
@@ -242,7 +243,7 @@ class SiteController extends Controller
         $model->password = $post['password'];
         $model->rememberMe = false;
         $user = User::findByUsername($model->username);
-        
+
         if ($user == null)
         {
             return 'user_not_exist';
@@ -527,6 +528,14 @@ class SiteController extends Controller
             die;
             echo 'value : ' . $b;
         }
+    }
+
+    public function actionSendEmail()
+    {
+        $link = '/mailtemplate' . DIRECTORY_SEPARATOR . 'user' . DIRECTORY_SEPARATOR . 'html';
+        $param = 1237567;
+        $a = EmailHelper::sendEmail('thanhdv193@gmail.com', 'Tiêu đề email', $link, $param);
+        var_dump($a); die('123');
     }
 
 }

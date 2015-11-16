@@ -16,15 +16,30 @@ class ProductBoxTwoWidget extends Widget
 
     public function run()
     {
-//        $menu = BackendMenu::find()->where(['parent_id' => 0])->asArray()->all();
-//        foreach ($menu AS &$value)
-//        {
-//            $subMenu = BackendMenu::find()->where(['parent_id' => $value['id']])->orderBy(['sort_order' => SORT_ASC])->asArray()->all();
-//            $value['sub_menu'] = $subMenu;
-//            $value['count_sub_menu'] = count($subMenu);
-//        }
-//        //echo'<pre>';  var_dump($menu); echo'<pre>'; die;
-        return $this->render('ProductBoxTwo');
+        $listProductTab1 = array();
+        $listProductTab2 = array();
+        $listProduct = Product::find()
+                ->where(['product_group_id' => 5])
+                ->asArray()
+                ->all();
+        foreach ($listProduct as $value)
+        {
+            if ($value['product_category_id'] == 5)  // ao khoac nam
+            {
+                $listProductTab1[] = $value;
+            }
+            if ($value['product_category_id'] == 4) // ao so mi nam
+            {
+                $listProductTab2[] = $value;
+            }
+        }
+//        echo'<pre>';
+//        var_dump($listProductTab1);
+//        echo'<pre>';
+//        var_dump($listProductTab2);
+//        die;
+        return $this->render('ProductBoxTwo', ['Tab1' => $listProductTab1, 'Tab2' => $listProductTab2]);
+        
     }
 
 }

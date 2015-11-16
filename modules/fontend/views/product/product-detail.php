@@ -2,6 +2,8 @@
 
 use yii\helpers;
 use app\widgets\HotDealWidget;
+
+$this->registerJsFile(Url::base('').'/js/jquery.elevatezoom.js', ['depends' => [\yii\web\JqueryAsset::className()]]);
 ?>
 <div class="columns-container">
     <div class="container" id="columns">

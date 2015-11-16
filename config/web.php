@@ -14,7 +14,7 @@ $config = [
     'defaultRoute' => 'index.php/site/login',
 //    ['catAll']=>['backend/user/index'],
     'components' => [
-        
+
         //login facebook and google.com
         'authClientCollection' => [
             'class' => 'yii\authclient\Collection',
@@ -52,15 +52,16 @@ $config = [
             'currencyCode' => 'EUR',
         ],
         'mailer' => [
-            'class' => 'yii\swiftmailer\Mailer',
-            // send all mails to a file by default. You have to set
-            // 'useFileTransport' to false and configure a transport
-            // for the mailer to send real emails.
-            'useFileTransport' => true,
-            'messageConfig' => [
-                'from' => ['admin@website.com' => 'Admin'], // this is needed for sending emails
-                'charset' => 'UTF-8',
-            ]
+            'class' => 'yii\swiftmailer\Mailer',            
+            'useFileTransport' => false,
+            'transport' => [
+                'class' => 'Swift_SmtpTransport',
+                'host' => 'smtp.gmail.com',
+                'username' => 'xuansang0509@gmail.com',
+                'password' => '02091992',
+                'port' => '587',
+                'encryption' => 'tls',
+            ],
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
@@ -79,19 +80,19 @@ $config = [
             // 'enableStrictParsing' => 'true',
 //            'suffix' => '.html',
             'rules' => [
-                'thumbs/<path:.*>' => 'site/thumb',                                
+                'thumbs/<path:.*>' => 'site/thumb',
                 '<controller:\w+>/<title:[\d\w\-_]+>-<id:\d+>' => '<controller>/view',
                 '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
                 '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
-                '<module:\w+>/<controller:\w+>/<action:\w+>' => '<module>/<controller>/<action>',                
+                '<module:\w+>/<controller:\w+>/<action:\w+>' => '<module>/<controller>/<action>',
                 'san-pham/<title>-<id:\d+>' => 'fontend/product/product-detail',
                 'mua-hang/<title>-<id:\d+>' => 'fontend/cart/add',
 //                'danh-muc/<title>-<id:\d+>_<page:\d+>' => 'fontend/product/product-category',
-                 'danh-muc/<title>-<id:\d+>-<page:\d+>' => 'fontend/product/product-category',
+                'danh-muc/<title>-<id:\d+>-<page:\d+>' => 'fontend/product/product-category',
                 'lien-he' => 'fontend/contact/create',
-                'home' => 'fontend/home/index',                
-                '<alias:login|logout|register>' => 'account/<alias>', 
-                '<alias:about>' => 'site/<alias>', 
+                'home' => 'fontend/home/index',
+                '<alias:login|logout|register>' => 'account/<alias>',
+                '<alias:about>' => 'site/<alias>',
                 'debug/<controller>/<action>' => 'debug/<controller>/<action>',
             ],
         ],

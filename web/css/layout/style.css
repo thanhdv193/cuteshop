@@ -2182,11 +2182,12 @@ span.notify-right{
 .owl-controls .owl-prev,
 .owl-controls .owl-next{
     background: #eaeaea;
-    width: 24px;
-    height: 24px;
+    width: 40px;
+    height: 40px;
     color: #ccc;
     text-align: center;
-    padding-top: 4px;
+    display: table;
+    
 }
 .owl-controls .owl-prev:hover,
 .owl-controls .owl-next:hover{
@@ -2196,6 +2197,8 @@ span.notify-right{
 .owl-controls .owl-prev .fa,
 .owl-controls .owl-next .fa{
     font-weight: bold;
+    display: table-cell;
+    vertical-align: middle;
 }
 
 /*-----------------
