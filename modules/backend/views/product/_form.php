@@ -37,7 +37,7 @@ use app\models\ProductCategory;
 //                         'preset' => 'full', 
                         'preset' => 'advanced',
                         'inline' => false,
-                        'filebrowserUploadUrl' => Yii::$app->getUrlManager()->createUrl('dashboard/test')
+                        'filebrowserUploadUrl' => Yii::$app->getUrlManager()->createUrl('/images/test')
                     ],
                 ])->label('Nội dung');
                 ?> 
