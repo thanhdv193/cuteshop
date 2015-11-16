@@ -1,10 +1,10 @@
 <?php
-use yii\helpers\Html;
 
+use yii\helpers\Html;
 ?>
 
-<p>
-    
-    aaaaaaaaaaaaaaaaaaaa <?php echo $param ?>
-    
+<p style="text-align: center;">    
+    Mật khẩu của bạn là :  <?php echo $param ?>
+
 </p>
+
