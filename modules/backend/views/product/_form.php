@@ -13,6 +13,8 @@ use app\models\ProductCategory;
 /* @var $this yii\web\View */
 /* @var $model app\models\Product */
 /* @var $form yii\widgets\ActiveForm */
+$this->registerJsFile(Url::base('').'/ckeditor/ckeditor.js', ['depends' => [\yii\web\JqueryAsset::className()]]);
+$this->registerJsFile(Url::base('').'/js/backend/editor.js', ['depends' => [\yii\web\JqueryAsset::className()]]);
 ?>
 
 <link href="<?= Url::base('http') ?>/css/backend/backend.css" rel="stylesheet">
@@ -31,16 +33,17 @@ use app\models\ProductCategory;
         <div class="col-md-8 col-lg-9">
             <div class="group-p-infor container-fluid">
                 <?= $form->field($model, 'name')->textInput(['maxlength' => true, 'placeholder' => 'Nhập tên sản phẩm'])->label('Tên sản phẩm') ?>
-                <?=
-                $form->field($model, 'content')->widget(CKEditor::className(), [
-                    'editorOptions' => [
-//                         'preset' => 'full', 
-                        'preset' => 'advanced',
-                        'inline' => false,
-                        'filebrowserUploadUrl' => Yii::$app->getUrlManager()->createUrl('/images/test')
-                    ],
-                ])->label('Nội dung');
+                <?php
+//                $form->field($model, 'content')->widget(CKEditor::className(), [
+//                    'editorOptions' => [
+//                        'preset' => 'advanced',
+//                        'inline' => false,
+//                        'filebrowserUploadUrl' => Yii::$app->getUrlManager()->createUrl('/images/test')
+//                    ],
+//                ])->label('Nội dung');
+                
                 ?> 
+                <?= $form->field($model, 'content')->textArea(['id'=>'summary','rows' => '6']) ?>
                 <div>
                     <div class="col-md-6">
                         <?php

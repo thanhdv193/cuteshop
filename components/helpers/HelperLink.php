@@ -10,8 +10,14 @@ class HelperLink {
 		$link = Yii::getAlias('@web').'-'. $action.'-'.UrlTransliterate::cleanString($title).'-'.$id.'.html';		
                 return urldecode($link);
 	}
+        
+//        public static function rewriteUrllink($id,$title,$action){
+//		$link = Yii::getAlias('@web').'/'. $action.'/'.UrlTransliterate::cleanString($title).'-'.$id.'.html';
+//		return urldecode($link);
+//	}
+        
         public static function rewriteUrllink($id,$title,$action){
-		$link = Yii::getAlias('@web').'/'. $action.'/'.UrlTransliterate::cleanString($title).'-'.$id.'.html';
+		$link = Yii::getAlias('@web').'/'. $action.'/'.UrlTransliterate::cleanString($title).'-'.$id;
 		return urldecode($link);
 	}
         public static function rewriteXl($id,$title,$action){
