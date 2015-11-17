@@ -33,7 +33,7 @@ use app\components\helpers\HelperLink;
                                                         </di>-->
                             <di class="box-count-down">
                                 <span class="countdown-lastest is-countdown" data-y="2015" data-m="9" data-d="1" data-h="00" data-i="00" data-s="00">
-                                    <span class="box-count">
+<!--                                    <span class="box-count">
                                         <span id="days" class="number">00</span> 
                                         <span class="text">Ngày</span>
                                     </span>
@@ -52,7 +52,7 @@ use app\components\helpers\HelperLink;
                                         <span id="seconds" class="number">00</span> 
                                         <span class="text">Giây</span>
 
-                                    </span>
+                                    </span>-->
                                 </span>
                             </di>
                         </div>

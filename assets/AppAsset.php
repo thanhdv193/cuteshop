@@ -18,7 +18,7 @@ class AppAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'css/site.css',
+        'css/site.css',        
         'css/layout/style.css',
         'lib/bootstrap/css/bootstrap.min.css',
         'css/layout/reset.css',
@@ -40,7 +40,7 @@ class AppAsset extends AssetBundle
         'lib/select2/js/select2.min.js',        
         'js/jquery.actual.min.js',
         'lib/countdown/jquery.plugin.js',
-//        'lib/countdown/jquery.countdown.js',        
+        'lib/countdown/jquery.countdown.min.js',        
         'lib/owl.carousel/owl.carousel.min.js',
         'lib/jquery.bxslider/jquery.bxslider.min.js',
         'lib/fancyBox/jquery.fancybox.js',

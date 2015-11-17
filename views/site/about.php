@@ -7,5 +7,8 @@ use app\widgets\ProductBoxOneWidget;
 /* @var $this yii\web\View */
 $this->title = 'About';
 $this->params['breadcrumbs'][] = $this->title;
+$this->registerJsFile(Url::base('').'/js/jquery.countdown.js', ['depends' => [\yii\web\JqueryAsset::className()]]);
+$this->registerJsFile(Url::base('').'/js/index.min.js', ['depends' => [\yii\web\JqueryAsset::className()]]);
 ?>
-<?= ProductBoxOneWidget::widget() ?>
+
+<div id="getting-started"></div>
