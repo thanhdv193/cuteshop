@@ -94,6 +94,7 @@ class ProductController
         }
         if ($model->load(Yii::$app->request->post()))
         {
+            
             $model->create_date = time();
             $model->sort_order = 0;
             $model->view_count = 0;
