@@ -70,7 +70,7 @@ class CartController extends \yii\web\Controller
                 $getCookies = CookieHelper::getCookie('user_guest_pc');
                 if ($getCookies == false)
                 {
-                    CookieHelper::addCookie('user_guest_pc', $product_id, 600);
+                    CookieHelper::addCookie('user_guest_pc', $product_id, 8600);
                     return true;
                 } else
                 {
@@ -91,7 +91,7 @@ class CartController extends \yii\web\Controller
                             array_push($value, array('id' => $id, 'sl' => 1));
                         }
                     }
-                    CookieHelper::addCookie('user_guest_pc', $value, 600);
+                    CookieHelper::addCookie('user_guest_pc', $value, 8600);
                     return true;
                 }
             }
@@ -131,9 +131,49 @@ class CartController extends \yii\web\Controller
                                     unset($value[$key]);
                                 }
                             }
-                            CookieHelper::addCookie('user_guest_pc', $value, 600);
+                            CookieHelper::addCookie('user_guest_pc', $value, 8600);
                         }
                     }
+                }
+            }
+        }
+    }
+
+    public function actionProcessCart()
+    {
+        $post = Yii::$app->request->post();
+        if ($post)
+        {
+            $cart = $post['cart'];
+
+            if (Yii::$app->user->isGuest == false)
+            { // user ->save db
+                echo Yii::$app->user->identity->username;
+                die();
+            } else
+            {
+                // guest -> save cookie
+                $getCookies = CookieHelper::getCookie('user_guest_pc');
+                if ($getCookies == false)
+                {
+//                    CookieHelper::addCookie('user_guest_pc', $product_id, 600);
+                    return true;
+                } else
+                {
+                    $value = unserialize($getCookies);
+                    if (is_array($value))
+                    {
+                        $check = false;
+                        foreach ($value as $key => &$data)
+                        {
+                            if (isset($cart[$data['id']]))
+                            {
+                                $data['sl'] = (int) $cart[$data['id']]['qty'];
+                            }
+                        }
+                    }
+                    CookieHelper::addCookie('user_guest_pc', $value, 8600);
+                    return true;
                 }
             }
         }

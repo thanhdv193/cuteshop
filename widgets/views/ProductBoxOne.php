@@ -39,7 +39,7 @@ use app\components\helpers\HelperLink;
                                     <a title="Quick view" class="search" href="#"></a>
                                 </div>
                                 <div class="add-to-cart">
-                                    <a title="Add to Cart" href="#">Mua hàng</a>
+                                    <a title="Add to Cart" data-value="<?php echo $value['product_id'] ?>" class="add-cart" href="#">Mua hàng</a>
                                 </div>
                             </div>
                             <div class="right-block">
@@ -70,7 +70,7 @@ use app\components\helpers\HelperLink;
                                     <a title="Quick view" class="search" href="#"></a>
                                 </div>
                                 <div class="add-to-cart">
-                                    <a title="Add to Cart" href="#">Mua hàng</a>
+                                    <a title="Add to Cart" data-value="<?php echo $value['product_id'] ?>" class="add-cart" href="#">Mua hàng</a>
                                 </div>
                             </div>
                             <div class="right-block">
