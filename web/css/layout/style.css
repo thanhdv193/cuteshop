@@ -3641,6 +3641,10 @@ span.notify-right{
     padding: 10px 20px;
     border: 1px solid #eaeaea;
 }
+.page-order .cart_navigation next-btn{
+    padding: 10px 20px;
+    border: 1px solid #eaeaea;
+}
 .page-order .cart_avail{
     text-align: center;
 
@@ -3664,13 +3668,16 @@ span.notify-right{
     color: #48b151;
     font-weight: normal;
 }
-.page-order .cart_navigation a.next-btn{
+.page-order .cart_navigation a.next-btn,.page-order .cart_navigation .next-btn{
     float: right;
     background: #ff3366;
     color: #fff;
     border: 1px solid #ff3366;
 }
 .page-order .cart_navigation a.next-btn:hover{
+    opacity: 0.8;
+}
+.page-order .cart_navigation .next-btn:hover{
     opacity: 0.8;
 }
 .page-order .cart_navigation a.prev-btn{
@@ -3682,6 +3689,11 @@ span.notify-right{
     padding-right: 15px;
 }
 .page-order .cart_navigation a.next-btn:after{
+    font: normal normal normal 14px/1 FontAwesome;
+    content: "\f105";
+    padding-left: 15px;
+}
+.page-order .cart_navigation .next-btn:after{
     font: normal normal normal 14px/1 FontAwesome;
     content: "\f105";
     padding-left: 15px;
