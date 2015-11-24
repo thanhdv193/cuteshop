@@ -662,63 +662,7 @@ AppAssetBackend::register($this);
                                                                 </ul>
                                                             </nav>
                                                         </div>-->
-
-
-                            <div class="widget stay-on-collapse">
-                                <div class="widget-heading">Functional Apps</div>
-                                <nav class="widget-body">
-                                    <ul class="acc-menu">
-                                        <li><a href="app-inbox.html"><i class="fa fa-inbox"></i><span>Inbox</span><span class="badge badge-success">3</span></a></li>
-                                        <li><a href="app-tasks.html"><i class="fa fa-tasks"></i><span>Tasks</span><span class="badge badge-info">7</span></a></li>
-                                        <li><a href="app-notes.html"><i class="fa fa-pencil-square-o"></i><span>Notes</span></a></li>
-                                        <li><a href="app-todo.html"><i class="fa fa-check"></i><span>Todo</span><span class="badge badge-dark">10</span></a></li>
-                                    </ul>
-                                </nav>
-                            </div>
-
-                            <div class="widget stay-on-collapse">
-                                <div class="widget-heading">Templates</div>
-                                <nav class="widget-body">
-                                    <ul class="acc-menu">
-                                        <li><a href="javascript:;"><i class="fa fa-coffee"></i><span>Blog</span></a>
-                                            <ul class="acc-menu">
-                                                <li><a href="app-blog-dashboard.html">Dashboard</a></li>
-                                                <li><a href="app-blog-page-list.html">Page List</a></li>
-                                                <li><a href="app-blog-edit.html">Page Edit</a></li>
-                                                <li><a href="app-blog-comment.html">Comment Moderation</a></li>
-                                                <li><a href="javascript:;">Blog Front</a>
-                                                    <ul class="acc-menu">
-                                                        <li><a href="app-blogfront-list.html">Blog Page</a></li>
-                                                        <li><a href="app-blogfront-page.html">Blog Post</a></li>
-                                                        <li><a href="app-blogfront-column.html">Blog Column</a></li>
-                                                        <li><a href="app-blogfront-portfolio.html">Porfolio</a></li>
-                                                    </ul>
-                                                </li>
-
-
-                                            </ul>
-                                        </li>
-                                        <li><a href="javascript:;"><i class="fa fa-shopping-cart"></i><span>eCommerce</span></a>
-                                            <ul class="acc-menu">
-                                                <li><a href="app-ecommerce-dashboard.html">Dashboard</a></li>
-                                                <!-- <li><a href="app-ecommerce-order-list.html">Order List</a></li>
-                                                <li><a href="app-ecommerce-order-details.html">Order Details</a></li> -->
-                                                <li><a href="app-ecommerce-product-list.html">Product List</a></li>
-                                                <li><a href="app-ecommerce-product-edit.html">Product Edit</a></li>
-                                                <li><a href="javascript:;">Store Front</a>
-                                                    <ul class="acc-menu">
-                                                        <li><a href="app-store-product-list.html">Product List</a></li>
-                                                        <!-- <li><a href="app-store-product-column.html">Product Column</a></li> -->
-                                                        <li><a href="app-store-product-details.html">Product Details</a></li>
-                                                        <li><a href="app-store-shoppingcart.html">Shopping Cart</a></li>
-                                                        <li><a href="app-store-checkout.html">Checkout</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </div>
+                                                       
                         </div>
                     </div>
                 </div>
