@@ -3,6 +3,9 @@
  *  Powered by Bootstrap v3.2
  */
 /* Margin */
+.static-sidebar li:hover i:before{color:#FFF}
+.static-sidebar li span:hover{color:#FFF}
+.dropdown .username .hidden-xs:hover{color:#FFF}
 .product-index tr:hover{
     background:#5f7676;
 }
