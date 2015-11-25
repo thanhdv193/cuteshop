@@ -533,7 +533,7 @@ class SiteController extends Controller
     public function actionSendEmail()
     {
         $link = '/mailtemplate' . DIRECTORY_SEPARATOR . 'user' . DIRECTORY_SEPARATOR . 'html';
-        $param = 1237567;
+        $param = 202020202;
         $a = EmailHelper::sendEmail('thanhdv193@gmail.com', 'Tiêu đề email', $link, $param);
         var_dump($a); die('123');
     }

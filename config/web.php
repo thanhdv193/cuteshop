@@ -51,18 +51,18 @@ $config = [
             'thousandSeparator' => ' ',
             'currencyCode' => 'EUR',
         ],
-        'mailer' => [
-            'class' => 'yii\swiftmailer\Mailer',           
-            'useFileTransport' => false,
-            'transport' => [
-                'class' => 'Swift_SmtpTransport',
-                'host' => 'smtp.gmail.com',
-                'username' => 'dovanthanh07051993@gmail.com',
-                'password' => 'thanhhihi',
-                'port' => '587',
-                'encryption' => 'tls',
-            ],
-        ],
+//        'mailer' => [
+//            'class' => 'yii\swiftmailer\Mailer',           
+//            'useFileTransport' => false,
+//            'transport' => [
+//                'class' => 'Swift_SmtpTransport',
+//                'host' => 'smtp.gmail.com',
+//                'username' => 'dovanthanh07051993@gmail.com',
+//                'password' => 'thanhhihi',
+//                'port' => '587',
+//                'encryption' => 'tls',
+//            ],
+//        ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [
