@@ -458,7 +458,7 @@ AppAssetBackend::register($this);
             <div id="layout-static">
                 <div class="static-sidebar-wrapper sidebar-default">
                     <div class="static-sidebar">
-                        <div class="sidebar">
+                        <div class="sidebar" style="border-bottom: 1px solid #354b60;">
 
 
                             <div class="widget stay-on-collapse">

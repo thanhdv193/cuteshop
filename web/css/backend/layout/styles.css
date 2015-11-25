@@ -15938,6 +15938,7 @@ body {
 .static-sidebar-wrapper,
 .static-sidebar {
     width: 260px;
+    padding-bottom: 15px;
 }
 .static-content-wrapper {
     display: table-cell;
