@@ -535,7 +535,20 @@ class SiteController extends Controller
         $link = '/mailtemplate' . DIRECTORY_SEPARATOR . 'user' . DIRECTORY_SEPARATOR . 'html';
         $param = 202020202;
         $a = EmailHelper::sendEmail('thanhdv193@gmail.com', 'Tiêu đề email', $link, $param);
-        var_dump($a); die('123');
+        var_dump($a);
+        die('123');
+    }
+
+    public function actionGetLocation()
+    {
+        $address = 'han,VietNam'; // Your address
+        $prepAddr = str_replace(' ', '+', $address);
+        $geocode = file_get_contents('http://maps.google.com/maps/api/geocode/json?address=' . $prepAddr . '&sensor=false');
+        $output = json_decode($geocode);
+        $lat = $output->results[0]->geometry->location->lat;
+        $long = $output->results[0]->geometry->location->lng;
+
+        echo $address . '<br>Lat: ' . $lat . '<br>Long: ' . $long;
     }
 
 }
