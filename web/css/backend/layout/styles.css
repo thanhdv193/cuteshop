@@ -16197,6 +16197,7 @@ body.layout-boxed .infobar-wrapper {
     background: #e6eaed;
     padding: 5px;
     margin: 0 -10px 20px;
+    border-bottom: 1px solid #354b60;
 }
 .page-heading h1 {
     float: left;

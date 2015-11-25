@@ -669,22 +669,21 @@ AppAssetBackend::register($this);
                 <div class="static-content-wrapper">
                     <div class="static-content">
                         <div class="page-content">
-                            <div class="page-heading">            
-                                <h1>Dashboard</h1>
-                                <div class="options">
-                                    <div class="btn-toolbar">
-                                        <a href="#" class="btn btn-default"><i class="fa fa-fw fa-cog"></i></a>
-                                    </div>
-                                </div>
-                            </div>
+                            
                             <!-- <ol class="breadcrumb">
                                 
 <li class="active"><a href="index.html">Home</a></li>
 
                             </ol> -->
-                            <div class="container-fluid">
-
-
+                            <div class="container-fluid">                                
+<!--                                <div class="page-heading">            
+                                    <h1>Trang chủ</h1>
+                                    <div class="options">
+                                        <div class="btn-toolbar">
+                                            <a href="#" class="btn btn-default"><i class="fa fa-fw fa-cog"></i></a>
+                                        </div>
+                                    </div>
+                                </div>-->
                                 <?= $content ?>
 
 
