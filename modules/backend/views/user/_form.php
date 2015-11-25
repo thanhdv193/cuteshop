@@ -67,7 +67,7 @@ use iutbay\yii2kcfinder\KCFinderInputWidget;
     <?= $form->field($model, 'password_hash')->passwordInput(['class'=>'txt_password form-control','name'=>'password_hash'])->label('Mật khẩu') ?>
     <?= $form->field($model, 'password_repeat')->passwordInput(['class'=>'txt_password form-control'])->label('Nhập lại mật khẩu') ?>
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? 'Lưu' : 'Cập nhật', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

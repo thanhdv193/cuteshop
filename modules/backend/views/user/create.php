@@ -12,7 +12,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Users', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <link href="<?= Url::base('http') ?>/css/backend/user/user_form.css" rel="stylesheet">
-<div class="user-create">
+<div class="user-create bread">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

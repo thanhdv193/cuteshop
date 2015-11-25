@@ -11,7 +11,7 @@ use yii\widgets\Pjax;
 $this->title = 'Danh sách người dùng';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="user-index">
+<div class="user-index bread">
 
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]);  ?>
@@ -53,17 +53,35 @@ $this->params['breadcrumbs'][] = $this->title;
                         'attribute' => 'created_at',
                         'format' => ['date', 'php:d/m/Y']
                     ],
-                    [
-                        'attribute' => 'updated_at',
-                        'format' => ['date', 'php:d/m/Y']
-                    ],
+//                    [
+//                        'attribute' => 'updated_at',
+//                        'format' => ['date', 'php:d/m/Y']
+//                    ],
                     ['class' => 'yii\grid\ActionColumn',
                         'header' => 'Thao tác',
-                        'headerOptions' => ['width' => '80', 'text-align' => 'center'],
-                        
-                    ],
-                ],
-            ]);
-            ?>
-            <?php Pjax::end() ?>
+                        'template' => '{update} {delete}',
+                        'headerOptions' => ['width' => '150', 'text-align' => 'center'],
+                        'buttons' => [
+
+                            //view button
+                            'update' => function ($url, $model)
+                            {
+                                return Html::a('<span class="fa fa-pencil-square-o"></span> Sửa', $url, [
+                                            'title' => Yii::t('app', 'View'),
+                                            'class' => 'btn-grid btn btn-primary btn-xs',
+                                ]);
+                            },
+                                    'delete' => function ($url, $model)
+                            {
+                                return Html::a('<span class="fa fa-trash-o"></span> Xóa', $url, [
+                                            'title' => Yii::t('app', 'delete'),
+                                            'class' => 'btn-grid btn btn-primary btn-xs',
+                                ]);
+                            },
+                                ],
+                            ],
+                        ],
+                    ]);
+                    ?>
+                    <?php Pjax::end() ?>
 </div>

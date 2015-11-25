@@ -29368,3 +29368,7 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
 .grid-view tr{
     border-bottom: 1px solid #ddd;
 }
+.bread h1{
+    border-bottom: 1px solid #BFB8B8;
+    padding: 1px 0px 10px 0px;
+}
