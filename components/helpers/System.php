@@ -187,6 +187,14 @@ class System
 
     public static function getLocationByAddress($address)
     {
+        $ch = curl_init(); // initiate curl
+        $url = 'http://maps.google.com/maps/api/geocode/json?address=' . $address . '&sensor=false';
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); // return the output in string format
+        $output = curl_exec($ch); // execute  
+        $output = json_decode($output);
+        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        
         //$address = 'han,VietNam'; // Your address
         $prepAddr = str_replace(' ', '+', $address);
         $geocode = file_get_contents('http://maps.google.com/maps/api/geocode/json?address=' . $prepAddr . '&sensor=false');

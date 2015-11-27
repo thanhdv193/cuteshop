@@ -542,6 +542,15 @@ class SiteController extends Controller
 
     public function actionGetLocation()
     {
+        $address ='85 Vũ Trọng Phụng, Thanh Xuân, Hà Nội';
+        $ch = curl_init(); // initiate curl
+        $url = 'http://maps.google.com/maps/api/geocode/json?address=' . $address . '&sensor=false';
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); // return the output in string format
+        $output = curl_exec($ch); // execute  
+        $output = json_decode($output);
+        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        echo'<pre>'; var_dump($output); die;
         //$sql = 'SELECT * FROM customer WHERE status=:status';
         $lat = 21.007792;
         $lng = 105.801147;
