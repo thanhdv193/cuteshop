@@ -21,6 +21,7 @@ use yii\data\Pagination;
 use app\models\Product;
 use yii\web\Cookie;
 use app\components\helpers\EmailHelper;
+use app\models\Location;
 
 class SiteController extends Controller
 {
@@ -541,14 +542,24 @@ class SiteController extends Controller
 
     public function actionGetLocation()
     {
-        $address = 'han,VietNam'; // Your address
-        $prepAddr = str_replace(' ', '+', $address);
-        $geocode = file_get_contents('http://maps.google.com/maps/api/geocode/json?address=' . $prepAddr . '&sensor=false');
-        $output = json_decode($geocode);
-        $lat = $output->results[0]->geometry->location->lat;
-        $long = $output->results[0]->geometry->location->lng;
-
-        echo $address . '<br>Lat: ' . $lat . '<br>Long: ' . $long;
+        //$sql = 'SELECT * FROM customer WHERE status=:status';
+        $lat = 21.007792;
+        $lng = 105.801147;
+        $sql = 'SELECT loc_id, 
+                ( 6371 * acos( cos( radians('.$lat.') ) * cos(radians(lat) ) * cos(radians(lng)
+                 - radians('.$lng.') ) + sin(radians('.$lat.')) * sin( radians(lat) ) ) ) 
+                 AS distance FROM location HAVING distance < 50 ORDER BY distance LIMIT 0 , 20;';
+        $customers = Location::findBySql($sql)->asArray()->all();       
+        echo'<pre>'; var_dump($customers); die;
+        //SELECT id, ( 3959 * acos( cos( radians(37) ) * cos( radians( lat ) ) * cos( radians( lng ) - radians(-122) ) + sin( radians(37) ) * sin( radians( lat ) ) ) ) AS distance FROM markers HAVING distance < 25 ORDER BY distance LIMIT 0 , 20;
+//        $address = 'han,VietNam'; // Your address
+//        $prepAddr = str_replace(' ', '+', $address);
+//        $geocode = file_get_contents('http://maps.google.com/maps/api/geocode/json?address=' . $prepAddr . '&sensor=false');
+//        $output = json_decode($geocode);
+//        $lat = $output->results[0]->geometry->location->lat;
+//        $long = $output->results[0]->geometry->location->lng;
+//
+//        echo $address . '<br>Lat: ' . $lat . '<br>Long: ' . $long;
     }
 
 }

@@ -9,7 +9,7 @@ use yii\helpers\Url;
 class System
 {
 
-    const STATUS_ON  = 1;
+    const STATUS_ON = 1;
     const STATUS_OFF = 0;
 
     public static function getStatus($status)
@@ -19,7 +19,8 @@ class System
 
     public static function setLogInfo(&$model)
     {
-        if ($model->isNewRecord) {
+        if ($model->isNewRecord)
+        {
             $model->created_at = date('Y-m-d H:i:s');
             $model->created_by = Yii::$app->user->getId();
         }
@@ -31,13 +32,12 @@ class System
     public static function getAlertMessages($message_id)
     {
         $messages = [
-            '403' => ['title'   => Yii::t('app', '403 Forbidden Error'),
-                      'message' => Yii::t('app', 'You have not permission to access this page')]
+            '403' => ['title' => Yii::t('app', '403 Forbidden Error'),
+                'message' => Yii::t('app', 'You have not permission to access this page')]
         ];
 
         return isset($messages[$message_id]) ? $messages[$message_id] : '';
     }
-
 
     /**
      * Get avatar by userID - thanh
@@ -48,7 +48,8 @@ class System
         $user = $modelUser->getXfUserByUserId($user_id);
         $externalDataUrl = 'http://static8.zamba.vn';
         $group = floor($user['user_id'] / 1000);
-        switch ($size) {
+        switch ($size)
+        {
             case 'l':
                 $sizeGroup = 'thumb_max';
                 $sizeMedia = 'thumb_w/190';
@@ -61,18 +62,21 @@ class System
                 $sizeGroup = 'thumb_w/48';
                 $sizeMedia = 'thumb_w/40';
         }
-        if ($user['avatar_date'] == 0) {
+        if ($user['avatar_date'] == 0)
+        {
             return "https://static18.zamba.vn/styles/muare/xenforo/avatars/avatar_m.png";
         }
-        if (isset($user['avatar_date']) && $user['avatar_date'] && $user['avatar_date'] < 1413436150) {
+        if (isset($user['avatar_date']) && $user['avatar_date'] && $user['avatar_date'] < 1413436150)
+        {
             return "http://muare1.vcmedia.vn/$sizeMedia/avatars/$size/$group/$user[user_id].jpg?$user[avatar_date]";
-        } else if ($user['avatar_date'] < 1430878518) {
+        } else if ($user['avatar_date'] < 1430878518)
+        {
             return $externalDataUrl . "/$sizeGroup/muare/avatars/$size/$group/$user[user_id].jpg?$user[avatar_date]";
-        } else {
+        } else
+        {
 
             return $externalDataUrl . "/$sizeGroup/muare/avatars/$size/$group/$user[user_id]" . "_" . $user['avatar_date'] . ".jpg?$user[avatar_date]";
         }
-
     }
 
     /**
@@ -96,7 +100,7 @@ class System
             "Ù", "Ú", "Ụ", "Ủ", "Ũ", "Ư", "Ừ", "Ứ", "Ự", "Ử", "Ữ",
             "Ỳ", "Ý", "Ỵ", "Ỷ", "Ỹ",
             "Đ",
-            "(", ")", " ", '"', '>', ':', '/', '%', '#', '@', '^', '&', ',', ';','?','`', '~','!', '*', '+','|', '[', ']',
+            "(", ")", " ", '"', '>', ':', '/', '%', '#', '@', '^', '&', ',', ';', '?', '`', '~', '!', '*', '+', '|', '[', ']',
         );
         $marKoDau = array(
             "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a",
@@ -113,8 +117,8 @@ class System
             "U", "U", "U", "U", "U", "U", "U", "U", "U", "U", "U",
             "Y", "Y", "Y", "Y", "Y",
             "D",
-            "", "", "-", '', '', '', '-', '', '', '', '', '', '', '','','','','','','','','','',
-        );       
+            "", "", "-", '', '', '', '-', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',
+        );
         $titlePlus = strtolower(str_replace($marTViet, $marKoDau, $title));
         $externalDataUrl = Yii::$app->params['urlMuare']['muare'];
         return $externalDataUrl . "threads/$node_id/$titlePlus.$thread_id";
@@ -123,14 +127,15 @@ class System
     /**
      * Get link Forum by node_id -thanh
      */
-    public function getLinkForums($node_id, $location_alias=1, $title)
+    public function getLinkForums($node_id, $location_alias = 1, $title)
     {
 
         $forum = $this->vn2latin($title);
         $externalDataUrl = Yii::$app->params['urlMuare']['muare'];
         return $externalDataUrl . "/forums/$location_alias/$forum.$node_id/";
     }
-    public function getLinkUser($user_name,$user_id)
+
+    public function getLinkUser($user_name, $user_id)
     {
         $externalDataUrl = Yii::$app->params['urlMuare']['muare'];
         return $externalDataUrl . "/members/$user_name.$user_id/";
@@ -173,11 +178,28 @@ class System
             "U", "U", "U", "U", "U", "U", "U", "U", "U", "U", "U",
             "Y", "Y", "Y", "Y", "Y",
             "D", "", "", "-", "");
-        if ($tolower) {
+        if ($tolower)
+        {
             return strtolower(str_replace($marTViet, $marKoDau, $cs));
         }
         return str_replace($marTViet, $marKoDau, $cs);
     }
 
+    public static function getLocationByAddress($address)
+    {
+        //$address = 'han,VietNam'; // Your address
+        $prepAddr = str_replace(' ', '+', $address);
+        $geocode = file_get_contents('http://maps.google.com/maps/api/geocode/json?address=' . $prepAddr . '&sensor=false');
+        $output = json_decode($geocode);
+        $lat = $output->results[0]->geometry->location->lat;
+        $long = $output->results[0]->geometry->location->lng;
+
+//        echo $address . '<br>Lat: ' . $lat . '<br>Long: ' . $long;
+
+        return array(
+                'lat' => $lat,
+                'long' =>$long,
+                );
+    }
 
 }
